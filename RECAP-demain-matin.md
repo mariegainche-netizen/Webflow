@@ -34,7 +34,7 @@ Le CSS est hébergé sur **jsDelivr** (CDN gratuit qui sert directement depuis t
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mariegainche-netizen/webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mariegainche-netizen/Webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css">
 ```
 
 Ce bloc ne fait plus que **380 caractères** → passe partout, même sur Basic.
@@ -62,7 +62,7 @@ Le fichier `body-only-content.html` (**36 KB**, sous la limite Embed de 50 KB de
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mariegainche-netizen/webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mariegainche-netizen/Webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css">
 ```
 
 - **Save**
@@ -144,7 +144,7 @@ Sur `mariegainche-netizen/webflow`, branche `claude/webflow-lovable-mockup-lygkt
 | Problème | Solution |
 |---|---|
 | L'Embed refuse le HTML (limite atteinte) | Utiliser `consentio-embed-part1.html` + un 2ᵉ Embed avec `consentio-embed-part2.html` |
-| Rien ne s'affiche en Preview | Vérifier que jsDelivr charge le CSS : `https://cdn.jsdelivr.net/gh/mariegainche-netizen/webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css` (doit s'ouvrir dans le navigateur) |
+| Rien ne s'affiche en Preview | Vérifier que jsDelivr charge le CSS : `https://cdn.jsdelivr.net/gh/mariegainche-netizen/Webflow@claude/webflow-lovable-mockup-lygkt4/consentio-styles.min.css` (doit s'ouvrir dans le navigateur) |
 | Auto-avance ne marche pas | Ouvrir console navigateur (F12) → onglet Console → chercher les erreurs |
 | Custom Code refuse le collage | Downgrade vers **Basic** (14 €/mois) suffit pour le CSS externe |
 
