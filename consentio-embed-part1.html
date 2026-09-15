@@ -1,0 +1,516 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--forest:#07372D;--deep:#0D4A3A;--lime:#A4EF28;--lime-fg:#0F2A22;--sand:#F5F6F1;--white:#FFFFFF;--ink:#12211C;--amber:#F59A23;--muted:#5C6B65;--border:#E4E6E1;--border-dark:rgba(255,255,255,.15);--fg-on-forest:#F5F6F1;--fg-on-forest-muted:#B7C4BE;--font:"Manrope",ui-sans-serif,system-ui,sans-serif;--container:1200px;--gutter:clamp(20px,4vw,40px);}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--white);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.5}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;border:0;background:none}.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--forest)}.eyebrow.on-dark{color:var(--fg-on-forest)}.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}.display{font-weight:800;letter-spacing:-.03em;line-height:1.02;color:var(--forest);margin:0}.display.lg{font-size:clamp(2.25rem,5vw,3.5rem)}.display.md{font-size:clamp(1.75rem,3.6vw,2.5rem)}.display.sm{font-size:clamp(1.4rem,2.4vw,1.75rem)}.display.on-dark{color:var(--fg-on-forest)}.lead{font-size:1.125rem;color:var(--muted);max-width:36rem}.lead.on-dark{color:var(--fg-on-forest-muted)}.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:.95rem;transition:transform .15s ease,background .15s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--lime);color:var(--lime-fg)}.btn-primary:hover{background:#B4F73F}.btn-outline-dark{background:transparent;color:var(--fg-on-forest);border:1px solid rgba(255,255,255,.35)}.btn-outline-dark:hover{background:rgba(255,255,255,.08)}.btn-outline{background:transparent;color:var(--forest);border:1px solid var(--border)}.btn-outline:hover{background:var(--sand)}.arrow{width:16px;height:16px;flex:0 0 16px}header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;height:68px}.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--forest);font-size:1.15rem}.logo-mark{width:28px;height:28px;border-radius:6px;background:var(--forest);display:grid;place-items:center;color:var(--lime);font-weight:800}.nav-links{display:none;gap:26px;font-size:.9rem;font-weight:600;color:var(--forest)}.nav-links a:hover{color:var(--deep);opacity:.8}.nav-cta{display:flex;gap:10px;align-items:center}.nav-cta .login{display:none;font-size:.85rem;font-weight:600;color:var(--muted)}@media (min-width:960px){.nav-links{display:flex}.nav-cta .login{display:inline}}.hero{position:relative;background:var(--forest);color:var(--fg-on-forest);overflow:hidden}.hero .flowline{position:absolute;inset:0;pointer-events:none}.hero .grid{display:grid;gap:32px;padding:56px 0 40px;align-items:center}@media (min-width:960px){.hero .grid{grid-template-columns:1fr 1.05fr;gap:56px;padding:80px 0 72px}}.hero h1{margin-top:20px}.hero .lead{margin-top:20px;color:rgba(245,246,241,.82);font-size:1.125rem;max-width:32rem}.hero .actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}.hero .cats{margin-top:28px;display:flex;flex-wrap:wrap;gap:22px}.hero .cats span{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,246,241,.75);display:inline-flex;align-items:center;gap:8px}.hero .cats span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}.hero-visual{position:relative;display:none}@media (min-width:640px){.hero-visual{display:block}}.hero-photo{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:2px}.hero-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(1.05);opacity:.88}.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--forest),rgba(7,55,45,.2) 50%,transparent)}.tag-cat{position:absolute;top:16px;left:16px;background:rgba(7,55,45,.7);backdrop-filter:blur(6px);color:var(--lime);border:1px solid rgba(164,239,40,.4);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;z-index:2}.card-float{position:absolute;background:var(--white);border-radius:12px;padding:18px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);width:54%;z-index:3}.card-forecast{top:20px;left:-10px}.card-order{bottom:-28px;right:-10px}.card-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.card-value{font-size:1.5rem;font-weight:800;color:var(--forest);margin-top:6px;letter-spacing:-.02em}.card-row{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--border);font-size:.85rem;color:var(--ink)}.card-row:first-of-type{border-top:0}.card-row .k{color:var(--muted)}.card-row .v{font-weight:600}.card-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(164,239,40,.2);color:var(--forest);margin-top:8px}.trust{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}.trust-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:20px}.trust-logos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 40px;align-items:center;justify-items:center;opacity:.85}@media (min-width:640px){.trust-logos{grid-template-columns:repeat(5,1fr)}}.trust-logos .logo-placeholder{font-weight:700;font-size:.95rem;color:var(--muted);letter-spacing:.02em;filter:grayscale(1)}.section{padding:72px 0}.section.compact{padding:56px 0}.section.tint{background:var(--sand)}.section.light{background:var(--white)}.section.dark{background:var(--forest);color:var(--fg-on-forest)}.section-head{max-width:52rem}.section-head .display{margin-top:16px}.section-head .lead{margin-top:16px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:20px}@media (min-width:960px){.stats{grid-template-columns:repeat(4,1fr)}}.stat{background:#F7F8F2;padding:20px}.stat-value{font-size:1.35rem;font-weight:800;color:var(--forest);letter-spacing:-.02em;line-height:1.15}.stat-label{margin-top:6px;font-size:.85rem;color:var(--muted);line-height:1.4}.compare{display:grid;gap:16px;margin-top:32px}@media (min-width:960px){.compare{grid-template-columns:0.85fr 1.15fr;gap:40px;margin-top:48px}}.compare-card{border:1px solid var(--border);background:#F8FAF5;padding:32px;display:flex;flex-direction:column}.compare-card h3{margin:12px 0 0;font-size:1.25rem;color:var(--muted);font-weight:700}.compare-card ul{list-style:none;padding:0;margin:20px 0 0;flex:1}.compare-card li{padding:12px 0;border-top:1px solid var(--border);font-size:.95rem;color:var(--muted)}.compare-card li:last-child{border-bottom:1px solid var(--border)}.compare-card .conclusion{margin-top:20px;font-size:.9rem;color:var(--muted)}.compare-card.fresh{position:relative;overflow:hidden;background:var(--forest);color:var(--fg-on-forest);padding:32px;border:0}.compare-card.fresh::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?w=1200') center/cover;opacity:.35}.compare-card.fresh::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--forest),rgba(7,55,45,.85) 55%,rgba(7,55,45,.4))}.compare-card.fresh>*{position:relative;z-index:1}.compare-card.fresh h3{color:var(--fg-on-forest)}.compare-card.fresh li{color:rgba(245,246,241,.9);border-color:rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:16px;align-items:baseline}.compare-card.fresh li:last-child{border-bottom-color:rgba(255,255,255,.15)}.compare-card.fresh li .metric{font-family:ui-monospace,monospace;font-size:.7rem;letter-spacing:.14em;color:var(--lime);white-space:nowrap}.compare-card.fresh .conclusion{color:var(--lime);font-weight:700}.compare-head-dark{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.chip-live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-on-forest)}.chip-live .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}.chip-week{padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);font-size:11px;font-weight:600;color:var(--fg-on-forest)}.cflow{background:var(--forest);color:var(--fg-on-forest);padding:80px 0 88px;position:relative}.cflow .section-head .display,.cflow .section-head h2{color:var(--fg-on-forest)}.cflow .section-head .lead{color:var(--fg-on-forest-muted)}.cflow-grid{margin-top:40px;display:grid;grid-template-columns:1fr;gap:32px}@media (min-width:1000px){.cflow-grid{grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}}.cflow-steps{position:relative;padding-left:40px}.cflow-steps::before{content:"";position:absolute;left:3px;top:16px;bottom:16px;width:1px;background:rgba(245,246,241,.15)}.cflow-steps::after{content:"";position:absolute;left:3px;top:16px;width:1px;background:var(--lime);height:calc(var(--progress,10%) - 12px);transition:height .5s ease}.cflow-step{position:relative;padding:16px 0;cursor:pointer;transition:opacity .4s ease}.cflow-step:not(.active){opacity:.45}.cflow-step:not(.active):hover{opacity:.8;transform:translateX(4px)}.cflow-step .dot{position:absolute;left:-40px;top:29px;width:8px;height:8px;border-radius:50%;background:rgba(245,246,241,.25);transition:background .4s}.cflow-step.active .dot{background:var(--lime)}.cflow-head{display:flex;align-items:baseline;gap:16px}.cflow-num{font-family:ui-monospace,monospace;font-size:2.5rem;font-weight:800;line-height:1;color:rgba(245,246,241,.4);letter-spacing:-.02em;transition:color .4s}.cflow-step.active .cflow-num{color:var(--lime)}.cflow-title{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--fg-on-forest);margin:0}.cflow-body{overflow:hidden;max-height:0;opacity:0;transition:max-height .5s ease,opacity .4s ease}.cflow-step.active .cflow-body{max-height:400px;opacity:1;margin-top:12px}.cflow-text{max-width:28rem;color:var(--fg-on-forest-muted);font-size:1rem;line-height:1.55;margin:0}.compare-grid{margin-top:16px;display:grid;gap:12px;max-width:36rem}@media (min-width:640px){.compare-grid{grid-template-columns:1fr 1fr}}.compare-box{border-radius:10px;padding:14px}.without-box{border:1px solid rgba(245,246,241,.15)}.with-box{border:1px solid rgba(164,239,40,.3);background:rgba(164,239,40,.06)}.compare-box h5{margin:0 0 10px;font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.without-box h5{color:var(--fg-on-forest-muted)}.with-box h5{color:var(--lime)}.compare-box ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}.compare-box li{display:flex;gap:8px;font-size:.8125rem;line-height:1.4}.without-box li{color:var(--fg-on-forest-muted)}.with-box li{color:rgba(245,246,241,.92)}.compare-box li svg{width:14px;height:14px;flex:0 0 14px;margin-top:2px}.without-box li svg{color:rgba(245,246,241,.6)}.with-box li svg{color:var(--lime)}.cflow-preview{position:relative;min-height:22rem}.preview-panel{position:absolute;inset:0;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}.preview-panel.active{opacity:1;transform:translateY(0);pointer-events:auto}.preview-meta{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-on-forest);margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}.preview-meta::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}@media (max-width:999px){.cflow-preview{position:relative;min-height:0}.preview-panel{position:relative;opacity:1;transform:none;display:none}.preview-panel.active{display:block}}.ui-panel{background:var(--white);color:var(--ink);border-radius:12px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);overflow:hidden}.ui-panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--border);background:#FAFBF7}.ui-panel-head .lbl{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:8px}.ui-panel-head .lbl::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--forest)}.ui-panel-head .meta{font-size:.75rem;color:var(--muted)}.ui-panel-body{padding:18px}.fc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.fc-week{font-size:1.75rem;font-weight:800;color:var(--forest);letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin:0;line-height:1}.fc-sub{font-size:.75rem;color:var(--muted);margin:4px 0 0}.fc-legend{display:flex;flex-direction:column;gap:4px;font-size:.6875rem;font-weight:600;text-align:right}.fc-legend .line{display:flex;align-items:center;gap:8px;justify-content:flex-end}.fc-legend .swatch{width:16px;height:2px;border-radius:2px}.fc-legend .swatch.actual{background:var(--forest)}.fc-legend .swatch.forecast{background:var(--lime)}.fc-legend .swatch.ly{background:rgba(92,107,101,.5)}.fc-legend .val{font-variant-numeric:tabular-nums}.fc-legend .delta{color:var(--amber);font-variant-numeric:tabular-nums}.fc-chart{margin-top:14px;width:100%;height:176px}.fc-weeks{margin-top:8px;display:grid;grid-template-columns:repeat(12,1fr);font-family:ui-monospace,monospace;font-size:.55rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}.fc-weeks span{text-align:center}.fc-weeks span.on{color:var(--forest);font-weight:700}.fc-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.fc-foot .k{font-size:.6875rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.fc-foot .v{font-size:.875rem;font-weight:800;color:var(--forest);font-variant-numeric:tabular-nums}.placeholder-visual{padding:24px;background:var(--white);color:var(--ink);border-radius:12px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);min-height:280px}.pv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}.pv-title{font-size:.9rem;font-weight:800;color:var(--forest);letter-spacing:-.01em}.pv-meta{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.pv-rows{display:flex;flex-direction:column;gap:10px}.pv-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:10px 12px;background:var(--sand);border-radius:8px;font-size:.85rem}.pv-row .name{font-weight:700;color:var(--forest)}.pv-row .amt{font-family:ui-monospace,monospace;font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}.pv-row .pill{padding:3px 8px;border-radius:999px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.pill-ok{background:rgba(164,239,40,.2);color:#2E4B0F}.pill-warn{background:rgba(245,154,35,.15);color:#8A4D0C}.pill-sync{background:rgba(7,55,45,.1);color:var(--forest)}.pv-bar{height:6px;background:var(--sand);border-radius:999px;overflow:hidden;margin-top:6px}.pv-bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--forest),var(--lime));border-radius:999px}.sides{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}@media (min-width:960px){.sides{grid-template-columns:1fr 1fr}}.side-card{background:var(--white);border:1px solid var(--border);padding:32px;display:flex;flex-direction:column}.side-card h3{margin:12px 0 0;font-size:1.5rem;font-weight:800;color:var(--forest);letter-spacing:-.02em}.side-card>p{margin-top:12px;color:var(--muted);font-size:.95rem}.side-card ul{list-style:none;padding:0;margin:20px 0 0;flex:1}.side-card li{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:.95rem;color:var(--muted)}.side-card li:last-child{border-bottom:1px solid var(--border)}.side-card li::before{content:"";flex:0 0 6px;height:6px;border-radius:50%;background:var(--lime);margin-top:9px}.side-card .btn{margin-top:24px;align-self:flex-start}.stories-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}.stories-head h2{margin:12px 0 0;font-size:clamp(1.6rem,3vw,2rem);font-weight:800;color:var(--fg-on-forest);letter-spacing:-.03em}.stories-cta{display:inline-flex;align-items:center;gap:8px;color:var(--lime);font-weight:700;font-size:.9rem}.stories-cta:hover{gap:12px}.stories-grid{margin-top:36px;display:grid;grid-template-columns:1fr;gap:20px}@media (min-width:720px){.stories-grid{grid-template-columns:1fr 1fr}}@media (min-width:1100px){.stories-grid{grid-template-columns:repeat(3,1fr)}}.story-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:24px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}.story-card:hover{border-color:var(--lime)}.story-badge{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}.story-name{font-size:1.25rem;font-weight:800;color:var(--fg-on-forest);letter-spacing:-.02em;margin:0}.story-excerpt{font-size:.9rem;color:var(--fg-on-forest-muted);line-height:1.5;margin:0;flex:1}.story-meta{display:flex;flex-wrap:wrap;gap:16px;font-size:.75rem;color:var(--fg-on-forest-muted);border-top:1px solid rgba(255,255,255,.1);padding-top:14px}.story-meta strong{color:var(--fg-on-forest);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem}.integrations-grid{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;align-items:center;justify-items:center;padding:32px;background:var(--sand);border:1px solid var(--border)}@media (min-width:720px){.integrations-grid{grid-template-columns:repeat(4,1fr)}}@media (min-width:1024px){.integrations-grid{grid-template-columns:repeat(8,1fr)}}.int-logo{font-weight:700;color:var(--muted);font-size:.9rem;letter-spacing:.02em}.final{position:relative;overflow:hidden;background:var(--forest);color:var(--fg-on-forest);padding:80px 0 96px}.final::before{content:"";position:absolute;top:0;right:0;width:50%;height:100%;background:url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=1600') center/cover;opacity:.3;display:none}@media (min-width:960px){.final::before{display:block}}.final::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--forest) 50%,rgba(7,55,45,.4));display:none}@media (min-width:960px){.final::after{display:block}}.final .container{position:relative;z-index:1}.final h2{margin:24px 0 0;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.02;max-width:32rem}.final .lead{margin-top:20px}.final .actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:32px;align-items:center}.link-underline{color:var(--fg-on-forest);font-weight:600;font-size:1rem;text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:4px}.link-underline:hover{text-decoration-color:var(--white)}.final .rule{margin-top:56px;height:1px;background:rgba(255,255,255,.15)}footer.site{background:var(--forest);color:var(--fg-on-forest-muted);padding:56px 0 24px;border-top:1px solid rgba(255,255,255,.08)}.foot-grid{display:grid;grid-template-columns:1fr;gap:32px}@media (min-width:720px){.foot-grid{grid-template-columns:2fr 1fr 1fr 1fr}}.foot-col h5{color:var(--fg-on-forest);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}.foot-col a{display:block;padding:6px 0;font-size:.9rem}.foot-col a:hover{color:var(--lime)}.foot-baseline{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem}</style>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="site">
+  <div class="container nav">
+    <a href="/" class="logo" aria-label="Consentio">
+      <span class="logo-mark">C</span>
+      <span>Consentio</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/retailers">For Retailers</a>
+      <a href="/suppliers">For Suppliers</a>
+      <a href="/customer-stories">Customer Stories</a>
+      <a href="/resources">Resources</a>
+      <a href="/company">Company</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="login" href="https://app.consentio.co">Sign in</a>
+      <a class="btn btn-primary" href="/book-demo">
+        Book a demo
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero">
+  <svg class="flowline" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 260 C 260 260, 340 90, 620 120 S 1000 300, 1260 170"
+          fill="none" stroke="rgba(164,239,40,.35)" stroke-width="1.25" />
+  </svg>
+  <div class="container">
+    <div class="grid">
+      <div>
+        <span class="eyebrow on-dark"><span class="dot"></span>Built for fresh food</span>
+        <h1 class="display lg on-dark" style="margin-top:20px">The operating platform for fresh food trade.</h1>
+        <p class="lead on-dark">Consentio connects buyers and suppliers across forecasting, sourcing, orders and execution — in one continuous workflow.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/book-demo">
+            Book a demo
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-outline-dark" href="#flow">
+            See how it works
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+        </div>
+        <div class="cats">
+          <span>Fresh produce</span>
+          <span>Seafood</span>
+          <span>Meat</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600" alt="Freshly harvested produce in a wooden crate" />
+          <span class="tag-cat">Fresh produce</span>
+        </div>
+        <!-- Floating card: Forecast -->
+        <div class="card-float card-forecast" aria-hidden="true">
+          <div class="card-title">Forecast · Week 27</div>
+          <div class="card-value">+12% vs plan</div>
+          <div class="card-row"><span class="k">Category</span><span class="v">Fresh produce</span></div>
+          <div class="card-row"><span class="k">Target volume</span><span class="v">18,400 kg</span></div>
+          <span class="card-chip">Live</span>
+        </div>
+        <!-- Floating card: Order -->
+        <div class="card-float card-order" aria-hidden="true">
+          <div class="card-title">Order PO-2481</div>
+          <div class="card-value">Confirmed</div>
+          <div class="card-row"><span class="k">Supplier</span><span class="v">Solarenn</span></div>
+          <div class="card-row"><span class="k">Delivery</span><span class="v">D+2 · 07:00</span></div>
+          <div class="card-row"><span class="k">ERP status</span><span class="v">Synced</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TRUST STRIP
+     ========================================================= -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-label">Trusted by leading fresh food companies across Europe</div>
+    <div class="trust-logos">
+      <span class="logo-placeholder">Carrefour</span>
+      <span class="logo-placeholder">Intermarché</span>
+      <span class="logo-placeholder">Monoprix</span>
+      <span class="logo-placeholder">Biocoop</span>
+      <span class="logo-placeholder">Manor Fresh</span>
+      <span class="logo-placeholder">Bell Food Group</span>
+      <span class="logo-placeholder">Maison Reynaud</span>
+      <span class="logo-placeholder">Mytilimer</span>
+      <span class="logo-placeholder">Ultra Marine</span>
+      <span class="logo-placeholder">Lagadec</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROOF — KPI stats
+     ========================================================= -->
+<section class="section compact tint">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span>Consentio in numbers</span>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">3,200+</div>
+        <div class="stat-label">suppliers using Consentio</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">10+ years</div>
+        <div class="stat-label">of fresh food and technology expertise</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Fresh produce, seafood, meat</div>
+        <div class="stat-label">and other fresh categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Active across</div>
+        <div class="stat-label">France, Spain, Switzerland, Benelux and the United States</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHY FRESH IS DIFFERENT
+     ========================================================= -->
+<section class="section light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>Why fresh is different</span>
+      <h2 class="display md">Fresh categories cannot be managed like standard goods.</h2>
+      <p class="lead">Prices, availability and quality change daily. Purchasing decisions are taken with incomplete information and executed across disconnected channels.</p>
+    </div>
+
+    <div class="compare">
+      <!-- standard side -->
+      <div class="compare-card">
+        <span class="eyebrow">Stable · Predictable · Structured</span>
+        <h3>Standard grocery purchasing</h3>
+        <ul>
+          <li>Stable references and prices</li>
+          <li>Long negotiation cycles</li>
+          <li>Predictable lead times</li>
+          <li>Contracted volumes</li>
+        </ul>
+        <p class="conclusion">Standard procurement tools are designed for this reality.</p>
+      </div>
+
+      <!-- fresh side -->
+      <div class="compare-card fresh">
+        <div class="compare-head-dark">
+          <span class="chip-live"><span class="dot"></span>Live data · Updated 09:42</span>
+          <span class="chip-week">Week 27</span>
+        </div>
+        <h3 style="color:var(--fg-on-forest);font-size:1.75rem;font-weight:800;letter-spacing:-.02em;margin-top:14px">Fresh food purchasing</h3>
+        <ul>
+          <li><span>Daily price and availability changes</span><span class="metric">+12%</span></li>
+          <li><span>Short decision windows</span><span class="metric">6H</span></li>
+          <li><span>Volumes adjusted continuously</span><span class="metric">±340KG</span></li>
+          <li><span>Perishable stock and quality variation</span><span class="metric">D+2</span></li>
+        </ul>
+        <p class="conclusion">Fresh needs workflows built for daily decisions and execution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONNECTED FLOW (ConnectedFlowV2 — 5-stage stepper)
+     ========================================================= -->
+<section class="cflow" id="flow">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-dark"><span class="dot"></span>The connected workflow</span>
+      <h2 class="display md on-dark">One workflow, from demand plan to synchronized order data.</h2>
+      <p class="lead on-dark">Each step feeds the next. Buyers and suppliers work on the same structured information instead of exchanging files, emails and messages.</p>
+    </div>
+
+    <div class="cflow-grid">
+      <!-- =========== LEFT : stepper =========== -->
+      <div class="cflow-steps" id="cflow-steps" style="--progress:10%">
+
+        <!-- 01 Forecast -->
+        <div class="cflow-step active" data-idx="0" role="button" tabindex="0" aria-current="step">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="cflow-head">
+            <span class="cflow-num">01</span>
+            <h3 class="cflow-title">Forecast</h3>
+          </div>
+          <div class="cflow-body">
+            <p class="cflow-text">Build demand plans by category, store group and period.</p>
+            <div class="compare-grid">
+              <div class="compare-box without-box">
+                <h5>Without Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Scattered historical data</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Manual spreadsheet calculations</li>
+                </ul>
+              </div>
+              <div class="compare-box with-box">
+                <h5>With Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Centralized sales and historical data</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>AI-powered demand forecasting</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Granular visibility by store, category and period</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Collect -->
+        <div class="cflow-step" data-idx="1" role="button" tabindex="0">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="cflow-head">
+            <span class="cflow-num">02</span>
+            <h3 class="cflow-title">Collect</h3>
+          </div>
+          <div class="cflow-body">
+            <p class="cflow-text">Collect prices, volumes and availability in one comparable format.</p>
+            <div class="compare-grid">
+              <div class="compare-box without-box">
+                <h5>Without Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Offers through email, Excel and messages</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Manual consolidation by buyers</li>
+                </ul>
+              </div>
+              <div class="compare-box with-box">
+                <h5>With Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Structured supplier requests</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Comparable prices, volumes and availability</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Real-time visibility for buyers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Allocation -->
+        <div class="cflow-step" data-idx="2" role="button" tabindex="0">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="cflow-head">
+            <span class="cflow-num">03</span>
+            <h3 class="cflow-title">Allocation</h3>
+          </div>
+          <div class="cflow-body">
+            <p class="cflow-text">Distribute volumes across suppliers with full decision context.</p>
+            <div class="compare-grid">
+              <div class="compare-box without-box">
+                <h5>Without Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Decisions based on fragmented information</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Manual supplier comparisons</li>
+                </ul>
+              </div>
+              <div class="compare-box with-box">
+                <h5>With Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>All offers compared in one place</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Faster volume allocation</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Transparent and traceable decisions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Order execution -->
+        <div class="cflow-step" data-idx="3" role="button" tabindex="0">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="cflow-head">
+            <span class="cflow-num">04</span>
+            <h3 class="cflow-title">Order execution</h3>
+          </div>
+          <div class="cflow-body">
+            <p class="cflow-text">Track confirmations, amendments, deliveries and documents.</p>
+            <div class="compare-grid">
+              <div class="compare-box without-box">
+                <h5>Without Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Orders created manually from allocations</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Changes exchanged by email or phone</li>
+                </ul>
+              </div>
+              <div class="compare-box with-box">
+                <h5>With Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Allocations converted into orders</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Centralized confirmations and amendments</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Validated order data synced with ERP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Modular approach -->
+        <div class="cflow-step" data-idx="4" role="button" tabindex="0">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="cflow-head">
+            <span class="cflow-num">05</span>
+            <h3 class="cflow-title">Modular approach</h3>
+          </div>
+          <div class="cflow-body">
+            <p class="cflow-text">Start with a focused use case, prove value quickly, then expand progressively across categories, workflows and teams.</p>
+            <div class="compare-grid">
+              <div class="compare-box without-box">
+                <h5>Without Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Big-bang rollouts that take months</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 6l12 12M18 6L6 18"/></svg>Value proven only after full deployment</li>
+                </ul>
+              </div>
+              <div class="compare-box with-box">
+                <h5>With Consentio</h5>
+                <ul>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Focused pilot live in weeks</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Measurable impact before extending scope</li>
+                  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>Progressive rollout across categories and teams</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.cflow-steps -->
+
+      <!-- =========== RIGHT : preview panels =========== -->
+      <div class="cflow-preview">
+
+        <!-- 01 Forecast — vraie visual: Forecast chart -->
+        <div class="preview-panel active" data-idx="0">
+          <span class="preview-meta">Week 27 · Demand plan</span>
+          <div class="ui-panel">
+            <div class="ui-panel-head">
+              <span class="lbl">Demand forecast</span>
+              <span class="meta">Vine tomato · Cat. I · 5 kg case</span>
+            </div>
+            <div class="ui-panel-body">
+              <div class="fc-head">
+                <div>
+                  <p class="fc-week">W27</p>
+                  <p class="fc-sub">Past week · tonnes / week</p>
+                </div>
+                <div class="fc-legend">
+                  <span class="line"><span class="swatch actual"></span>Actual<span class="val">55 t</span></span>
+                  <span class="line"><span class="swatch forecast"></span>Forecast<span class="val">58 t</span></span>
+                  <span class="line"><span class="swatch ly"></span>Last year<span class="val">53 t</span></span>
+                  <span class="delta">-3 t vs. forecast</span>
+                </div>
+              </div>
+              <svg class="fc-chart" viewBox="0 0 320 132" preserveAspectRatio="none" role="img" aria-label="Weekly volume: actual, forecast and last year, weeks 22 to 33.">
+                <!-- grid -->
+                <line x1="0" x2="320" y1="33" y2="33" stroke="#E4E6E1" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <line x1="0" x2="320" y1="66" y2="66" stroke="#E4E6E1" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <line x1="0" x2="320" y1="99" y2="99" stroke="#E4E6E1" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <!-- forward area -->
+                <rect x="160" y="0" width="160" height="132" fill="#07372D" opacity="0.03"/>
+                <!-- last year -->
+                <path d="M0,112.2 L29.1,106.3 L58.2,100.4 L87.3,96.4 L116.4,82.7 L145.5,78.8 L174.6,70.9 L203.6,63.1 L232.7,57.2 L261.8,53.2 L290.9,43.4 L320,37.5" fill="none" stroke="#5C6B65" stroke-opacity=".4" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- forecast solid past -->
+                <path d="M0,103.9 L29.1,98.4 L58.2,94.5 L87.3,84.7 L116.4,74.8 L145.5,68.9" fill="none" stroke="#A4EF28" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- forecast dashed future -->
+                <path d="M145.5,68.9 L174.6,61.1 L203.6,49.3 L232.7,45.4 L261.8,37.5 L290.9,27.7 L320,19.9" fill="none" stroke="#A4EF28" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>
+                <!-- actual past -->
+                <path d="M0,108.2 L29.1,96.4 L58.2,102.3 L87.3,80.7 L116.4,68.9 L145.5,74.8" fill="none" stroke="#07372D" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <!-- Today marker -->
+                <line x1="160" x2="160" y1="0" y2="132" stroke="#07372D" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <text x="164" y="11" fill="#07372D" fill-opacity=".7" font-size="9" font-weight="700" font-family="Manrope">TODAY</text>
+                <!-- active week guide (W27) -->
+                <line x1="145.5" x2="145.5" y1="0" y2="132" stroke="#07372D" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+                <circle cx="145.5" cy="78.8" r="3" fill="#5C6B65" fill-opacity=".5"/>
+                <circle cx="145.5" cy="68.9" r="3.5" fill="#A4EF28"/>
+                <circle cx="145.5" cy="74.8" r="3.5" fill="#07372D"/>
+              </svg>
+              <div class="fc-weeks">
+                <span>W22</span><span>W23</span><span>W24</span><span>W25</span><span>W26</span><span class="on">W27</span><span>W28</span><span>W29</span><span>W30</span><span>W31</span><span>W32</span><span>W33</span>
+              </div>
+              <div class="fc-foot">
+                <div><p class="k">Product</p><p class="v">1 SKU</p></div>
+                <div><p class="k">Sites</p><p class="v">18</p></div>
+                <div><p class="k">Horizon</p><p class="v">12 wks</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 Collect — placeholder (à raffiner en itération 2) -->
+        <div class="preview-panel" data-idx="1">
+          <span class="preview-meta">Live data · 14 suppliers</span>
+          <div class="placeholder-visual">
+            <div class="pv-head">
+              <span class="pv-title">Supplier consultation · Vine tomato W28</span>
+              <span class="pv-meta">14 offers · Live</span>
+            </div>
+            <div class="pv-rows">
+              <div class="pv-row"><span class="name">Solarenn</span><span class="amt">4.2 t · €2.85/kg</span><span class="pill pill-ok">Confirmed</span></div>
+              <div class="pv-row"><span class="name">Rougeline</span><span class="amt">3.8 t · €2.92/kg</span><span class="pill pill-ok">Confirmed</span></div>
+              <div class="pv-row"><span class="name">Savéol</span><span class="amt">2.5 t · €2.78/kg</span><span class="pill pill-warn">Partial</span></div>
+              <div class="pv-row"><span class="name">Priméale</span><span class="amt">5.1 t · €2.95/kg</span><span class="pill pill-ok">Confirmed</span></div>
+              <div class="pv-row"><span class="name">Blue Whale</span><span class="amt">3.0 t · €3.02/kg</span><span class="pill pill-warn">Pending</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 Allocation — placeholder -->
+        <div class="preview-panel" data-idx="2">
+          <span class="preview-meta">Allocation · Updated 09:42</span>
+          <div class="placeholder-visual">
+            <div class="pv-head">
+              <span class="pv-title">Volume allocation · W28 · 18.6 t</span>
+              <span class="pv-meta">5 suppliers</span>
+            </div>
+            <div class="pv-rows">
+              <div class="pv-row" style="grid-template-columns:1fr auto"><span class="name">Solarenn <span style="color:var(--muted);font-weight:500">· 27 %</span></span><span class="amt">5.0 t</span></div>
+              <div class="pv-bar"><span style="width:27%"></span></div>
+              <div class="pv-row" style="grid-template-columns:1fr auto"><span class="name">Priméale <span style="color:var(--muted);font-weight:500">· 27 %</span></span><span class="amt">5.0 t</span></div>
+              <div class="pv-bar"><span style="width:27%"></span></div>
+              <div class="pv-row" style="grid-template-columns:1fr auto"><span class="name">Rougeline <span style="color:var(--muted);font-weight:500">· 20 %</span></span><span class="amt">3.8 t</span></div>
+              <div class="pv-bar"><span style="width:20%"></span></div>
+              <div class="pv-row" style="grid-template-columns:1fr auto"><span class="name">Savéol <span style="color:var(--muted);font-weight:500">· 13 %</span></span><span class="amt">2.5 t</span></div>
+              <div class="pv-bar"><span style="width:13%"></span></div>
+              <div class="pv-row" style="grid-template-columns:1fr auto"><span class="name">Blue Whale <span style="color:var(--muted);font-weight:500">· 13 %</span></span><span class="amt">2.3 t</span></div>
+              <div class="pv-bar"><span style="width:13%"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 Order execution — placeholder -->
+        <div class="preview-panel" data-idx="3">
+          <span class="preview-meta">Orders · Synced to ERP</span>
+          <div class="placeholder-visual">
+            <div class="pv-head">
+              <span class="pv-title">Purchase orders · Fresh produce W28</span>
+              <span class="pv-meta">42 orders</span>
+            </div>
+            <div class="pv-rows">
+              <div class="pv-row"><span class="name">PO-2481 · Solarenn</span><span class="amt">D+2 · 07:00</span><span class="pill pill-sync">Sync OK</span></div>
+              <div class="pv-row"><span class="name">PO-2482 · Priméale</span><span class="amt">D+2 · 09:00</span><span class="pill pill-sync">Sync OK</span></div>
+              <div class="pv-row"><span class="name">PO-2483 · Rougeline</span><span class="amt">D+3 · 06:30</span><span class="pill pill-ok">Confirmed</span></div>
+              <div class="pv-row"><span class="name">PO-2484 · Savéol</span><span class="amt">D+3 · 08:00</span><span class="pill pill-warn">Amended</span></div>
+              <div class="pv-row"><span class="name">PO-2485 · Blue Whale</span><span class="amt">D+4 · 07:00</span><span class="pill pill-ok">Confirmed</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 Modular approach — placeholder -->
+        <div class="preview-panel" data-idx="4">
+          <span class="preview-meta">Your workspace · Your modules</span>
+          <div class="placeholder-visual">
+            <div class="pv-head">
+              <span class="pv-title">Deployment plan · 90 days</span>
+              <span class="pv-meta">4 phases</span>
+            </div>
+            <div class="pv-rows">
+              <div class="pv-row"><span class="name">Pilot · 1 category</span><span class="amt">Week 1-4</span><span class="pill pill-ok">Live</span></div>
+              <div class="pv-row"><span class="name">Prove value</span><span class="amt">Week 4-8</span><span class="pill pill-sync">In progress</span></div>
+              <div class="pv-row"><span class="name">Expand · 3 categories</span><span class="amt">Week 8-12</span><span class="pill pill-warn">Next</span></div>
+              <div class="pv-row"><span class="name">Scale · full ops</span><span class="amt">Month 3+</span><span class="pill pill-sync">Planned</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.cflow-preview -->
+    </div><!-- /.cflow-grid -->
+  </div>
+</section>
+
+<script>
+(function(){
+  const steps = document.querySelectorAll('.cflow-step');
+  const panels = document.querySelectorAll('.preview-panel');
+  const stepsWrap = document.getElementById('cflow-steps');
+  const total = steps.length;
+  const INTERVAL_MS = 4500;
+  let current = 0;
+
+  function setActive(idx){
+    current = idx;
+    steps.forEach(s => {
+      const on = Number(s.dataset.idx) === idx;
+      s.classList.toggle('active', on);
+      if (on) s.setAttribute('aria-current','step'); else s.removeAttribute('aria-current');
+    });
+    panels.forEach(p => p.classList.toggle('active', Number(p.dataset.idx) === idx));
+    const pct = ((idx + 0.5) / total) * 100;
+    stepsWrap.style.setProperty('--progress', pct + '%');
+  }
+
+  // Auto-advance — starts immediately, runs forever, ne s'arrête jamais.
+  setInterval(() => setActive((current + 1) % total), INTERVAL_MS);
+
+  // Click / clavier possibles mais ne stoppent pas le cycle
+  steps.forEach(s => {
+    s.addEventListener('click', () => setActive(Number(s.dataset.idx)));
+    s.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActive(Number(s.dataset.idx)); }
+    });
+  });
+})();
+</script>
