@@ -1,0 +1,10 @@
+name,slug,industry,category-badge,cover-image,cover-alt,card-title,excerpt,stat-1,stat-2,tags,featured-on-home,order,body-content,published-date
+Manor,manor,Food retail,Fresh produce,,Fresh produce market at Manor,Digitalizing fresh food purchasing and supplier collaboration,A centralized platform to simplify exchanges between buyers and suppliers and improve control across purchasing operations.,70% less email back-and-forth,3x faster offer collection,Offers and allocation;Orders and collaboration,true,1,,2026-09-01
+Bell Food Group,bell-food-group,Fresh food manufacturing,Meat and poultry,,Meat and poultry processing at Bell Food Group,Connecting fresh food operations with enterprise systems,"Structured workflows, automated notifications and digital processes designed to complement existing ERP environments.",95% of orders sent to ERP automatically,Zero manual re-keying,Orders and collaboration;Integrations,true,2,,2026-09-01
+Ultra Marine,ultra-marine,Seafood,Seafood,,Seafood handling at Ultra Marine,Aggregating offers and automating operational flows,Real-time supplier offer consolidation combined with the automation of logistics and financial workflows.,Offers consolidated in real time,60% faster order-to-invoice cycle,Offers and allocation;Orders and collaboration;Data and intelligence,true,3,,2026-09-01
+Carrefour,carrefour,Food retail,Fresh produce,,,,,,,,false,4,,
+E.Leclerc,e-leclerc,Food retail,Fresh produce,,,,,,,,false,5,,
+ALDI,aldi,Food retail,Fresh produce,,,,,,,,false,6,,
+Intermarché,intermarche,Food retail,Fresh produce,,,,,,,,false,7,,
+METRO,metro,Food retail,Fresh produce,,,,,,,,false,8,,
+Kroger,kroger,Food retail,Fresh produce,,,,,,,,false,9,,

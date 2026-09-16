@@ -207,6 +207,84 @@ On enrichira cette page plus tard, une fois le contenu client rédigé.
 
 ---
 
+## Import CSV en masse
+
+Deux fichiers dans le repo à côté de cette notice :
+
+- `product-modules-template.csv` — la petite collection des tags (5 lignes)
+- `customer-stories-template.csv` — la collection principale, avec les 3 items déjà remplis (Manor, Bell, Ultra Marine) + 6 items vides pré-slugués (Carrefour, E.Leclerc, ALDI, Intermarché, METRO, Kroger) prêts à être complétés
+
+### Pièges CSV Webflow à connaître
+
+- **Ordre obligatoire** : importer `product-modules-template.csv` **en premier**, sinon la colonne `tags` de Customer Stories n'aura rien à référencer.
+- **Multi-reference dans une cellule** : Webflow attend les **noms** des items (pas les slugs), séparés par un **point-virgule** `;`. Exemple : `Offers and allocation;Orders and collaboration`. C'est ce qui est déjà mis dans le template.
+- **Booléens Switch** : `true` / `false` (pas `1`/`0`, pas `oui`/`non`).
+- **Champ Option** : la valeur doit **exister exactement** dans les options que tu as créées (respect de la casse et de l'orthographe). Si tu ajoutes `Dairy` dans le CSV mais que l'option Dairy n'existe pas encore côté Webflow, l'import échoue sur cette ligne.
+- **Images** : Webflow ne peut importer que des **URLs directes publiques** (`https://…/photo.jpg`). Si tu n'as pas d'hébergement, laisse la colonne `cover-image` vide et upload manuellement après l'import via l'interface CMS (drag & drop dans chaque item).
+- **Slug immuable** : mets un slug propre dès le CSV, ne renomme pas après. Kebab-case, sans accent : `intermarche` pas `Intermarché`.
+- **Encoding** : sauvegarde en **UTF-8** (par défaut sous Numbers/Excel avec « Enregistrer sous → CSV UTF-8 »). Sinon les accents/caractères spéciaux cassent.
+- **Séparateur** : Webflow attend une **virgule** `,`. Si Excel FR t'exporte avec `;` (par défaut FR), reconfigure l'export ou remplace le séparateur avant l'import. Les valeurs qui contiennent une virgule doivent être entre `"…"` (déjà géré dans le template pour Bell Food Group).
+- **Limite** : 10 000 lignes par import. Largement de la marge.
+
+### Étapes d'import (Webflow Designer)
+
+**1. Import des Product modules**
+
+1. CMS → **Product modules** → bouton **⋯** en haut à droite → **Import CSV**
+2. Sélectionner `product-modules-template.csv`
+3. Mapping automatique (colonnes `name` et `slug` reconnues)
+4. **Import** → **Publish** les 5 items
+
+**2. Import des Customer Stories**
+
+1. CMS → **Customer Stories** → **⋯ → Import CSV**
+2. Sélectionner `customer-stories-template.csv`
+3. Mapper chaque colonne CSV au champ Webflow correspondant :
+
+| Colonne CSV | → Champ Webflow |
+|---|---|
+| `name` | Name |
+| `slug` | Slug |
+| `industry` | Industry |
+| `category-badge` | Category badge (Option) |
+| `cover-image` | Cover image (Image, URL) — vide si upload manuel |
+| `cover-alt` | Cover alt |
+| `card-title` | Card title |
+| `excerpt` | Excerpt |
+| `stat-1` | Stat 1 |
+| `stat-2` | Stat 2 |
+| `tags` | Tags → **séparateur `;`** |
+| `featured-on-home` | Featured on home (Switch) |
+| `order` | Order |
+| `body-content` | Body content (Rich text) |
+| `published-date` | Published date |
+
+4. Cocher **Draft** ou **Publish** selon si tu veux publier tout de suite
+5. **Import**
+6. Webflow affiche un rapport : lignes importées, ignorées, avec erreurs. **Corrige les rouges** et réimporte uniquement ces lignes.
+
+### Workflow de remplissage recommandé
+
+Comme tu vas avoir beaucoup de cas clients (Carrefour, E.Leclerc, ALDI, Intermarché, METRO, Kroger + les 3 déjà présents), le plus efficace :
+
+1. Ouvrir `customer-stories-template.csv` dans **Google Sheets** (Fichier → Importer → **avec virgule** en séparateur)
+2. Remplir les lignes ligne à ligne (une par client)
+3. Uploader les 9 images sur un **Google Drive public** ou directement dans les **Assets Webflow** (Assets → Upload) — pour Assets Webflow tu récupères ensuite l'URL en cliquant sur l'asset dans le panneau
+4. Coller les URLs dans la colonne `cover-image`
+5. Fichier → Télécharger → **Valeurs séparées par des virgules (.csv)**
+6. Réimporter dans Webflow → les items existants sont **mis à jour** (matching sur le slug) et les nouveaux sont créés
+
+Pratique : le même CSV sert pour la création initiale ET les mises à jour, tant que les slugs ne bougent pas.
+
+### Localisation FR / ES
+
+L'import CSV ne fait qu'importer la locale primaire (EN). Pour FR et ES, deux options une fois Localization activé :
+
+- **A. Traduction champ par champ dans l'interface** : ouvrir chaque item, switcher la locale en haut, retraduire les champs traduisibles (Name reste identique, Card title/Excerpt/Stat 1/Stat 2 se traduisent). Compter ~3 min par item par langue.
+- **B. Export → traduire → réimport par locale** : plus rapide sur du volume. Webflow ne le supporte nativement que sur Enterprise ; sur Business il faut passer par des extensions comme **PowerImporter** ou **Weglot** (payant). Pour 9 items, la Méthode A suffit.
+
+---
+
 ## Checklist de validation avant push staging
 
 - [ ] Les 3 cards s'affichent bien avec image + badge overlay + stats + tags
