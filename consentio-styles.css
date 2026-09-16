@@ -80,23 +80,66 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .hero .cats span{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,246,241,.75);display:inline-flex;align-items:center;gap:8px}
 .hero .cats span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}
 
-/* Hero visual : image + floating cards */
-.hero-visual{position:relative;display:none}
+/* Hero visual : photo + floating cards (fidèle Lovable) */
+.hero-visual{position:relative;display:none;margin-left:0}
 @media (min-width:640px){.hero-visual{display:block}}
+@media (min-width:960px){.hero-visual{margin-left:40px}}
 .hero-photo{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:2px}
 .hero-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(1.05);opacity:.88}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, var(--forest), rgba(7,55,45,.2) 50%, transparent)}
-.tag-cat{position:absolute;top:16px;left:16px;background:rgba(7,55,45,.7);backdrop-filter:blur(6px);color:var(--lime);border:1px solid rgba(164,239,40,.4);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;z-index:2}
-.card-float{position:absolute;background:var(--white);border-radius:12px;padding:18px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);width:54%;z-index:3}
-.card-forecast{top:20px;left:-10px}
-.card-order{bottom:-28px;right:-10px}
-.card-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.card-value{font-size:1.5rem;font-weight:800;color:var(--forest);margin-top:6px;letter-spacing:-.02em}
-.card-row{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--border);font-size:.85rem;color:var(--ink)}
-.card-row:first-of-type{border-top:0}
-.card-row .k{color:var(--muted)}
-.card-row .v{font-weight:600}
-.card-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(164,239,40,.2);color:var(--forest);margin-top:8px}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, var(--forest), rgba(7,55,45,.2) 50%, transparent);pointer-events:none}
+.tag-cat{position:absolute;top:16px;left:16px;background:rgba(7,55,45,.7);backdrop-filter:blur(6px);color:var(--fg-on-forest);border:1px solid rgba(245,246,241,.3);padding:5px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;z-index:2}
+
+/* --- UiPanel : structure commune (fidèle Lovable product-ui.tsx) --- */
+.ui-panel{position:absolute;z-index:3;background:var(--white);border:1px solid var(--border);border-radius:8px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);overflow:hidden}
+.ui-panel__head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border)}
+.ui-panel__label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ui-panel__dot{width:6px;height:6px;border-radius:50%;background:var(--forest)}
+.ui-panel__dot--lime{background:var(--lime)}
+.ui-panel__meta{font-size:11px;font-weight:500;color:var(--muted)}
+.ui-panel__body{padding:16px}
+
+/* --- Positionnement flottant --- */
+.ui-panel--forecast{top:24px;left:0;width:54%}
+.ui-panel--order{bottom:-32px;right:0;width:52%}
+@media (min-width:960px){
+  .ui-panel--order{right:-24px}
+}
+
+/* --- ForecastCard --- */
+.fc-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.fc-week{margin:0;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--forest);font-variant-numeric:tabular-nums}
+.fc-sub{margin:2px 0 0;font-size:.75rem;color:var(--muted)}
+.fc-legend{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:11px;font-weight:600}
+.fc-legend-row{display:inline-flex;align-items:center;gap:6px}
+.fc-legend-row--forest{color:var(--forest)}
+.fc-legend-row--muted{color:var(--muted)}
+.fc-swatch{display:inline-block;width:16px;height:2px;border-radius:1px}
+.fc-swatch--forest{background:var(--forest)}
+.fc-swatch--lime{background:var(--lime)}
+.fc-chart{display:block;width:100%;height:auto;margin-top:16px;overflow:visible}
+.fc-grid{stroke:var(--border);stroke-width:1;vector-effect:non-scaling-stroke}
+.fc-line{fill:none;stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.fc-line--forest{stroke:var(--forest)}
+.fc-line--lime{stroke:var(--lime)}
+.fc-dot{fill:var(--forest)}
+.fc-stats{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fc-stats-k{margin:0;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fc-stats-v{margin:2px 0 0;font-size:.875rem;font-weight:700;color:var(--forest);font-variant-numeric:tabular-nums}
+
+/* --- OrderCard --- */
+.po-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.po-title{margin:0;font-size:.875rem;font-weight:800;color:var(--forest)}
+.po-sub{margin:2px 0 0;font-size:.75rem;color:var(--muted)}
+.po-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:rgba(164,239,40,.25);color:var(--forest);font-size:11px;font-weight:700;white-space:nowrap}
+.po-badge svg{width:12px;height:12px;flex:0 0 12px}
+.po-rows{margin-top:12px}
+.po-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid rgba(228,230,225,.7);font-size:13px}
+.po-row:first-of-type{padding-top:0}
+.po-row:last-of-type{border-bottom:0;padding-bottom:0}
+.po-k{color:var(--muted)}
+.po-v{color:rgba(18,33,28,.8);font-variant-numeric:tabular-nums}
+.po-row--strong .po-k{color:var(--ink);font-weight:700}
+.po-row--strong .po-v{color:var(--forest);font-weight:700}
 
 /* ---------- trust strip ---------- */
 .trust{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
