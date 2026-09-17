@@ -66,14 +66,15 @@ button{font-family:inherit;cursor:pointer;border:0;background:none}
 
 /* ---------- header ---------- */
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--forest);font-size:1.15rem}
+header.site .container.nav{max-width:1440px;padding:0 clamp(20px,3vw,32px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;color:var(--forest);font-size:1.15rem;flex:0 0 auto}
 .logo-mark{width:28px;height:28px;border-radius:6px;background:var(--forest);display:grid;place-items:center;color:var(--lime);font-weight:800}
-.nav-links{display:none;gap:26px;font-size:.9rem;font-weight:600;color:var(--forest)}
+.nav-links{display:none;gap:clamp(16px,2vw,26px);font-size:.9rem;font-weight:600;color:var(--forest);white-space:nowrap;flex-wrap:nowrap}
 .nav-links a:hover{color:var(--deep);opacity:.8}
-.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta{display:flex;gap:10px;align-items:center;flex:0 0 auto}
 .nav-cta .login{display:none;font-size:.85rem;font-weight:600;color:var(--muted)}
-@media (min-width:960px){
+@media (min-width:900px){
   .nav-links{display:flex}
   .nav-cta .login{display:inline}
 }
