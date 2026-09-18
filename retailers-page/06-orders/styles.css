@@ -1,0 +1,93 @@
+/* Section 06 — Module Orders (fond forest sombre) */
+.c7-section { font-family: Manrope, ui-sans-serif, system-ui, sans-serif; padding: 104px 40px; }
+.c7-section--dark { background: #07372D; color: #F5F6F1; }
+.c7-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+
+.c7-module { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.c7-module__eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.c7-module__num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; font-weight: 700; color: #A4EF28; letter-spacing: 0.1em;
+}
+.c7-module__label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(245, 246, 241, 0.55);
+}
+.c7-module__title {
+  font-size: 32px; font-weight: 800; color: #F5F6F1;
+  line-height: 1.1; letter-spacing: -0.02em; margin: 12px 0 0;
+}
+.c7-module__desc {
+  font-size: 16px; line-height: 1.65;
+  color: rgba(245, 246, 241, 0.7); margin: 16px 0 0; max-width: 32rem;
+}
+.c7-module__rule { width: 100%; height: 1px; background: rgba(245, 246, 241, 0.15); margin: 24px 0; }
+.c7-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.c7-check-item { display: flex; gap: 12px; font-size: 14px; color: rgba(245, 246, 241, 0.85); line-height: 1.5; }
+.c7-check-icon { color: #A4EF28; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+/* Execution card */
+.c7-exec {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px; padding: 24px;
+}
+.c7-exec__head { margin-bottom: 24px; }
+.c7-exec__label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #A4EF28;
+}
+.c7-exec__meta { font-size: 12px; color: rgba(245, 246, 241, 0.55); margin-top: 6px; }
+.c7-exec__timeline { display: flex; flex-direction: column; }
+
+/* Step lifecycle : done / current / todo, dernière étape = --last */
+.c7-step { display: grid; grid-template-columns: 24px 1fr; gap: 16px; position: relative; padding-bottom: 20px; }
+.c7-step--last { padding-bottom: 0; }
+.c7-step__line {
+  position: absolute; left: 11px; top: 24px; bottom: 0;
+  width: 1px; background: rgba(255, 255, 255, 0.15);
+}
+.c7-step__dot {
+  width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+  position: relative; z-index: 2;
+}
+.c7-step__dot--done { background: #A4EF28; color: #07372D; }
+.c7-step__dot--current {
+  background: #A4EF28; color: #07372D;
+  box-shadow: 0 0 0 4px rgba(164, 239, 40, 0.25);
+}
+.c7-step__dot--todo {
+  background: rgba(255, 255, 255, 0.1); color: rgba(245, 246, 241, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.c7-step__body { padding-top: 2px; }
+.c7-step__title { font-size: 14px; font-weight: 700; color: #F5F6F1; }
+.c7-step__title--muted { color: rgba(245, 246, 241, 0.55); }
+.c7-step__meta { font-size: 12px; color: rgba(245, 246, 241, 0.5); margin-top: 2px; }
+
+/* Documents strip */
+.c7-exec__docs {
+  margin-top: 20px; padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+}
+.c7-doc {
+  font-size: 11px; font-weight: 600; color: rgba(245, 246, 241, 0.5);
+  background: transparent; border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 5px 10px; border-radius: 4px;
+}
+.c7-doc--ready {
+  color: #F5F6F1; background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15); border-style: solid;
+}
+.c7-erp { margin-left: auto; font-size: 11px; font-weight: 700; color: #A4EF28; letter-spacing: 0.05em; }
+
+@media (max-width: 991px) {
+  .c7-section { padding: 64px 20px; }
+  .c7-module { grid-template-columns: 1fr; gap: 40px; }
+  .c7-module__title { font-size: 26px; }
+  .c7-erp { margin-left: 0; }
+}

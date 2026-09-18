@@ -1,0 +1,66 @@
+/* Section 02 — End to End Workflow (fond blanc) */
+.c3-section {
+  background: #FFFFFF;
+  padding: 104px 40px;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  color: #12211C;
+}
+.c3-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+
+.c3-section-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.45);
+}
+.c3-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; }
+.c3-eyebrow__dot { width: 6px; height: 6px; border-radius: 50%; background: #A4EF28; display: inline-block; }
+.c3-eyebrow__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #07372D;
+}
+
+.c3-h2 {
+  font-size: 52px; font-weight: 800; letter-spacing: -0.03em;
+  color: #07372D; line-height: 1.06; margin: 24px 0 0; max-width: 48rem;
+}
+
+/* Timeline horizontale avec ligne lime */
+.c3-timeline { position: relative; margin-top: 56px; }
+.c3-flow-line { position: absolute; left: 0; right: 0; top: 8px; height: 1px; background: #A4EF28; z-index: 1; }
+.c3-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px;
+  position: relative; z-index: 2;
+}
+.c3-step { display: flex; flex-direction: column; align-items: flex-start; }
+.c3-step__dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #FFFFFF; border: 2px solid #A4EF28;
+  display: inline-block; margin-bottom: 24px;
+}
+.c3-step__meta {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.55);
+}
+.c3-step__title {
+  font-size: 16px; font-weight: 800; color: #07372D;
+  margin: 12px 0 0; letter-spacing: -0.02em; line-height: 1.2;
+}
+.c3-step__text {
+  font-size: 13px; line-height: 1.6;
+  color: rgba(18, 33, 28, 0.6); margin: 8px 0 0;
+}
+
+/* Mobile : passe en border-left lime, cache la ligne horizontale */
+@media (max-width: 991px) {
+  .c3-section { padding: 64px 20px; }
+  .c3-h2 { font-size: 36px; }
+  .c3-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px 20px; }
+  .c3-flow-line { display: none; }
+  .c3-step { border-left: 2px solid #A4EF28; padding-left: 16px; }
+  .c3-step__dot { display: none; }
+}
+@media (max-width: 767px) {
+  .c3-grid { grid-template-columns: 1fr; gap: 24px; }
+  .c3-h2 { font-size: 28px; }
+}

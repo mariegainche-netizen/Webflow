@@ -1,0 +1,76 @@
+/* Section 07 — Integration ERP (fond warm + carousel de logos) */
+.c8-section {
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  color: #12211C; padding: 80px 40px;
+}
+.c8-section--warm { background: #F5EFE4; }
+.c8-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+
+.c8-head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: flex-start; margin-bottom: 48px;
+}
+.c8-eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.c8-eyebrow__dot { width: 6px; height: 6px; border-radius: 50%; background: #A4EF28; display: inline-block; }
+.c8-eyebrow__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #07372D;
+}
+.c8-h2 {
+  font-size: 44px; font-weight: 800; letter-spacing: -0.03em;
+  color: #07372D; line-height: 1.06; margin: 20px 0 0;
+}
+.c8-lead { font-size: 15px; line-height: 1.7; color: rgba(18, 33, 28, 0.7); margin: 0; }
+.c8-cta {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+  font-size: 15px; font-weight: 700; color: #07372D;
+  text-decoration: none; border-bottom: 2px solid #A4EF28; padding-bottom: 4px;
+}
+.c8-cta__arrow { transition: transform 0.2s; }
+
+/* Carousel de logos */
+.c8-carousel {
+  background: #FFFFFF; border-radius: 8px; padding: 32px 24px;
+  display: grid; grid-template-columns: 40px 1fr 40px;
+  align-items: center; gap: 16px;
+  box-shadow: 0 4px 24px rgba(13, 43, 31, 0.04);
+}
+.c8-nav {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: transparent; border: 1px solid rgba(7, 55, 45, 0.15);
+  color: rgba(7, 55, 45, 0.55); font-size: 20px; font-weight: 600;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  padding: 0; line-height: 1;
+}
+.c8-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; align-items: center; justify-items: center; }
+.c8-logo { display: inline-flex; align-items: center; gap: 4px; color: rgba(7, 55, 45, 0.55); }
+.c8-logo__mark { font-weight: 800; font-size: 24px; letter-spacing: 0.02em; }
+.c8-logo__mark--sap {
+  font-size: 22px; font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800; color: rgba(7, 55, 45, 0.55); letter-spacing: -0.02em;
+}
+.c8-logo__mark--microsoft { font-size: 22px; color: rgba(7, 55, 45, 0.55); }
+.c8-logo__mark--dynamics { font-size: 26px; font-weight: 800; color: rgba(7, 55, 45, 0.55); }
+.c8-logo__mark--oracle { font-size: 28px; color: rgba(7, 55, 45, 0.55); font-weight: 400; }
+.c8-logo__caption {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+  color: rgba(7, 55, 45, 0.45); align-self: flex-end; padding-bottom: 4px;
+}
+.c8-logo__text { font-size: 20px; font-weight: 400; color: rgba(7, 55, 45, 0.55); letter-spacing: -0.01em; }
+
+.c8-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.c8-dot {
+  width: 24px; height: 4px; background: rgba(7, 55, 45, 0.15);
+  border-radius: 2px; display: inline-block;
+}
+.c8-dot--active { background: #A4EF28; }
+
+@media (max-width: 991px) {
+  .c8-section { padding: 56px 20px; }
+  .c8-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
+  .c8-h2 { font-size: 32px; }
+  .c8-carousel { grid-template-columns: 32px 1fr 32px; padding: 24px 16px; gap: 8px; }
+  .c8-nav { width: 32px; height: 32px; font-size: 18px; }
+  .c8-logos { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width: 767px) { .c8-h2 { font-size: 26px; } }

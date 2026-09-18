@@ -1,29 +1,5 @@
 
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
-<header class="site">
-  <div class="container nav">
-    <a href="/" class="logo" aria-label="Consentio">
-      <span class="logo-mark">C</span>
-      <span>Consentio</span>
-    </a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="/retailers">For Retailers</a>
-      <a href="/suppliers">For Suppliers</a>
-      <a href="/customer-stories">Customer Stories</a>
-      <a href="/resources">Resources</a>
-      <a href="/company">Company</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="login" href="https://app.consentio.co">Sign in</a>
-      <a class="btn btn-primary" href="/book-demo">
-        Book a demo
-        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
-</header>
+<!-- Header + Footer sont désormais des Components Webflow natifs (Layout > Header Consentio / Footer Consentio) inserted par MCP hors de cet Embed. Cet Embed ne contient donc plus que le corps de la home. -->
 
 <!-- =========================================================
      HERO
@@ -58,24 +34,68 @@
 
       <div class="hero-visual">
         <div class="hero-photo">
-          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600" alt="Freshly harvested produce in a wooden crate" />
+          <img src="https://s3.amazonaws.com/webflow-prod-assets/6aa9284e2c3f1f5923e96572/6aaa676ec419d5f9d4719b4f_crate-produce.jpg" srcset="https://s3.amazonaws.com/webflow-prod-assets/6aa9284e2c3f1f5923e96572/6aaa676ec419d5f9d4719b4f_crate-produce-p-500.jpg 500w, https://s3.amazonaws.com/webflow-prod-assets/6aa9284e2c3f1f5923e96572/6aaa676ec419d5f9d4719b4f_crate-produce-p-800.jpg 800w, https://s3.amazonaws.com/webflow-prod-assets/6aa9284e2c3f1f5923e96572/6aaa676ec419d5f9d4719b4f_crate-produce-p-1080.jpg 1080w, https://s3.amazonaws.com/webflow-prod-assets/6aa9284e2c3f1f5923e96572/6aaa676ec419d5f9d4719b4f_crate-produce.jpg 1600w" sizes="(min-width: 960px) 640px, 100vw" alt="Caisse de produits frais Consentio" width="1600" height="1067" loading="eager" />
           <span class="tag-cat">Fresh produce</span>
         </div>
-        <!-- Floating card: Forecast -->
-        <div class="card-float card-forecast" aria-hidden="true">
-          <div class="card-title">Forecast · Week 27</div>
-          <div class="card-value">+12% vs plan</div>
-          <div class="card-row"><span class="k">Category</span><span class="v">Fresh produce</span></div>
-          <div class="card-row"><span class="k">Target volume</span><span class="v">18,400 kg</span></div>
-          <span class="card-chip">Live</span>
+
+        <!-- Floating card: Demand Forecast (haut / gauche) -->
+        <div class="ui-panel ui-panel--forecast" aria-hidden="true">
+          <div class="ui-panel__head">
+            <span class="ui-panel__label"><span class="ui-panel__dot"></span>Demand forecast</span>
+            <span class="ui-panel__meta">Fresh produce · W22–W33</span>
+          </div>
+          <div class="ui-panel__body">
+            <div class="fc-top">
+              <div>
+                <p class="fc-week">Week 27</p>
+                <p class="fc-sub">Planned volume vs. forecast</p>
+              </div>
+              <div class="fc-legend">
+                <span class="fc-legend-row fc-legend-row--forest"><span class="fc-swatch fc-swatch--forest"></span>Forecast</span>
+                <span class="fc-legend-row fc-legend-row--muted"><span class="fc-swatch fc-swatch--lime"></span>Plan</span>
+              </div>
+            </div>
+            <svg class="fc-chart" viewBox="0 0 280 96" preserveAspectRatio="none" role="img" aria-label="Demand forecast trend chart">
+              <line x1="0" x2="280" y1="24" y2="24" class="fc-grid"/>
+              <line x1="0" x2="280" y1="48" y2="48" class="fc-grid"/>
+              <line x1="0" x2="280" y1="72" y2="72" class="fc-grid"/>
+              <!-- Plan (lime) -->
+              <path class="fc-line fc-line--lime" d="M0.0,54.3 L25.5,50.9 L50.9,48.9 L76.4,43.7 L101.8,38.5 L127.3,35.3 L152.7,31.1 L178.2,24.9 L203.6,22.8 L229.1,18.6 L254.5,13.3 L280.0,9.1"/>
+              <!-- Forecast (forest) -->
+              <path class="fc-line fc-line--forest" d="M0.0,56.3 L25.5,50.0 L50.9,53.2 L76.4,41.7 L101.8,35.5 L127.3,38.6 L152.7,30.2 L178.2,21.9 L203.6,25.0 L229.1,16.7 L254.5,10.4 L280.0,13.6"/>
+              <circle class="fc-dot" cx="280" cy="13.6" r="4"/>
+            </svg>
+            <div class="fc-stats">
+              <div><p class="fc-stats-k">Categories</p><p class="fc-stats-v">6</p></div>
+              <div><p class="fc-stats-k">Sites</p><p class="fc-stats-v">18</p></div>
+              <div><p class="fc-stats-k">Horizon</p><p class="fc-stats-v">12 wks</p></div>
+            </div>
+          </div>
         </div>
-        <!-- Floating card: Order -->
-        <div class="card-float card-order" aria-hidden="true">
-          <div class="card-title">Order PO-2481</div>
-          <div class="card-value">Confirmed</div>
-          <div class="card-row"><span class="k">Supplier</span><span class="v">Solarenn</span></div>
-          <div class="card-row"><span class="k">Delivery</span><span class="v">D+2 · 07:00</span></div>
-          <div class="card-row"><span class="k">ERP status</span><span class="v">Synced</span></div>
+
+        <!-- Floating card: Purchase Order (bas / droite) -->
+        <div class="ui-panel ui-panel--order" aria-hidden="true">
+          <div class="ui-panel__head">
+            <span class="ui-panel__label"><span class="ui-panel__dot ui-panel__dot--lime"></span>Purchase order</span>
+            <span class="ui-panel__meta">PO-2749</span>
+          </div>
+          <div class="ui-panel__body">
+            <div class="po-top">
+              <div>
+                <p class="po-title">Fresh produce · Week 27</p>
+                <p class="po-sub">3 suppliers · 12 lines</p>
+              </div>
+              <span class="po-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Confirmed
+              </span>
+            </div>
+            <div class="po-rows">
+              <div class="po-row"><span class="po-k">Sent to suppliers</span><span class="po-v">09:12</span></div>
+              <div class="po-row"><span class="po-k">Confirmations</span><span class="po-v">3 / 3</span></div>
+              <div class="po-row po-row--strong"><span class="po-k">ERP sync</span><span class="po-v">Complete</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -571,34 +591,85 @@
       </a>
     </div>
 
+    <!-- Preview statique (Manor / Bell / Ultra Marine).
+         Dans Webflow, ce bloc devient un Collection List "Customer Stories".
+         Voir NOTICE-Collection-CustomerStories.md pour le mapping. -->
     <div class="stories-grid">
-      <a class="story-card" href="/customer-stories/manor">
-        <span class="story-badge">Retailer · Food retail</span>
-        <h3 class="story-name">Manor</h3>
-        <p class="story-excerpt">A centralized platform to simplify exchanges between buyers and suppliers and improve control across purchasing operations.</p>
-        <div class="story-meta">
-          <span><strong>Modules</strong> Offers · Orders</span>
-          <span><strong>Category</strong> Fresh produce</span>
+      <article class="story-card">
+        <a class="story-media" href="/customer-stories/manor" aria-label="Manor customer story">
+          <img src="./assets/hands-market.jpg" alt="Fresh produce market" loading="lazy">
+          <span class="story-badge">Fresh produce</span>
+        </a>
+        <div class="story-body">
+          <h3 class="story-name">Manor</h3>
+          <span class="story-industry">Food retail</span>
+          <h4 class="story-title">Digitalizing fresh food purchasing and supplier collaboration</h4>
+          <p class="story-excerpt">A centralized platform to simplify exchanges between buyers and suppliers and improve control across purchasing operations.</p>
+          <ul class="story-stats">
+            <li>70% less email back-and-forth</li>
+            <li>3x faster offer collection</li>
+          </ul>
+          <div class="story-tags">
+            <span class="story-tag">Offers and allocation</span>
+            <span class="story-tag">Orders and collaboration</span>
+          </div>
+          <a class="story-link" href="/customer-stories/manor">
+            Read customer story
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
-      </a>
-      <a class="story-card" href="/customer-stories/bell-food-group">
-        <span class="story-badge">Supplier · Meat &amp; poultry</span>
-        <h3 class="story-name">Bell Food Group</h3>
-        <p class="story-excerpt">Structured workflows, automated notifications and digital processes designed to complement existing ERP environments.</p>
-        <div class="story-meta">
-          <span><strong>Modules</strong> Orders · Integrations</span>
-          <span><strong>Category</strong> Meat &amp; poultry</span>
+      </article>
+
+      <article class="story-card">
+        <a class="story-media" href="/customer-stories/bell-food-group" aria-label="Bell Food Group customer story">
+          <img src="./assets/crate-produce.jpg" alt="Meat and poultry processing" loading="lazy">
+          <span class="story-badge">Meat and poultry</span>
+        </a>
+        <div class="story-body">
+          <h3 class="story-name">Bell Food Group</h3>
+          <span class="story-industry">Fresh food manufacturing</span>
+          <h4 class="story-title">Connecting fresh food operations with enterprise systems</h4>
+          <p class="story-excerpt">Structured workflows, automated notifications and digital processes designed to complement existing ERP environments.</p>
+          <ul class="story-stats">
+            <li>95% of orders sent to ERP automatically</li>
+            <li>Zero manual re-keying</li>
+          </ul>
+          <div class="story-tags">
+            <span class="story-tag">Orders and collaboration</span>
+            <span class="story-tag">Integrations</span>
+          </div>
+          <a class="story-link" href="/customer-stories/bell-food-group">
+            Read customer story
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
-      </a>
-      <a class="story-card" href="/customer-stories/ultra-marine">
-        <span class="story-badge">Supplier · Seafood</span>
-        <h3 class="story-name">Ultra Marine</h3>
-        <p class="story-excerpt">Real-time supplier offer consolidation combined with the automation of logistics and financial workflows.</p>
-        <div class="story-meta">
-          <span><strong>Modules</strong> Offers · Orders · Data</span>
-          <span><strong>Category</strong> Seafood</span>
+      </article>
+
+      <article class="story-card">
+        <a class="story-media" href="/customer-stories/ultra-marine" aria-label="Ultra Marine customer story">
+          <img src="./assets/crate-produce.jpg" alt="Seafood packaging" loading="lazy">
+          <span class="story-badge">Seafood</span>
+        </a>
+        <div class="story-body">
+          <h3 class="story-name">Ultra Marine</h3>
+          <span class="story-industry">Seafood</span>
+          <h4 class="story-title">Aggregating offers and automating operational flows</h4>
+          <p class="story-excerpt">Real-time supplier offer consolidation combined with the automation of logistics and financial workflows.</p>
+          <ul class="story-stats">
+            <li>Offers consolidated in real time</li>
+            <li>60% faster order-to-invoice cycle</li>
+          </ul>
+          <div class="story-tags">
+            <span class="story-tag">Offers and allocation</span>
+            <span class="story-tag">Orders and collaboration</span>
+            <span class="story-tag">Data and intelligence</span>
+          </div>
+          <a class="story-link" href="/customer-stories/ultra-marine">
+            Read customer story
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
-      </a>
+      </article>
     </div>
   </div>
 </section>
@@ -649,41 +720,5 @@
   </div>
 </section>
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-<footer class="site">
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-col">
-        <div class="logo" style="color:var(--fg-on-forest)"><span class="logo-mark">C</span><span>Consentio</span></div>
-        <p style="margin-top:14px;font-size:.9rem;max-width:22rem">The operating platform for fresh food trade. Barcelona · Paris · Rennes.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Product</h5>
-        <a href="/retailers">For Retailers</a>
-        <a href="/suppliers">For Suppliers</a>
-        <a href="/platform">Platform</a>
-        <a href="/resources">Resources</a>
-      </div>
-      <div class="foot-col">
-        <h5>Company</h5>
-        <a href="/company">About</a>
-        <a href="/customer-stories">Customer Stories</a>
-        <a href="/klarys-joins-consentio">Klarys joins Consentio</a>
-        <a href="/book-demo">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h5>Legal</h5>
-        <a href="/legal-notice">Legal notice</a>
-        <a href="/privacy-policy">Privacy policy</a>
-        <a href="/cookie-policy">Cookie policy</a>
-      </div>
-    </div>
-    <div class="foot-baseline">
-      <span>© 2026 Consentio. All rights reserved.</span>
-      <span>Barcelona · Paris · Rennes</span>
-    </div>
-  </div>
-</footer>
+<!-- Footer retiré : désormais Component Webflow natif "Footer Consentio" (panneau Add > Components > Layout). -->
 

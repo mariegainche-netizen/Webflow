@@ -1,0 +1,91 @@
+/* Section 04 — Module Consultations (fond blanc) */
+.c5-section {
+  background: #FFFFFF;
+  padding: 104px 40px;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  color: #12211C;
+}
+.c5-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+
+.c5-module { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.c5-module__eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.c5-module__num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; font-weight: 700; color: #A4EF28; letter-spacing: 0.1em;
+}
+.c5-module__label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.55);
+}
+.c5-module__title {
+  font-size: 32px; font-weight: 800; color: #07372D;
+  line-height: 1.1; letter-spacing: -0.02em; margin: 12px 0 0;
+}
+.c5-module__desc {
+  font-size: 16px; line-height: 1.65;
+  color: rgba(18, 33, 28, 0.7); margin: 16px 0 0; max-width: 32rem;
+}
+.c5-module__rule { width: 100%; height: 1px; background: rgba(7, 55, 45, 0.12); margin: 24px 0; }
+.c5-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.c5-check-item { display: flex; gap: 12px; font-size: 14px; color: rgba(18, 33, 28, 0.8); line-height: 1.5; }
+.c5-check-icon { color: #A4EF28; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+/* Offers card */
+.c5-offers {
+  background: #FFFFFF; border: 1px solid rgba(7, 55, 45, 0.1);
+  border-radius: 8px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(13, 43, 31, 0.06);
+}
+.c5-offers__head {
+  background: #F0F6E9; padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.c5-offers__label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  color: #07372D; text-transform: uppercase;
+}
+.c5-offers__meta { font-size: 12px; color: rgba(18, 33, 28, 0.6); margin-top: 4px; }
+.c5-offers__badge {
+  font-size: 11px; font-weight: 700; color: #07372D;
+  background: #FFFFFF; border: 1px solid #A4EF28;
+  border-radius: 20px; padding: 4px 12px; white-space: nowrap;
+}
+.c5-offers__cols {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px;
+  padding: 12px 20px; background: #F9FBF7;
+  border-bottom: 1px solid rgba(7, 55, 45, 0.08);
+}
+.c5-col-head {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  color: rgba(7, 55, 45, 0.55); text-transform: uppercase;
+}
+.c5-offers__row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px;
+  padding: 14px 20px; border-bottom: 1px solid rgba(7, 55, 45, 0.06);
+  align-items: center;
+}
+.c5-cell { font-size: 14px; color: #07372D; }
+.c5-cell--num { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 600; }
+.c5-cell-name { font-weight: 700; color: #07372D; }
+.c5-cell-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; background: #F0F6E9; color: #07372D;
+  padding: 2px 8px; border-radius: 2px; margin-top: 4px; text-transform: uppercase;
+}
+.c5-offers__foot { padding: 14px 20px; text-align: right; }
+.c5-offers__cta {
+  font-size: 13px; font-weight: 700; color: #07372D;
+  background: #A4EF28; padding: 8px 14px; border-radius: 4px; display: inline-block;
+}
+
+@media (max-width: 991px) {
+  .c5-section { padding: 64px 20px; }
+  .c5-module { grid-template-columns: 1fr; gap: 40px; }
+  .c5-module__visual { order: 2; }
+  .c5-module__title { font-size: 26px; }
+  .c5-offers__cols, .c5-offers__row {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 8px;
+    padding-left: 12px; padding-right: 12px;
+  }
+}

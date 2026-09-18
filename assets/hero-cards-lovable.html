@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Consentio hero cards</title>
+<style>
+  :root{
+    --forest:#05312D;
+    --lime:#A3EA34;
+    --sand:#F3FCEB;
+    --white:#FFFFFF;
+    --ink:#161616;
+    --muted:#5C6B65;
+    --border:#E4E6E1;
+    --fg-on-forest:#F3FCEB;
+  }
+  *{box-sizing:border-box;font-family:"Manrope","Inter",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{margin:0;padding:0;background:var(--forest);width:900px;height:520px;overflow:hidden}
+  .stage{position:relative;width:100%;height:100%;padding:40px}
+  /* photo greens plate placeholder (right) */
+  .photo{
+    position:absolute;top:0;right:0;bottom:0;width:52%;
+    background:
+      linear-gradient(to top,#05312D 0%,rgba(5,49,45,.35) 45%,transparent 100%),
+      url('crate-produce.jpg') center/cover no-repeat;
+    filter:contrast(1.06) saturate(1.05);
+  }
+  /* cards shared */
+  .card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:8px;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.55), 0 8px 16px -8px rgba(0,0,0,.25);
+    overflow:hidden;
+    position:absolute;
+  }
+  .card__head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:11px 18px;border-bottom:1px solid var(--border);
+  }
+  .lbl{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  }
+  .lbl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--forest)}
+  .lbl.lime::before{background:var(--lime)}
+  .meta{font-size:11px;font-weight:500;color:var(--muted)}
+  .body{padding:18px}
+
+  /* Forecast card */
+  .forecast{top:60px;left:40px;width:360px}
+  .fc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .fc-week{margin:0;font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--forest);line-height:1}
+  .fc-sub{margin:6px 0 0;font-size:12px;color:var(--muted)}
+  .fc-legend{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;color:var(--forest)}
+  .fc-row{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+  .fc-swatch{display:inline-block;width:18px;height:2px;border-radius:1px}
+  .fc-swatch--forest{background:var(--forest)}
+  .fc-swatch--lime{background:var(--lime)}
+  .fc-chart{display:block;width:100%;height:80px;margin-top:14px}
+  .fc-stats{
+    margin-top:14px;padding-top:14px;border-top:1px solid var(--border);
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+  }
+  .fc-k{margin:0;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .fc-v{margin:4px 0 0;font-size:18px;font-weight:800;color:var(--forest);letter-spacing:-.01em}
+
+  /* Order card */
+  .order{top:230px;left:400px;width:400px}
+  .po-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .po-title{margin:0;font-size:15px;font-weight:800;color:var(--forest)}
+  .po-sub{margin:4px 0 0;font-size:13px;color:var(--muted)}
+  .po-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 12px;border-radius:999px;
+    background:rgba(163,234,52,.28);color:var(--forest);
+    font-size:12px;font-weight:800;white-space:nowrap;
+  }
+  .po-badge svg{width:12px;height:12px;flex:0 0 12px;color:var(--forest)}
+  .po-rows{margin-top:14px}
+  .po-row{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:10px 0;border-bottom:1px solid #EEF0EB;font-size:13.5px;
+  }
+  .po-row:first-of-type{padding-top:0}
+  .po-row:last-of-type{border-bottom:0;padding-bottom:0}
+  .po-k{color:var(--muted)}
+  .po-v{color:#212B27;font-weight:500}
+  .po-row--strong{padding-top:12px;margin-top:2px}
+  .po-row--strong .po-k{color:var(--ink);font-weight:800}
+  .po-row--strong .po-v{color:var(--forest);font-weight:800}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="photo"></div>
+
+  <!-- Forecast card -->
+  <div class="card forecast">
+    <div class="card__head">
+      <span class="lbl">Demand forecast</span>
+      <span class="meta">Fresh produce · W22–W33</span>
+    </div>
+    <div class="body">
+      <div class="fc-top">
+        <div>
+          <p class="fc-week">Week 27</p>
+          <p class="fc-sub">Planned volume vs. forecast</p>
+        </div>
+        <div class="fc-legend">
+          <span class="fc-row"><span class="fc-swatch fc-swatch--forest"></span>Forecast</span>
+          <span class="fc-row"><span class="fc-swatch fc-swatch--lime"></span>Plan</span>
+        </div>
+      </div>
+      <svg class="fc-chart" viewBox="0 0 320 80" preserveAspectRatio="none" aria-hidden="true">
+        <!-- grille -->
+        <line x1="0" x2="320" y1="20" y2="20" stroke="#EEF0EB" stroke-width="1"/>
+        <line x1="0" x2="320" y1="40" y2="40" stroke="#EEF0EB" stroke-width="1"/>
+        <line x1="0" x2="320" y1="60" y2="60" stroke="#EEF0EB" stroke-width="1"/>
+        <!-- plan (lime) -->
+        <path d="M0,52 L29,50 L58,48 L87,44 L116,40 L145,37 L174,32 L203,27 L232,24 L261,20 L290,15 L320,11"
+              fill="none" stroke="#A3EA34" stroke-width="2.6" stroke-linecap="round"/>
+        <!-- forecast (forest) -->
+        <path d="M0,54 L29,49 L58,50 L87,42 L116,36 L145,38 L174,30 L203,23 L232,25 L261,18 L290,12 L320,14"
+              fill="none" stroke="#05312D" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="320" cy="14" r="4" fill="#05312D"/>
+      </svg>
+      <div class="fc-stats">
+        <div><p class="fc-k">Categories</p><p class="fc-v">6</p></div>
+        <div><p class="fc-k">Sites</p><p class="fc-v">18</p></div>
+        <div><p class="fc-k">Horizon</p><p class="fc-v">12 wks</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order card -->
+  <div class="card order">
+    <div class="card__head">
+      <span class="lbl lime">Purchase order</span>
+      <span class="meta">PO-2749</span>
+    </div>
+    <div class="body">
+      <div class="po-top">
+        <div>
+          <p class="po-title">Fresh produce · Week 27</p>
+          <p class="po-sub">3 suppliers · 12 lines</p>
+        </div>
+        <span class="po-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Confirmed
+        </span>
+      </div>
+      <div class="po-rows">
+        <div class="po-row"><span class="po-k">Sent to suppliers</span><span class="po-v">09:12</span></div>
+        <div class="po-row"><span class="po-k">Confirmations</span><span class="po-v">3 / 3</span></div>
+        <div class="po-row po-row--strong"><span class="po-k">ERP sync</span><span class="po-v">Complete</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
