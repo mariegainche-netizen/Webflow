@@ -1,0 +1,122 @@
+/* Section 01 — The Daily Reality (fond tint) */
+.c2-section { font-family: Manrope, ui-sans-serif, system-ui, sans-serif; color: #12211C; }
+.c2-section--tint { background: #F0F6E9; padding: 64px 20px; }
+@media (min-width: 1024px) { .c2-section--tint { padding: 104px 40px; } }
+
+.c2-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+.c2-grid-2 { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 1024px) {
+  .c2-grid-2--problem {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 64px;
+    align-items: center;
+  }
+}
+
+.c2-section-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.45);
+}
+.c2-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; }
+.c2-eyebrow__dot { width: 6px; height: 6px; border-radius: 50%; background: #A4EF28; display: inline-block; }
+.c2-eyebrow__label {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #07372D;
+}
+
+.c2-h2 {
+  font-size: 36px; font-weight: 800; letter-spacing: -0.03em;
+  color: #07372D; line-height: 1.06; margin: 24px 0 0;
+}
+@media (min-width: 1024px) { .c2-h2 { font-size: 52px; } }
+
+.c2-rule { width: 100%; height: 1px; background: rgba(7, 55, 45, 0.15); margin-top: 40px; }
+
+.c2-list { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 14px; }
+.c2-list__item { font-size: 15px; line-height: 1.55; color: rgba(18, 33, 28, 0.75); }
+
+/* Fragmentation grid — 5 canaux dispersés */
+.c2-frag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.c2-frag-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; border: 1px solid rgba(7, 55, 45, 0.1);
+  background: #FFFFFF; border-radius: 4px;
+}
+.c2-frag-card--wide { grid-column: 1 / -1; }
+.c2-frag-icon { font-size: 16px; line-height: 1; flex-shrink: 0; color: rgba(7, 55, 45, 0.55); }
+.c2-frag-body { min-width: 0; flex: 1; }
+.c2-frag-label { font-size: 14px; font-weight: 700; color: #07372D; line-height: 1.2; }
+.c2-frag-meta { font-size: 12px; color: rgba(18, 33, 28, 0.5); margin-top: 3px; }
+.c2-frag-badge {
+  min-width: 22px; height: 20px; padding: 0 7px; border-radius: 11px;
+  background: #D64545; color: #FFFFFF;
+  font-size: 11px; font-weight: 700;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.c2-frag-badge--alert { background: #D64545; }
+.c2-frag-arrow { text-align: center; color: rgba(7, 55, 45, 0.35); font-size: 16px; margin: 12px 0; }
+
+/* Consentio buying workspace (fond forest) */
+.c2-workspace { background: #07372D; padding: 20px; color: #F5F6F1; border-radius: 4px; }
+.c2-workspace__head {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 8px; margin-bottom: 16px;
+}
+.c2-workspace__label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #F5F6F1;
+}
+.c2-workspace__dot { width: 6px; height: 6px; border-radius: 50%; background: #A4EF28; display: inline-block; }
+.c2-workspace__badge {
+  font-size: 10px; font-weight: 700; color: #F5F6F1;
+  background: transparent; border: 1px solid rgba(245, 246, 241, 0.35);
+  padding: 4px 10px; letter-spacing: 0.15em;
+}
+
+/* Supplier offers card à l'intérieur du workspace */
+.c2-offers { background: #FFFFFF; color: #07372D; padding: 14px 16px; border-radius: 2px; }
+.c2-offers__head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 12px; border-bottom: 1px solid rgba(7, 55, 45, 0.1);
+}
+.c2-offers__title {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #07372D;
+}
+.c2-offers__dot { width: 6px; height: 6px; border-radius: 50%; background: #07372D; display: inline-block; }
+.c2-offers__meta { font-size: 12px; color: rgba(18, 33, 28, 0.6); }
+.c2-offers__product {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid rgba(7, 55, 45, 0.08);
+}
+.c2-offers__product-name { font-size: 13px; font-weight: 700; color: #07372D; }
+.c2-offers__product-count {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  color: rgba(18, 33, 28, 0.55);
+}
+.c2-offers__rows { display: grid; gap: 4px; padding-top: 4px; }
+.c2-offer-row {
+  display: grid; grid-template-columns: 28px 1fr auto auto;
+  align-items: center; gap: 12px; padding: 8px 0;
+}
+.c2-offer-thumb { width: 28px; height: 28px; background: rgba(7, 55, 45, 0.06); border-radius: 2px; }
+.c2-offer-body { min-width: 0; }
+.c2-offer-name { font-size: 13px; font-weight: 700; color: #07372D; }
+.c2-offer-ref {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  color: rgba(18, 33, 28, 0.45); margin-top: 2px; text-transform: uppercase;
+}
+.c2-offer-qty {
+  font-size: 13px; color: rgba(18, 33, 28, 0.6);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.c2-offer-price {
+  font-size: 13px; font-weight: 700; color: #07372D;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  padding: 4px 8px;
+}
+.c2-offer-price--best { background: #A4EF28; color: #07372D; border-radius: 2px; }

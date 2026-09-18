@@ -1,0 +1,45 @@
+/* Section 08 — Implementation timeline (fond blanc) */
+.c9-section {
+  background: #FFFFFF;
+  padding: 72px 40px;
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  color: #12211C;
+}
+.c9-container { max-width: 80rem; margin: 0 auto; width: 100%; }
+
+.c9-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 32px; flex-wrap: wrap; margin-bottom: 40px;
+}
+.c9-section-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.45);
+}
+.c9-h2 {
+  font-size: 24px; font-weight: 800; letter-spacing: -0.02em;
+  color: #07372D; line-height: 1.25;
+  margin: 0; max-width: 32rem; text-align: right;
+}
+
+.c9-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.c9-step { display: flex; flex-direction: column; align-items: flex-start; }
+.c9-step__rule { width: 100%; height: 1px; background: rgba(7, 55, 45, 0.15); margin-bottom: 16px; }
+.c9-step__num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(7, 55, 45, 0.45);
+}
+.c9-step__title {
+  font-size: 16px; font-weight: 800; color: #07372D;
+  margin: 12px 0 0; letter-spacing: -0.02em; line-height: 1.2;
+}
+.c9-step__text { font-size: 14px; line-height: 1.6; color: rgba(18, 33, 28, 0.65); margin: 8px 0 0; }
+
+@media (max-width: 991px) {
+  .c9-section { padding: 48px 20px; }
+  .c9-head { flex-direction: column; }
+  .c9-h2 { font-size: 22px; text-align: left; }
+  .c9-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+@media (max-width: 767px) { .c9-grid { grid-template-columns: 1fr; } }
