@@ -1,0 +1,276 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * CONSENTIO design system.
+ * Brand palette (hex -> oklch):
+ *   #07372D primary dark green | #0D4A3A deep green | #A4EF28 lime
+ *   #F5F6F1 off-white | #FFFFFF white | #12211C dark text | #F59A23 orange (sparingly)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-forest: var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-deep: var(--deep);
+  --color-lime: var(--lime);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-sand: var(--sand);
+  --color-amber-accent: var(--amber-accent);
+  --color-onforest-muted: var(--onforest-muted);
+
+  --shadow-soft: 0 1px 2px oklch(0.24 0.05 165 / 0.05);
+  --shadow-lift: 0 1px 2px oklch(0.24 0.05 165 / 0.04), 0 18px 40px -24px oklch(0.24 0.05 165 / 0.22);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --forest: oklch(0.298 0.055 166.5);
+  --forest-foreground: oklch(0.98 0.008 120);
+  --deep: oklch(0.354 0.066 166);
+  --lime: oklch(0.885 0.213 128.5);
+  --lime-foreground: oklch(0.24 0.05 166);
+  --sand: oklch(0.968 0.007 120);
+  --amber-accent: oklch(0.74 0.145 62);
+  --onforest-muted: oklch(0.83 0.02 150);
+
+  --background: oklch(0.995 0.002 120);
+  --foreground: oklch(0.225 0.014 165);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.234 0.026 165);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.234 0.026 165);
+  --primary: oklch(0.298 0.055 166.5);
+  --primary-foreground: oklch(0.98 0.008 120);
+  --secondary: oklch(0.972 0.008 110);
+  --secondary-foreground: oklch(0.298 0.055 166.5);
+  --muted: oklch(0.966 0.007 140);
+  --muted-foreground: oklch(0.512 0.014 162);
+  --accent: oklch(0.885 0.213 128.5);
+  --accent-foreground: oklch(0.24 0.05 166);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.906 0.005 150);
+  --input: oklch(0.906 0.005 150);
+  --ring: oklch(0.298 0.055 166.5);
+}
+
+.dark {
+  --background: oklch(0.234 0.026 165);
+  --foreground: oklch(0.98 0.008 120);
+  --card: oklch(0.298 0.055 166.5);
+  --card-foreground: oklch(0.98 0.008 120);
+  --popover: oklch(0.298 0.055 166.5);
+  --popover-foreground: oklch(0.98 0.008 120);
+  --primary: oklch(0.885 0.213 128.5);
+  --primary-foreground: oklch(0.24 0.05 166);
+  --secondary: oklch(0.354 0.066 166);
+  --secondary-foreground: oklch(0.98 0.008 120);
+  --muted: oklch(0.354 0.066 166);
+  --muted-foreground: oklch(0.83 0.02 150);
+  --accent: oklch(0.885 0.213 128.5);
+  --accent-foreground: oklch(0.24 0.05 166);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.885 0.213 128.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility section-y {
+  padding-block: 4rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 6.5rem;
+  }
+}
+
+/* Supporting / credibility sections: deliberately more compact. */
+@utility section-y-sm {
+  padding-block: 3rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 4.5rem;
+  }
+}
+
+
+/* V2 density tiers — used only by V2 pages. */
+@utility v2-compact {
+  padding-block: 2.5rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 4rem;
+  }
+}
+
+@utility v2-standard {
+  padding-block: 3.5rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 5.5rem;
+  }
+}
+
+@utility v2-signature {
+  padding-block: 4rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 7rem;
+  }
+}
+
+
+/* Large editorial headline scale. */
+@utility display-1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+
+@utility display-2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+@utility lede {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  max-width: 34rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.25rem;
+  }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &[data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Mobile customer-logo marquee. */
+@utility marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 3rem;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
