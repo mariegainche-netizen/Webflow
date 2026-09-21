@@ -55,11 +55,33 @@ Le projet Lovable (TanStack Start + React + TypeScript + Tailwind + shadcn/ui) e
 - `lovable-reference/src/assets/logos/` — logos partenaires (carrefour, intermarché, monoprix, biocoop, bell-food-group, manor, agroponiente, blue-whale, primeale, saveol, solarenn, rougeline, mytilimer, ultra-marine, clasol, coast-citrus, coast-tropical, kultive, everest-fresh, reynaud, lagadec-primeurs)
 - `lovable-reference/src/assets/v2/` — photos hero/section (buyer-desk, crate-produce, cucumber, hands-market, seafood-line, vine-tomato, warehouse-dawn)
 
-## Design system Consentio (extrait home)
+## Design system Consentio — CHARTE OFFICIELLE
 
-- **Font** : Manrope (400/500/600/700/800) via Google Fonts
-- **Palette** : `forest` (foncé principal), `lime` (accent), `sand` (neutre chaud)
-- Tokens CSS variables — voir `consentio-styles.css`
+**Font** : Manrope (400/500/600/700/800) via Google Fonts
+
+### Palette officielle (identique sur toutes les pages, ne jamais en inventer d'autres — seulement variants 90/60/20/10 % opacité autorisés)
+
+| Nom | Hex | Variable CSS | Usage |
+|---|---|---|---|
+| Consentio **Dark Green** | `#05312D` | `--forest` | Fond sections sombres, titres, boutons secondaires |
+| Consentio **Electric Green** | `#A3EA34` | `--lime` | Accent CTA, pastilles, points actifs |
+| Consentio **Light Fresh Green** | `#F3FCEB` | `--fresh` | Fond neutre alternatif, badges soft |
+| Consentio **Neutral Black** | `#161616` | `--neutral-black` / `--ink` | Texte principal |
+| Consentio **Orange** | `#FF8B00` | `--orange` / `--amber` | Accent secondaire, warnings, KPI d'attention |
+| Consentio **Yellow** | `#FFCE00` | `--yellow` | Highlight, badges, notifications |
+| Consentio **Mild Red** | `#F9603D` | `--mild-red` | Erreurs, alertes destructives |
+
+### Variables dérivées (compatibilité + confort)
+
+- `--deep: #0A3E36` — variant clair du forest
+- `--lime-fg: #05312D` — texte sur fond lime
+- `--sand: #F5F6F1` — fond de page (variante du fresh)
+- `--muted: #5C6B65` — texte secondaire, labels aide
+- `--border: #E4E6E1` — bordures champs, cartes
+- `--fg-on-forest: #F3FCEB` — texte sur fond forest
+- `--fg-on-forest-muted: #B7C4BE` — texte secondaire sur fond forest
+
+Tokens complets : `consentio-styles.css`.
 
 ## Livrables déjà dans le repo
 
@@ -69,9 +91,14 @@ Le projet Lovable (TanStack Start + React + TypeScript + Tailwind + shadcn/ui) e
 | `body-only-content.html` | Home EN prêt à coller dans un Embed Webflow |
 | `consentio-embed-all-in-one.html` | Fallback : CSS + HTML + JS en un seul Embed |
 | `consentio-embed-part1.html` / `part2.html` | Fallback : découpe en 2 Embeds |
-| `consentio-styles.css` / `.min.css` | Feuille de style Consentio (servie via jsDelivr) |
-| `GUIDE-integration-webflow.md` | Guide pas à pas intégration Webflow |
+| `consentio-styles.css` / `.min.css` | Feuille de style Consentio (servie via jsDelivr) — charte officielle |
+| `consentio-book-demo-en.html` | Book a demo EN standalone (référence de rendu) |
+| `consentio-book-demo-embed.html` | Book a demo EN prêt à coller dans un Embed Webflow |
+| `GUIDE-integration-webflow.md` | Guide pas à pas intégration Webflow (home) |
+| `GUIDE-book-a-demo.md` | Guide book-a-demo : création form HubSpot + intégration Webflow |
 | `RECAP-demain-matin.md` | Récap J2 (Home Webflow staging) |
+
+**HubSpot** — Portal ID Consentio : `144242237` (région `eu1`).
 
 **CSS servi via jsDelivr** :
 `https://cdn.jsdelivr.net/gh/mariegainche-netizen/Webflow@<branch>/consentio-styles.min.css`
@@ -86,7 +113,7 @@ Le projet Lovable (TanStack Start + React + TypeScript + Tailwind + shadcn/ui) e
 | J3 | Style Guide + Header/Footer symbols + activation Localization FR/ES | En cours |
 | J4 | For Retailers EN | À faire |
 | J5 | For Suppliers EN | À faire |
-| J6 | Book a demo (HubSpot) + Company → 5 pages MVP | À faire |
+| J6 | Book a demo (HubSpot embed, Portal `144242237`) ✅ livré + Company → 5 pages MVP | Book a demo ✅ |
 | J7 | Traduction FR + peuplement Webflow FR | À faire |
 | J8 | Traduction ES + peuplement Webflow ES | À faire |
 | J9 | QA multi-langue, hreflang, redirections, SEO, Cookies | À faire |

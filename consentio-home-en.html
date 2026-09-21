@@ -11,19 +11,19 @@
 <style>
 /* =============================================================
    CONSENTIO — Home V1 (standalone, Webflow-ready)
-   Palette : forest #07372D · deep #0D4A3A · lime #A4EF28
-             sand #F5F6F1 · white · ink #12211C · amber #F59A23
+   Palette : forest #05312D · deep #0A3E36 · lime #A3EA34
+             sand #F5F6F1 · white · ink #161616 · amber #FF8B00
    Font    : Manrope
    ============================================================= */
 :root{
-  --forest:#07372D;
-  --deep:#0D4A3A;
-  --lime:#A4EF28;
-  --lime-fg:#0F2A22;
+  --forest:#05312D;
+  --deep:#0A3E36;
+  --lime:#A3EA34;
+  --lime-fg:#05312D;
   --sand:#F5F6F1;
   --white:#FFFFFF;
-  --ink:#12211C;
-  --amber:#F59A23;
+  --ink:#161616;
+  --amber:#FF8B00;
   --muted:#5C6B65;
   --border:#E4E6E1;
   --border-dark:rgba(255,255,255,.15);
@@ -56,7 +56,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:.95rem;transition:transform .15s ease, background .15s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--lime);color:var(--lime-fg)}
-.btn-primary:hover{background:#B4F73F}
+.btn-primary:hover{background:#B8F04C}
 .btn-outline-dark{background:transparent;color:var(--fg-on-forest);border:1px solid rgba(255,255,255,.35)}
 .btn-outline-dark:hover{background:rgba(255,255,255,.08)}
 .btn-outline{background:transparent;color:var(--forest);border:1px solid var(--border)}
@@ -96,8 +96,8 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 @media (min-width:640px){.hero-visual{display:block}}
 .hero-photo{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:2px}
 .hero-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(1.05);opacity:.88}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, var(--forest), rgba(7,55,45,.2) 50%, transparent)}
-.tag-cat{position:absolute;top:16px;left:16px;background:rgba(7,55,45,.7);backdrop-filter:blur(6px);color:var(--lime);border:1px solid rgba(164,239,40,.4);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;z-index:2}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, var(--forest), rgba(5,49,45,.2) 50%, transparent)}
+.tag-cat{position:absolute;top:16px;left:16px;background:rgba(5,49,45,.7);backdrop-filter:blur(6px);color:var(--lime);border:1px solid rgba(163,234,52,.4);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;z-index:2}
 .card-float{position:absolute;background:var(--white);border-radius:12px;padding:18px;box-shadow:0 24px 60px -30px rgba(15,42,34,.55);width:54%;z-index:3}
 .card-forecast{top:20px;left:-10px}
 .card-order{bottom:-28px;right:-10px}
@@ -107,7 +107,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .card-row:first-of-type{border-top:0}
 .card-row .k{color:var(--muted)}
 .card-row .v{font-weight:600}
-.card-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(164,239,40,.2);color:var(--forest);margin-top:8px}
+.card-chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(163,234,52,.2);color:var(--forest);margin-top:8px}
 
 /* ---------- trust strip ---------- */
 .trust{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
@@ -144,7 +144,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .compare-card .conclusion{margin-top:20px;font-size:.9rem;color:var(--muted)}
 .compare-card.fresh{position:relative;overflow:hidden;background:var(--forest);color:var(--fg-on-forest);padding:32px;border:0}
 .compare-card.fresh::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1524593689594-aae2f26b75ab?w=1200') center/cover;opacity:.35}
-.compare-card.fresh::after{content:"";position:absolute;inset:0;background:linear-gradient(to right, var(--forest), rgba(7,55,45,.85) 55%, rgba(7,55,45,.4))}
+.compare-card.fresh::after{content:"";position:absolute;inset:0;background:linear-gradient(to right, var(--forest), rgba(5,49,45,.85) 55%, rgba(5,49,45,.4))}
 .compare-card.fresh > *{position:relative;z-index:1}
 .compare-card.fresh h3{color:var(--fg-on-forest)}
 .compare-card.fresh li{color:rgba(245,246,241,.9);border-color:rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
@@ -182,7 +182,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 @media (min-width:640px){.compare-grid{grid-template-columns:1fr 1fr}}
 .compare-box{border-radius:10px;padding:14px}
 .without-box{border:1px solid rgba(245,246,241,.15)}
-.with-box{border:1px solid rgba(164,239,40,.3);background:rgba(164,239,40,.06)}
+.with-box{border:1px solid rgba(163,234,52,.3);background:rgba(163,234,52,.06)}
 .compare-box h5{margin:0 0 10px;font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .without-box h5{color:var(--fg-on-forest-muted)}
 .with-box h5{color:var(--lime)}
@@ -244,9 +244,9 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .pv-row .name{font-weight:700;color:var(--forest)}
 .pv-row .amt{font-family:ui-monospace,monospace;font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .pv-row .pill{padding:3px 8px;border-radius:999px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.pill-ok{background:rgba(164,239,40,.2);color:#2E4B0F}
+.pill-ok{background:rgba(163,234,52,.2);color:#2E4B0F}
 .pill-warn{background:rgba(245,154,35,.15);color:#8A4D0C}
-.pill-sync{background:rgba(7,55,45,.1);color:var(--forest)}
+.pill-sync{background:rgba(5,49,45,.1);color:var(--forest)}
 .pv-bar{height:6px;background:var(--sand);border-radius:999px;overflow:hidden;margin-top:6px}
 .pv-bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--forest),var(--lime));border-radius:999px}
 
@@ -288,7 +288,7 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);ba
 .final{position:relative;overflow:hidden;background:var(--forest);color:var(--fg-on-forest);padding:80px 0 96px}
 .final::before{content:"";position:absolute;top:0;right:0;width:50%;height:100%;background:url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=1600') center/cover;opacity:.3;display:none}
 @media (min-width:960px){.final::before{display:block}}
-.final::after{content:"";position:absolute;inset:0;background:linear-gradient(to right, var(--forest) 50%, rgba(7,55,45,.4));display:none}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(to right, var(--forest) 50%, rgba(5,49,45,.4));display:none}
 @media (min-width:960px){.final::after{display:block}}
 .final .container{position:relative;z-index:1}
 .final h2{margin:24px 0 0;font-size:clamp(2rem, 5vw, 3.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.02;max-width:32rem}
@@ -342,7 +342,7 @@ footer.site{background:var(--forest);color:var(--fg-on-forest-muted);padding:56p
 <section class="hero">
   <svg class="flowline" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
     <path d="M-20 260 C 260 260, 340 90, 620 120 S 1000 300, 1260 170"
-          fill="none" stroke="rgba(164,239,40,.35)" stroke-width="1.25" />
+          fill="none" stroke="rgba(163,234,52,.35)" stroke-width="1.25" />
   </svg>
   <div class="container">
     <div class="grid">
@@ -677,23 +677,23 @@ footer.site{background:var(--forest);color:var(--fg-on-forest-muted);padding:56p
                 <line x1="0" x2="320" y1="66" y2="66" stroke="#E4E6E1" stroke-width="1" vector-effect="non-scaling-stroke"/>
                 <line x1="0" x2="320" y1="99" y2="99" stroke="#E4E6E1" stroke-width="1" vector-effect="non-scaling-stroke"/>
                 <!-- forward area -->
-                <rect x="160" y="0" width="160" height="132" fill="#07372D" opacity="0.03"/>
+                <rect x="160" y="0" width="160" height="132" fill="#05312D" opacity="0.03"/>
                 <!-- last year -->
                 <path d="M0,112.2 L29.1,106.3 L58.2,100.4 L87.3,96.4 L116.4,82.7 L145.5,78.8 L174.6,70.9 L203.6,63.1 L232.7,57.2 L261.8,53.2 L290.9,43.4 L320,37.5" fill="none" stroke="#5C6B65" stroke-opacity=".4" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
                 <!-- forecast solid past -->
-                <path d="M0,103.9 L29.1,98.4 L58.2,94.5 L87.3,84.7 L116.4,74.8 L145.5,68.9" fill="none" stroke="#A4EF28" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <path d="M0,103.9 L29.1,98.4 L58.2,94.5 L87.3,84.7 L116.4,74.8 L145.5,68.9" fill="none" stroke="#A3EA34" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
                 <!-- forecast dashed future -->
-                <path d="M145.5,68.9 L174.6,61.1 L203.6,49.3 L232.7,45.4 L261.8,37.5 L290.9,27.7 L320,19.9" fill="none" stroke="#A4EF28" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>
+                <path d="M145.5,68.9 L174.6,61.1 L203.6,49.3 L232.7,45.4 L261.8,37.5 L290.9,27.7 L320,19.9" fill="none" stroke="#A3EA34" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>
                 <!-- actual past -->
-                <path d="M0,108.2 L29.1,96.4 L58.2,102.3 L87.3,80.7 L116.4,68.9 L145.5,74.8" fill="none" stroke="#07372D" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                <path d="M0,108.2 L29.1,96.4 L58.2,102.3 L87.3,80.7 L116.4,68.9 L145.5,74.8" fill="none" stroke="#05312D" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
                 <!-- Today marker -->
-                <line x1="160" x2="160" y1="0" y2="132" stroke="#07372D" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke"/>
-                <text x="164" y="11" fill="#07372D" fill-opacity=".7" font-size="9" font-weight="700" font-family="Manrope">TODAY</text>
+                <line x1="160" x2="160" y1="0" y2="132" stroke="#05312D" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <text x="164" y="11" fill="#05312D" fill-opacity=".7" font-size="9" font-weight="700" font-family="Manrope">TODAY</text>
                 <!-- active week guide (W27) -->
-                <line x1="145.5" x2="145.5" y1="0" y2="132" stroke="#07372D" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+                <line x1="145.5" x2="145.5" y1="0" y2="132" stroke="#05312D" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
                 <circle cx="145.5" cy="78.8" r="3" fill="#5C6B65" fill-opacity=".5"/>
-                <circle cx="145.5" cy="68.9" r="3.5" fill="#A4EF28"/>
-                <circle cx="145.5" cy="74.8" r="3.5" fill="#07372D"/>
+                <circle cx="145.5" cy="68.9" r="3.5" fill="#A3EA34"/>
+                <circle cx="145.5" cy="74.8" r="3.5" fill="#05312D"/>
               </svg>
               <div class="fc-weeks">
                 <span>W22</span><span>W23</span><span>W24</span><span>W25</span><span>W26</span><span class="on">W27</span><span>W28</span><span>W29</span><span>W30</span><span>W31</span><span>W32</span><span>W33</span>
@@ -942,7 +942,7 @@ footer.site{background:var(--forest);color:var(--fg-on-forest-muted);padding:56p
      ========================================================= -->
 <section class="final">
   <svg style="position:absolute;left:0;bottom:32px;width:100%;height:80px;z-index:0;pointer-events:none" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-20 120 C 280 30, 520 210, 820 100 S 1100 40, 1260 110" fill="none" stroke="rgba(164,239,40,.6)" stroke-width="1.5" />
+    <path d="M-20 120 C 280 30, 520 210, 820 100 S 1100 40, 1260 110" fill="none" stroke="rgba(163,234,52,.6)" stroke-width="1.5" />
   </svg>
   <div class="container">
     <span class="eyebrow on-dark"><span class="dot"></span>Next step</span>
