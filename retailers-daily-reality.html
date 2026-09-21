@@ -1,0 +1,428 @@
+<!-- =========================================================
+     CONSENTIO · Retailers · Section « The daily reality »
+     Fragment autonome pour Embed Webflow.
+     Styles scopés en .rdr-* pour éviter les collisions.
+     Utilise les variables déjà chargées via jsDelivr
+     (fallback intégré pour rendu en preview local).
+     ========================================================= -->
+<style>
+  .rdr {
+    --rdr-forest: var(--forest, #07372D);
+    --rdr-deep:   var(--deep,   #0D4A3A);
+    --rdr-lime:   var(--lime,   #A4EF28);
+    --rdr-sand:   var(--sand,   #F5F6F1);
+    --rdr-white:  #FFFFFF;
+    --rdr-ink:    var(--ink,    #12211C);
+    --rdr-muted:  var(--muted,  #5C6B65);
+    --rdr-border: var(--border, #E4E6E1);
+    --rdr-red:    #E23A3A;
+    --rdr-amber:  var(--amber,  #F59A23);
+    background: #EEF2EB;
+    color: var(--rdr-ink);
+    padding: clamp(56px, 8vw, 96px) 0;
+    font-family: var(--font, "Manrope", ui-sans-serif, system-ui, sans-serif);
+  }
+  .rdr *,
+  .rdr *::before,
+  .rdr *::after { box-sizing: border-box; }
+
+  .rdr__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+
+  /* Grid principal : 2 colonnes équilibrées, alignées en haut */
+  .rdr__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+
+  /* --------- Colonne gauche : intro --------- */
+  .rdr__intro { min-width: 0; }
+  .rdr__step {
+    font-size: .875rem;
+    color: rgba(15, 42, 34, .45);
+    letter-spacing: .12em;
+    font-weight: 600;
+  }
+  .rdr__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--rdr-forest);
+  }
+  .rdr__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rdr-lime);
+    flex: 0 0 6px;
+  }
+  .rdr__title {
+    margin: 20px 0 32px;
+    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    color: var(--rdr-forest);
+  }
+  .rdr__rule {
+    height: 1px;
+    background: rgba(15, 42, 34, .15);
+    margin-bottom: 28px;
+  }
+  .rdr__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rdr__list li {
+    color: rgba(15, 42, 34, .78);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* --------- Colonne droite : visuel --------- */
+  .rdr__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  /* Grille des 5 cartes : 2 cols, ERP export sur toute la largeur */
+  .rdr__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .rdr__card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--rdr-white);
+    border-radius: 14px;
+    padding: 16px 18px;
+    min-height: 76px;
+    box-shadow: 0 1px 2px rgba(15, 42, 34, .05),
+                0 8px 24px -20px rgba(15, 42, 34, .25);
+  }
+  .rdr__card--wide { grid-column: 1 / -1; }
+  .rdr__card-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    color: var(--rdr-muted);
+  }
+  .rdr__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .rdr__card-title {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--rdr-forest);
+    letter-spacing: -.005em;
+  }
+  .rdr__card-sub {
+    font-size: .8rem;
+    color: rgba(15, 42, 34, .55);
+    line-height: 1.35;
+  }
+  .rdr__badge {
+    flex: 0 0 auto;
+    min-width: 24px;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: var(--rdr-red);
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* Flèche verticale */
+  .rdr__arrow {
+    align-self: center;
+    color: rgba(15, 42, 34, .3);
+    font-size: 1.25rem;
+    line-height: 1;
+    margin: 4px 0;
+  }
+
+  /* Workspace panel */
+  .rdr__workspace {
+    background: var(--rdr-forest);
+    color: #fff;
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .rdr__workspace-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .rdr__workspace-head .rdr__eyebrow {
+    color: #fff;
+    margin: 0;
+  }
+  .rdr__tag {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .1);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #fff;
+    flex: 0 0 auto;
+  }
+  .rdr__panel {
+    background: var(--rdr-white);
+    color: var(--rdr-forest);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .rdr__panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .rdr__panel-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--rdr-forest);
+  }
+  .rdr__panel-title .rdr__dot { background: var(--rdr-forest); }
+  .rdr__panel-meta {
+    font-size: .78rem;
+    color: rgba(15, 42, 34, .55);
+    text-align: right;
+  }
+  .rdr__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 0 10px;
+    border-bottom: 1px solid var(--rdr-border);
+    margin-bottom: 8px;
+  }
+  .rdr__item-name { font-weight: 700; font-size: .95rem; color: var(--rdr-forest); }
+  .rdr__item-count {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(15, 42, 34, .55);
+  }
+  .rdr__row {
+    display: grid;
+    grid-template-columns: 22px 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: .875rem;
+  }
+  .rdr__row + .rdr__row { border-top: 1px dashed rgba(15, 42, 34, .08); }
+  .rdr__thumb {
+    width: 22px; height: 22px;
+    background: var(--rdr-sand);
+    border: 1px solid var(--rdr-border);
+    border-radius: 4px;
+  }
+  .rdr__supplier-name {
+    display: flex; flex-direction: column; line-height: 1.25;
+    min-width: 0;
+  }
+  .rdr__supplier-name strong {
+    font-weight: 700; color: var(--rdr-forest);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .rdr__supplier-name span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(15, 42, 34, .5);
+  }
+  .rdr__ton { font-size: .8rem; color: rgba(15, 42, 34, .6); white-space: nowrap; }
+  .rdr__price {
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--rdr-forest);
+    white-space: nowrap;
+  }
+  .rdr__price--active {
+    background: var(--rdr-lime);
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  /* --------- Responsive --------- */
+  /* Tablette et écrans intermédiaires : pile 1 col avant que ça se casse */
+  @media (max-width: 1023px) {
+    .rdr__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .rdr__visual { max-width: 560px; }
+  }
+
+  /* Mobile : cartes en 1 col */
+  @media (max-width: 560px) {
+    .rdr__cards { grid-template-columns: 1fr; }
+    .rdr__card--wide { grid-column: auto; }
+    .rdr__panel-meta { display: none; }
+    .rdr__row { grid-template-columns: 22px 1fr auto; }
+    .rdr__ton { display: none; }
+  }
+</style>
+
+<section class="rdr" aria-labelledby="rdr-title">
+  <div class="rdr__container">
+    <div class="rdr__grid">
+
+      <!-- Colonne gauche : intro -->
+      <div class="rdr__intro">
+        <span class="rdr__step">01</span><br>
+        <span class="rdr__eyebrow"><span class="rdr__dot"></span>The daily reality</span>
+        <h2 id="rdr-title" class="rdr__title">Buying teams spend their day reconciling information.</h2>
+        <div class="rdr__rule" role="presentation"></div>
+        <ul class="rdr__list">
+          <li>Supplier offers spread across email, phone and messaging</li>
+          <li>Manual spreadsheets rebuilt for every consultation</li>
+          <li>No shared view of prices, volumes and availability</li>
+          <li>Allocation decisions difficult to justify afterwards</li>
+          <li>Orders re-entered into several systems</li>
+          <li>Limited visibility on supplier performance</li>
+        </ul>
+      </div>
+
+      <!-- Colonne droite : cartes + workspace -->
+      <div class="rdr__visual">
+
+        <div class="rdr__cards">
+          <!-- Email thread -->
+          <div class="rdr__card">
+            <svg class="rdr__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            <div class="rdr__card-body">
+              <span class="rdr__card-title">Email thread</span>
+              <span class="rdr__card-sub">42 unread</span>
+            </div>
+            <span class="rdr__badge">42</span>
+          </div>
+
+          <!-- Spreadsheet -->
+          <div class="rdr__card">
+            <svg class="rdr__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 9h16M9 4v16"/></svg>
+            <div class="rdr__card-body">
+              <span class="rdr__card-title">Spreadsheet</span>
+              <span class="rdr__card-sub">v14_final_FINAL.xlsx</span>
+            </div>
+          </div>
+
+          <!-- Phone call -->
+          <div class="rdr__card">
+            <svg class="rdr__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l1-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5-4 1z"/></svg>
+            <div class="rdr__card-body">
+              <span class="rdr__card-title">Phone call</span>
+              <span class="rdr__card-sub">09:12 — Supplier B</span>
+            </div>
+            <span class="rdr__badge">2</span>
+          </div>
+
+          <!-- Messages -->
+          <div class="rdr__card">
+            <svg class="rdr__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>
+            <div class="rdr__card-body">
+              <span class="rdr__card-title">Messages</span>
+              <span class="rdr__card-sub">3 chats open</span>
+            </div>
+            <span class="rdr__badge">3</span>
+          </div>
+
+          <!-- ERP export : pleine largeur pour équilibrer -->
+          <div class="rdr__card rdr__card--wide">
+            <svg class="rdr__card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6"/><path d="M5 12v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/></svg>
+            <div class="rdr__card-body">
+              <span class="rdr__card-title">ERP export</span>
+              <span class="rdr__card-sub">Stale since Monday</span>
+            </div>
+            <span class="rdr__badge" aria-label="Alert">!</span>
+          </div>
+        </div>
+
+        <div class="rdr__arrow" aria-hidden="true">↓</div>
+
+        <!-- Workspace panel -->
+        <div class="rdr__workspace">
+          <div class="rdr__workspace-head">
+            <span class="rdr__eyebrow"><span class="rdr__dot"></span>Consentio buying workspace</span>
+            <span class="rdr__tag">Live data</span>
+          </div>
+
+          <div class="rdr__panel">
+            <div class="rdr__panel-head">
+              <span class="rdr__panel-title"><span class="rdr__dot"></span>Supplier offers</span>
+              <span class="rdr__panel-meta">Consultation · Week 27</span>
+            </div>
+
+            <div class="rdr__item">
+              <span class="rdr__item-name">Tomato Marmande · 5 kg case</span>
+              <span class="rdr__item-count">3 offers</span>
+            </div>
+
+            <div class="rdr__row">
+              <span class="rdr__thumb" aria-hidden="true"></span>
+              <span class="rdr__supplier-name"><strong>Supplier A</strong><span>REF TM-A-4412</span></span>
+              <span class="rdr__ton">12 t</span>
+              <span class="rdr__price rdr__price--active">1.28 €/kg</span>
+            </div>
+            <div class="rdr__row">
+              <span class="rdr__thumb" aria-hidden="true"></span>
+              <span class="rdr__supplier-name"><strong>Supplier B</strong><span>REF TOM-MRM-05</span></span>
+              <span class="rdr__ton">8 t</span>
+              <span class="rdr__price">1.34 €/kg</span>
+            </div>
+            <div class="rdr__row">
+              <span class="rdr__thumb" aria-hidden="true"></span>
+              <span class="rdr__supplier-name"><strong>Supplier C</strong><span>REF 9920-TMD</span></span>
+              <span class="rdr__ton">15 t</span>
+              <span class="rdr__price">1.41 €/kg</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
