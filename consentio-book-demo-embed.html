@@ -1,0 +1,47 @@
+<!--
+  ============================================================
+  CONSENTIO — Micro-Embed HubSpot pour la page /book-demo Webflow
+  ============================================================
+  À COLLER dans un SEUL Element Embed placé DANS la Div `.demo-card`
+  de la page (voir GUIDE-book-a-demo.md, Partie 2, étape 4).
+
+  PRÉREQUIS — Site Settings → Custom Code → Head Code :
+    <script charset="utf-8" type="text/javascript"
+            src="https://js.hsforms.net/forms/embed/v2.js"></script>
+
+  ⚠ AVANT PUBLICATION : remplacer REPLACE_WITH_FORM_ID par le vrai
+     Form ID HubSpot (Portal Consentio 144242237, région eu1).
+  ============================================================
+-->
+
+<div id="hubspot-form-target"></div>
+
+<style>
+  /* Surcharge du form HubSpot injecté au runtime — charte officielle Consentio */
+  #hubspot-form-target .hs-form{display:grid;gap:20px;grid-template-columns:1fr;margin-top:32px}
+  @media(min-width:640px){#hubspot-form-target .hs-form{grid-template-columns:1fr 1fr}}
+  #hubspot-form-target .hs-form fieldset{border:0;padding:0;margin:0;max-width:none!important}
+  #hubspot-form-target .hs-form .hs-form-field{margin:0}
+  #hubspot-form-target .hs-form .form-columns-1,#hubspot-form-target .hs-form .form-columns-2{max-width:none!important;display:contents}
+  #hubspot-form-target .hs-form .hs-form-field>label,#hubspot-form-target .hs-form .hs-fieldtype-booleancheckbox>label,#hubspot-form-target .hs-form .hs-richtext label{display:block;font:600 .875rem "Manrope",sans-serif;color:#05312D;margin-bottom:8px}
+  #hubspot-form-target .hs-form .hs-form-required{color:#F9603D;margin-left:2px}
+  #hubspot-form-target .hs-form input[type=text],#hubspot-form-target .hs-form input[type=email],#hubspot-form-target .hs-form input[type=tel],#hubspot-form-target .hs-form input[type=number],#hubspot-form-target .hs-form select,#hubspot-form-target .hs-form textarea{width:100%;max-width:none!important;padding:12px 16px;font:400 1rem "Manrope",sans-serif;color:#161616;background:#FFFFFF;border:1px solid #E4E6E1;border-radius:12px;outline:0;transition:border-color .15s,box-shadow .15s}
+  #hubspot-form-target .hs-form input:focus,#hubspot-form-target .hs-form select:focus,#hubspot-form-target .hs-form textarea:focus{border-color:#05312D;box-shadow:0 0 0 3px rgba(5,49,45,.12)}
+  #hubspot-form-target .hs-form textarea{resize:vertical;min-height:120px}
+  #hubspot-form-target .hs-form .hs-fieldtype-textarea,#hubspot-form-target .hs-form .hs-fieldtype-booleancheckbox,#hubspot-form-target .hs-form .legal-consent-container,#hubspot-form-target .hs-form .hs-richtext,#hubspot-form-target .hs-form .hs-submit{grid-column:1/-1}
+  #hubspot-form-target .hs-form .hs-form-booleancheckbox-display{display:flex;gap:10px;align-items:flex-start;font:400 .875rem "Manrope",sans-serif;color:#5C6B65;cursor:pointer}
+  #hubspot-form-target .hs-form .hs-form-booleancheckbox-display input[type=checkbox]{margin-top:3px;accent-color:#05312D;width:16px;height:16px;flex:0 0 16px}
+  #hubspot-form-target .hs-form .hs-error-msg,#hubspot-form-target .hs-form .hs-error-msgs label{color:#F9603D;font:600 .8125rem "Manrope",sans-serif;margin-top:6px}
+  #hubspot-form-target .hs-form .hs-button,#hubspot-form-target .hs-form input[type=submit]{display:inline-flex;align-items:center;padding:14px 24px;border-radius:12px;background:#A3EA34;color:#05312D;font:700 .9375rem "Manrope",sans-serif;border:0;cursor:pointer;transition:background .15s,transform .15s}
+  #hubspot-form-target .hs-form .hs-button:hover{background:#B8F04C;transform:translateY(-1px)}
+  #hubspot-form-target .submitted-message{color:#05312D;font:600 1rem "Manrope",sans-serif}
+</style>
+
+<script>
+  hbspt.forms.create({
+    portalId: "144242237",
+    formId: "REPLACE_WITH_FORM_ID",
+    region: "eu1",
+    target: "#hubspot-form-target"
+  });
+</script>

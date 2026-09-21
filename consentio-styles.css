@@ -1,23 +1,33 @@
 /* =============================================================
-   CONSENTIO — Home V1 (standalone, Webflow-ready)
-   Palette : forest #07372D · deep #0D4A3A · lime #A4EF28
-             sand #F5F6F1 · white · ink #12211C · amber #F59A23
-   Font    : Manrope
+   CONSENTIO — Charte graphique officielle (Webflow-ready)
+   Dark Green #05312D · Electric Green #A3EA34
+   Light Fresh Green #F3FCEB · Neutral Black #161616
+   Orange #FF8B00 · Yellow #FFCE00 · Mild Red #F9603D
+   Font : Manrope
    ============================================================= */
 :root{
-  --forest:#07372D;
-  --deep:#0D4A3A;
-  --lime:#A4EF28;
-  --lime-fg:#0F2A22;
-  --sand:#F5F6F1;
+  /* Charte officielle */
+  --forest:#05312D;           /* Consentio Dark Green */
+  --lime:#A3EA34;             /* Consentio Electric Green */
+  --fresh:#F3FCEB;            /* Consentio Light Fresh Green */
+  --neutral-black:#161616;    /* Consentio Neutral Black */
+  --orange:#FF8B00;           /* Consentio Orange */
+  --yellow:#FFCE00;           /* Consentio Yellow */
+  --mild-red:#F9603D;         /* Consentio Mild Red */
+
+  /* Variants dérivés (opacités 90/60/20/10 autorisées par la charte) */
+  --deep:#0A3E36;             /* variant clair du forest (dérivé) */
+  --lime-fg:#05312D;          /* texte sur fond lime = forest */
+  --sand:#F5F6F1;             /* fond neutre (variante de fresh) */
   --white:#FFFFFF;
-  --ink:#12211C;
-  --amber:#F59A23;
+  --ink:#161616;              /* alias neutral-black */
+  --amber:#FF8B00;            /* alias orange (compat home v1) */
   --muted:#5C6B65;
   --border:#E4E6E1;
   --border-dark:rgba(255,255,255,.15);
-  --fg-on-forest:#F5F6F1;
+  --fg-on-forest:#F3FCEB;     /* texte principal sur fond forest = light fresh green */
   --fg-on-forest-muted:#B7C4BE;
+
   --font: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --container: 1200px;
   --gutter: clamp(20px, 4vw, 40px);
@@ -45,7 +55,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:.95rem;transition:transform .15s ease, background .15s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--lime);color:var(--lime-fg)}
-.btn-primary:hover{background:#B4F73F}
+.btn-primary:hover{background:#B8F04C}
 .btn-outline-dark{background:transparent;color:var(--fg-on-forest);border:1px solid rgba(255,255,255,.35)}
 .btn-outline-dark:hover{background:rgba(255,255,255,.08)}
 .btn-outline{background:transparent;color:var(--forest);border:1px solid var(--border)}
