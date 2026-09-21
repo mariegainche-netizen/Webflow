@@ -1,135 +1,47 @@
 <!--
   ============================================================
-  CONSENTIO — Book a demo (EN) — À coller dans un Embed Webflow
+  CONSENTIO — Micro-Embed HubSpot pour la page /book-demo Webflow
   ============================================================
-  Prérequis Custom Code HEAD de la page /book-demo (à ajouter côté Webflow) :
+  À COLLER dans un SEUL Element Embed placé DANS la Div `.demo-card`
+  de la page (voir GUIDE-book-a-demo.md, Partie 2, étape 4).
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mariegainche-netizen/Webflow@claude/charming-ride-fs49bc/consentio-styles.min.css">
-  <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
+  PRÉREQUIS — Site Settings → Custom Code → Head Code :
+    <script charset="utf-8" type="text/javascript"
+            src="https://js.hsforms.net/forms/embed/v2.js"></script>
 
-  Puis coller le bloc ci-dessous (entre <style> et </script>) dans un
-  seul Embed Webflow au corps de la page. Ne rien laisser autour.
-
-  ⚠ Avant de publier, remplacer REPLACE_WITH_FORM_ID par le vrai Form ID
-     HubSpot (Portal ID Consentio : 144242237, déjà en dur ci-dessous).
+  ⚠ AVANT PUBLICATION : remplacer REPLACE_WITH_FORM_ID par le vrai
+     Form ID HubSpot (Portal Consentio 144242237, région eu1).
   ============================================================
 -->
 
-<style>
-  /* Layout page + surcharge form HubSpot (charte officielle Consentio) */
-  .demo-page{background:var(--sand);padding:56px 0 80px}
-  @media (min-width:960px){.demo-page{padding:80px 0 112px}}
-  .demo-grid{display:grid;gap:32px;grid-template-columns:1fr}
-  @media (min-width:960px){.demo-grid{grid-template-columns:1fr .75fr;gap:48px;align-items:start}}
-  .demo-card{background:var(--white);border:1px solid var(--border);border-radius:24px;padding:32px}
-  @media (min-width:720px){.demo-card{padding:40px}}
-  .demo-card h1{font-size:clamp(1.75rem,3.2vw,2.25rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--forest);margin:0}
-  .demo-card .lead{margin-top:16px;font-size:1.0625rem;color:var(--muted);max-width:34rem}
-  .demo-aside{background:var(--forest);color:var(--fg-on-forest);border-radius:24px;padding:32px;height:fit-content}
-  .demo-aside h2{margin:0;font-size:1.25rem;font-weight:700;color:var(--fg-on-forest)}
-  .demo-aside ol{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:16px}
-  .demo-aside li{display:flex;gap:12px;align-items:flex-start;font-size:.9375rem;line-height:1.5;color:var(--fg-on-forest-muted)}
-  .demo-aside .num{flex:0 0 28px;height:28px;border-radius:50%;background:var(--lime);color:var(--lime-fg);display:grid;place-items:center;font-size:.75rem;font-weight:800}
-  .demo-success{display:none}
-  .demo-success h1{color:var(--forest)}
-  .demo-success .lead{margin-top:16px;color:var(--muted)}
-  .demo-card.sent .demo-form-wrap{display:none}
-  .demo-card.sent .demo-success{display:block}
+<div id="hubspot-form-target"></div>
 
-  /* Surcharge HubSpot */
-  .hs-form-wrap{margin-top:32px}
-  .hs-form-wrap .hs-form{display:grid;gap:20px;grid-template-columns:1fr}
-  @media (min-width:640px){.hs-form-wrap .hs-form{grid-template-columns:1fr 1fr}}
-  .hs-form-wrap .hs-form fieldset{border:0;padding:0;margin:0;max-width:none!important}
-  .hs-form-wrap .hs-form .hs-form-field{margin:0}
-  .hs-form-wrap .hs-form .form-columns-1,
-  .hs-form-wrap .hs-form .form-columns-2{max-width:none!important;display:contents}
-  .hs-form-wrap .hs-form .hs-form-field>label,
-  .hs-form-wrap .hs-form .hs-fieldtype-booleancheckbox>label,
-  .hs-form-wrap .hs-form .hs-richtext label{display:block;font-size:.875rem;font-weight:600;color:var(--forest);margin-bottom:8px}
-  .hs-form-wrap .hs-form .hs-form-required{color:#F9603D;margin-left:2px}
-  .hs-form-wrap .hs-form input[type=text],
-  .hs-form-wrap .hs-form input[type=email],
-  .hs-form-wrap .hs-form input[type=tel],
-  .hs-form-wrap .hs-form input[type=number],
-  .hs-form-wrap .hs-form select,
-  .hs-form-wrap .hs-form textarea{
-    width:100%;max-width:none!important;padding:12px 16px;
-    font:400 1rem "Manrope",ui-sans-serif,system-ui,sans-serif;
-    color:var(--ink);background:var(--white);
-    border:1px solid var(--border);border-radius:12px;outline:0;
-    transition:border-color .15s ease,box-shadow .15s ease;
-  }
-  .hs-form-wrap .hs-form input:focus,
-  .hs-form-wrap .hs-form select:focus,
-  .hs-form-wrap .hs-form textarea:focus{
-    border-color:var(--forest);box-shadow:0 0 0 3px rgba(5,49,45,.12)
-  }
-  .hs-form-wrap .hs-form textarea{resize:vertical;min-height:120px}
-  .hs-form-wrap .hs-form .hs-fieldtype-textarea{grid-column:1/-1}
-  .hs-form-wrap .hs-form .hs-fieldtype-booleancheckbox,
-  .hs-form-wrap .hs-form .legal-consent-container,
-  .hs-form-wrap .hs-form .hs-richtext{grid-column:1/-1}
-  .hs-form-wrap .hs-form .hs-form-booleancheckbox-display{display:flex;gap:10px;align-items:flex-start;font-size:.875rem;color:var(--muted);cursor:pointer}
-  .hs-form-wrap .hs-form .hs-form-booleancheckbox-display input[type=checkbox]{margin-top:3px;accent-color:var(--forest);width:16px;height:16px;flex:0 0 16px}
-  .hs-form-wrap .hs-form .hs-error-msg,
-  .hs-form-wrap .hs-form .hs-error-msgs label{color:#F9603D;font-size:.8125rem;font-weight:600;margin-top:6px}
-  .hs-form-wrap .hs-form .hs-submit{grid-column:1/-1;margin-top:8px}
-  .hs-form-wrap .hs-form .hs-button,
-  .hs-form-wrap .hs-form input[type=submit]{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:14px 24px;border-radius:12px;
-    background:var(--lime);color:var(--lime-fg);
-    font:700 .9375rem "Manrope",ui-sans-serif,system-ui,sans-serif;
-    border:0;cursor:pointer;transition:background .15s ease,transform .15s ease
-  }
-  .hs-form-wrap .hs-form .hs-button:hover{background:#B8F04C;transform:translateY(-1px)}
-  .hs-form-wrap .submitted-message{color:var(--forest);font-weight:600}
+<style>
+  /* Surcharge du form HubSpot injecté au runtime — charte officielle Consentio */
+  #hubspot-form-target .hs-form{display:grid;gap:20px;grid-template-columns:1fr;margin-top:32px}
+  @media(min-width:640px){#hubspot-form-target .hs-form{grid-template-columns:1fr 1fr}}
+  #hubspot-form-target .hs-form fieldset{border:0;padding:0;margin:0;max-width:none!important}
+  #hubspot-form-target .hs-form .hs-form-field{margin:0}
+  #hubspot-form-target .hs-form .form-columns-1,#hubspot-form-target .hs-form .form-columns-2{max-width:none!important;display:contents}
+  #hubspot-form-target .hs-form .hs-form-field>label,#hubspot-form-target .hs-form .hs-fieldtype-booleancheckbox>label,#hubspot-form-target .hs-form .hs-richtext label{display:block;font:600 .875rem "Manrope",sans-serif;color:#05312D;margin-bottom:8px}
+  #hubspot-form-target .hs-form .hs-form-required{color:#F9603D;margin-left:2px}
+  #hubspot-form-target .hs-form input[type=text],#hubspot-form-target .hs-form input[type=email],#hubspot-form-target .hs-form input[type=tel],#hubspot-form-target .hs-form input[type=number],#hubspot-form-target .hs-form select,#hubspot-form-target .hs-form textarea{width:100%;max-width:none!important;padding:12px 16px;font:400 1rem "Manrope",sans-serif;color:#161616;background:#FFFFFF;border:1px solid #E4E6E1;border-radius:12px;outline:0;transition:border-color .15s,box-shadow .15s}
+  #hubspot-form-target .hs-form input:focus,#hubspot-form-target .hs-form select:focus,#hubspot-form-target .hs-form textarea:focus{border-color:#05312D;box-shadow:0 0 0 3px rgba(5,49,45,.12)}
+  #hubspot-form-target .hs-form textarea{resize:vertical;min-height:120px}
+  #hubspot-form-target .hs-form .hs-fieldtype-textarea,#hubspot-form-target .hs-form .hs-fieldtype-booleancheckbox,#hubspot-form-target .hs-form .legal-consent-container,#hubspot-form-target .hs-form .hs-richtext,#hubspot-form-target .hs-form .hs-submit{grid-column:1/-1}
+  #hubspot-form-target .hs-form .hs-form-booleancheckbox-display{display:flex;gap:10px;align-items:flex-start;font:400 .875rem "Manrope",sans-serif;color:#5C6B65;cursor:pointer}
+  #hubspot-form-target .hs-form .hs-form-booleancheckbox-display input[type=checkbox]{margin-top:3px;accent-color:#05312D;width:16px;height:16px;flex:0 0 16px}
+  #hubspot-form-target .hs-form .hs-error-msg,#hubspot-form-target .hs-form .hs-error-msgs label{color:#F9603D;font:600 .8125rem "Manrope",sans-serif;margin-top:6px}
+  #hubspot-form-target .hs-form .hs-button,#hubspot-form-target .hs-form input[type=submit]{display:inline-flex;align-items:center;padding:14px 24px;border-radius:12px;background:#A3EA34;color:#05312D;font:700 .9375rem "Manrope",sans-serif;border:0;cursor:pointer;transition:background .15s,transform .15s}
+  #hubspot-form-target .hs-form .hs-button:hover{background:#B8F04C;transform:translateY(-1px)}
+  #hubspot-form-target .submitted-message{color:#05312D;font:600 1rem "Manrope",sans-serif}
 </style>
 
-<main class="demo-page">
-  <div class="container">
-    <div class="demo-grid">
-
-      <section class="demo-card" id="demo-card">
-        <div class="demo-form-wrap">
-          <h1>Let's discuss your fresh food operations.</h1>
-          <p class="lead">Tell us about your organization and the workflows you want to improve. We will connect you with the relevant Consentio team.</p>
-          <div class="hs-form-wrap" id="hubspot-form-target"></div>
-        </div>
-        <div class="demo-success">
-          <h1>Request received</h1>
-          <p class="lead">Thank you. Our team will review your request and contact you shortly.</p>
-          <a href="/" class="btn btn-outline" style="margin-top:24px">← Back to home</a>
-        </div>
-      </section>
-
-      <aside class="demo-aside" aria-label="What happens next">
-        <h2>What happens next</h2>
-        <ol>
-          <li><span class="num">1</span>We review your request and operational context.</li>
-          <li><span class="num">2</span>A specialist from the retailer or supplier team contacts you.</li>
-          <li><span class="num">3</span>We prepare a demo focused on your categories and workflows.</li>
-        </ol>
-      </aside>
-
-    </div>
-  </div>
-</main>
-
 <script>
-  /* Portal ID Consentio : 144242237 — Form ID à remplacer */
   hbspt.forms.create({
     portalId: "144242237",
     formId: "REPLACE_WITH_FORM_ID",
     region: "eu1",
-    target: "#hubspot-form-target",
-    onFormSubmitted: function () {
-      document.getElementById('demo-card').classList.add('sent');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    target: "#hubspot-form-target"
   });
 </script>

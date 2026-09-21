@@ -92,10 +92,10 @@ Tokens complets : `consentio-styles.css`.
 | `consentio-embed-all-in-one.html` | Fallback : CSS + HTML + JS en un seul Embed |
 | `consentio-embed-part1.html` / `part2.html` | Fallback : découpe en 2 Embeds |
 | `consentio-styles.css` / `.min.css` | Feuille de style Consentio (servie via jsDelivr) — charte officielle |
-| `consentio-book-demo-en.html` | Book a demo EN standalone (référence de rendu) |
-| `consentio-book-demo-embed.html` | Book a demo EN prêt à coller dans un Embed Webflow |
+| `consentio-book-demo-en.html` | Book a demo EN standalone (référence de rendu offline) |
+| `consentio-book-demo-embed.html` | Micro-Embed HubSpot (40 lignes) à coller dans la carte formulaire de la page Webflow — approche **native Webflow** (structure Designer + Style Guide) |
 | `GUIDE-integration-webflow.md` | Guide pas à pas intégration Webflow (home) |
-| `GUIDE-book-a-demo.md` | Guide book-a-demo : création form HubSpot + intégration Webflow |
+| `GUIDE-book-a-demo.md` | Guide book-a-demo : création form HubSpot + construction native Webflow (Style Guide, structure Designer, micro-Embed HubSpot) |
 | `RECAP-demain-matin.md` | Récap J2 (Home Webflow staging) |
 
 **HubSpot** — Portal ID Consentio : `144242237` (région `eu1`).
@@ -121,6 +121,7 @@ Tokens complets : `consentio-styles.css`.
 
 ## Conventions de travail (préférences Marie)
 
+- **Native Webflow d'abord** : construire les pages avec le Designer (Sections, Divs, Grid, Style Guide, Symbols). Le custom code / Embed reste réservé aux briques qui ne peuvent pas être natives (form HubSpot injecté au runtime, script tiers, interaction JS avancée). Toujours livrer un plan de construction Designer + un micro-Embed isolé si nécessaire.
 - Réponses **directes, actionnables** — solution la plus rapide en premier
 - Anticipe les pièges avant qu'ils arrivent
 - Code simple et commenté (Webflow custom code, JS, expressions n8n)
