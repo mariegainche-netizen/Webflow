@@ -1,0 +1,38 @@
+<!-- =============================================================
+     CONSENTIO — Formulaire HubSpot seul (FR / EN / ES)
+     À coller dans un Code Embed, À LA PLACE de l'ancien formulaire
+     dans la mise en page 2026 copiée depuis le site test.
+     La langue est détectée via <html lang> (Webflow Localization),
+     avec repli sur l'URL (/es-es, /en-us), FR par défaut.
+     ============================================================= -->
+<div id="rd-form" style="min-height:520px"></div>
+<script>
+(function () {
+  // Langue de la page : fr-FR / es-ES / en-US → fr / es / en
+  var lang = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
+  if (!/^(fr|en|es)$/.test(lang)) {
+    var p = location.pathname;
+    lang = p.indexOf('/es-es') === 0 ? 'es' : p.indexOf('/en-us') === 0 ? 'en' : 'fr';
+  }
+
+  // Un formulaire HubSpot par langue (portail 144242237, région eu1)
+  var FORMS = {
+    en: '4e689804-5174-4575-a0c6-1228f1675a25',
+    fr: 'ca0ea91c-a8b6-4ae7-802b-e64fa310516e',
+    es: 'f705925c-3f85-453d-9c21-6aab9b3cac29'
+  };
+
+  // Conteneur HubSpot créé AVANT le chargement du script (il le cherche au chargement)
+  var frame = document.createElement('div');
+  frame.className = 'hs-form-frame';
+  frame.setAttribute('data-region', 'eu1');
+  frame.setAttribute('data-form-id', FORMS[lang]);
+  frame.setAttribute('data-portal-id', '144242237');
+  document.getElementById('rd-form').appendChild(frame);
+
+  var s = document.createElement('script');
+  s.src = 'https://js-eu1.hsforms.net/forms/embed/144242237.js';
+  s.defer = true;
+  document.body.appendChild(s);
+})();
+</script>
