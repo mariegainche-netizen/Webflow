@@ -22,6 +22,10 @@
     lang = p.indexOf('/es-es') === 0 ? 'es' : p.indexOf('/en-us') === 0 ? 'en' : 'fr';
   }
 
+  // Test : ?lang=fr|es|en dans l'URL force la langue (sans activer les langues Webflow)
+  var forced = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+  if (/^(fr|en|es)$/.test(forced)) lang = forced;
+
   // Un formulaire HubSpot par langue (portail 144242237, région eu1)
   var FORMS = {
     en: '4e689804-5174-4575-a0c6-1228f1675a25',
