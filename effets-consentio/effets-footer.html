@@ -1,0 +1,127 @@
+<!-- ============================================================
+     EFFETS CONSENTIO · partie 2/2 : Site settings › Custom code › Footer
+     (à coller À LA FIN du bloc Footer existant, sans rien effacer)
+     ============================================================ -->
+<script>
+/* Moteur d'effets repris de la maquette Lovable. Il se pilote avec des attributs
+   posés dans le Designer : élément › ⚙ Settings (touche D) › Custom attributes › +
+     data-reveal="120"         apparition au scroll (fondu + montée), 120 = délai en ms, facultatif
+     data-reveal-stagger="80"  sur un parent : ses enfants directs apparaissent en cascade
+     data-draw                 sur un <svg> ou un <path> : la ligne se dessine
+     data-parallax="14"        glisse de ±14 px pendant le scroll (photos)
+     data-zoom                 sur le cadre d'une photo : zoom léger au survol (CSS du Head)
+     data-float / data-float="2"  flottement lent (cartes) ; "2" = décalé
+   Les effets ne tournent que sur le site publié, pas dans le Designer. */
+(function () {
+  var html = document.documentElement;
+  if (!html.classList.contains('fx')) return; // « moins d'animations » demandé, ou filet de sécurité déclenché
+  var EASE = 'cubic-bezier(.22,1,.36,1)';
+  function all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+
+  // 1. Cascade : chaque enfant direct devient un data-reveal rattaché à son parent.
+  //    Une cascade posée sur un enfant direct d'une autre cascade (ex. grille de cartes dans une section)
+  //    ne bouge pas elle-même : ses cartes arrivent une par une, après les éléments qui la précèdent.
+  all('[data-reveal-stagger]').forEach(function (list) {
+    var step = parseFloat(list.getAttribute('data-reveal-stagger')) || 80;
+    var outer = list.parentNode, base = 0;
+    if (outer && outer.hasAttribute && outer.hasAttribute('data-reveal-stagger')) {
+      base = Array.prototype.indexOf.call(outer.children, list) * (parseFloat(outer.getAttribute('data-reveal-stagger')) || 80);
+    }
+    Array.prototype.forEach.call(list.children, function (el) {
+      if (el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-stagger')) return; // délai réglé à la main, ou cascade imbriquée
+      el.setAttribute('data-reveal', '');
+      el._fxStep = step;
+      el._fxBase = base;
+    });
+  });
+
+  // 2. Lignes : on mesure chaque tracé et on le masque, il sera dessiné à l'écran
+  all('[data-draw]').forEach(function (host) {
+    host._fxPaths = (host.tagName.toLowerCase() === 'path' ? [host] : all('path', host)).filter(function (p) {
+      try {
+        var m = p.getScreenCTM(), k = m ? Math.max(1, Math.abs(m.a), Math.abs(m.d)) : 1;
+        var len = Math.ceil(p.getTotalLength() * k) + 4;
+        p.style.strokeDasharray = len + ' ' + len;
+        p.style.strokeDashoffset = len;
+        return true;
+      } catch (e) { return false; }
+    });
+  });
+
+  function reveal(el, delay) {
+    el.style.setProperty('--fx-d', delay + 'ms');
+    el.classList.add('fx-in');
+    setTimeout(function () { // animation finie : l'élément retrouve ses styles Webflow d'origine
+      el.removeAttribute('data-reveal');
+      el.classList.remove('fx-in');
+      el.style.removeProperty('--fx-d');
+    }, delay + 900);
+  }
+  function draw(host, delay) {
+    (host._fxPaths || []).forEach(function (p) {
+      p.getBoundingClientRect(); // fixe l'état masqué avant de lancer le tracé
+      p.style.transition = 'stroke-dashoffset 2.2s ' + EASE + ' ' + delay + 'ms';
+      p.style.strokeDashoffset = '0';
+      setTimeout(function () { p.style.transition = p.style.strokeDasharray = p.style.strokeDashoffset = ''; }, delay + 2400);
+    });
+  }
+  function play(el, delay) {
+    if (el.hasAttribute('data-draw')) draw(el, delay);
+    if (el.hasAttribute('data-reveal')) reveal(el, delay);
+  }
+
+  // 3. Déclenchement quand l'élément entre à l'écran (une seule fois)
+  var targets = all('[data-reveal], [data-draw]');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { play(el, 0); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      var parents = [], counts = []; // cascade : on compte les enfants d'un même parent arrivés ensemble
+      entries.filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.target.compareDocumentPosition(b.target) & 2 ? 1 : -1; })
+        .forEach(function (e) {
+          var el = e.target;
+          io.unobserve(el);
+          var delay = parseFloat(el.getAttribute(el.hasAttribute('data-draw') ? 'data-draw' : 'data-reveal')) || 0;
+          if (el._fxStep) {
+            var i = parents.indexOf(el.parentNode);
+            if (i < 0) { i = parents.push(el.parentNode) - 1; counts[i] = 0; }
+            delay += el._fxBase + counts[i]++ * el._fxStep;
+          }
+          play(el, delay);
+        });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  // 4. Parallaxe : décalage proportionnel à la position dans l'écran
+  var slides = all('[data-parallax]');
+  if (slides.length) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var vh = window.innerHeight;
+      slides.forEach(function (el) {
+        var r = el.getBoundingClientRect(), y = el._fxY || 0, top = r.top - y;
+        if (top + r.height < -200 || top > vh + 200) return; // hors écran : rien à calculer
+        var s = parseFloat(el.getAttribute('data-parallax')) || 14;
+        var p = Math.max(-1, Math.min(1, (top + r.height / 2 - vh / 2) / vh));
+        el._fxY = -p * s;
+        el.style.translate = '0 ' + el._fxY.toFixed(1) + 'px';
+      });
+    };
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  html.classList.add('fx-ready');
+  // Filet de sécurité n°2 : au bout de 4 s, tout ce qui est à l'écran et encore masqué apparaît
+  setTimeout(function () {
+    all('[data-reveal]:not(.fx-in)').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) reveal(el, 0);
+    });
+  }, 4000);
+})();
+</script>
