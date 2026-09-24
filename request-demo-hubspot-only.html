@@ -3,7 +3,7 @@
      À coller dans un Code Embed, À LA PLACE de l'ancien formulaire
      dans la mise en page 2026 copiée depuis le site test.
      La langue est détectée via le sous-dossier de l'URL
-     (/es-es, /en-us), FR par défaut (racine).
+     (/fr-fr, /es-es), EN par défaut (langue principale).
      ============================================================= -->
 <style>
   /* Le formulaire HubSpot a déjà son titre et son paragraphe : on masque ceux de Webflow.
@@ -15,11 +15,11 @@
 <div id="rd-form" style="min-height:520px"></div>
 <script>
 (function () {
-  // Langue = sous-dossier de l'URL (Webflow Localization) : /es-es → es, /en-us → en, sinon fr.
-  // On n'utilise PAS <html lang> : Weglot le modifie selon la langue choisie par le visiteur,
-  // ce qui chargeait parfois le mauvais formulaire.
+  // Langue = sous-dossier de l'URL (Webflow Localization) :
+  // /fr-fr → fr, /es-es → es, sinon en (langue principale : racine ou /en-en).
+  // On n'utilise PAS <html lang> (peut être modifié par un outil tiers).
   var p = location.pathname.toLowerCase();
-  var lang = /^\/es-es(\/|$)/.test(p) ? 'es' : /^\/en-us(\/|$)/.test(p) ? 'en' : 'fr';
+  var lang = /^\/fr-fr(\/|$)/.test(p) ? 'fr' : /^\/es-es(\/|$)/.test(p) ? 'es' : 'en';
 
   // Test : ?lang=fr|es|en dans l'URL force la langue (sans activer les langues Webflow)
   var forced = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
