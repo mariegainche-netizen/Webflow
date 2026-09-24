@@ -85,7 +85,23 @@
 
 ---
 
-## 7. Fichiers du repo
+## 7. Pages déjà équipées (24/09)
+
+| Page | Effets posés |
+|---|---|
+| **Home** | hero natif (cascade texte, ligne, photo parallaxe + zoom, cartes qui arrivent puis flottent, courbe tracée) + 7 sections (logos, Why fresh, workflow, Two sides, cas clients CMS, intégrations, CTA final) |
+| **Retailers** | hero + 8 sections (problème, workflow, 4 modules, intégration, déploiement) |
+| **Suppliers** | hero + 12 sections (cartes, résultats, Magic Orders, Webshop, FAQ, photos, CTA final) |
+| **Customer Stories** · **Resources** | hero, filtres, cartes CMS en cascade, CTA final |
+| **Modèles CMS** (cas client, article) | en-tête en cascade, corps de texte, liste « à lire aussi », CTA final |
+| **Klarys joins Consentio** | hero + 3 sections |
+| **Composant CTA Next Step** | cascade + ligne : vaut pour toutes les pages qui l'utilisent |
+| Volontairement sans effet | Request Demo (formulaire affiché sans délai), pages légales, header, footer |
+| Pas touché | **About Us** (en cours de refonte) : appliquer la recette § 3 une fois la page finie · section chiffres de la Home (interaction Webflow existante) |
+
+---
+
+## 8. Fichiers du repo
 
 | Fichier | Rôle |
 |---|---|
