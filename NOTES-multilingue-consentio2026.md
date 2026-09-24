@@ -19,3 +19,13 @@
 4. Vérifier les classes `.only-fr/.only-es/.only-en` (règles CSS écrites pour Weglot, `html[lang="fr"]` ne correspond plus à `fr-FR`).
 5. Request Demo : 3 étapes du bloc vert en EN (textes Lovable) une fois l'EN en langue principale.
 6. Site test : formulaire ES = `f705925c…` ; police du formulaire HubSpot.
+
+## Mise à jour 24/09 après-midi
+- Langues échangées : **EN principale** (`/en-en`), FR `/fr-fr`, ES `/es-es`. Script du formulaire adapté (FR/ES selon le sous-dossier, EN sinon).
+- 3 pages de démo, même formulaire HubSpot :
+  - `/request-demo` (générique, indexée)
+  - `/request-demo-retailers` (message centrales d'achat, `noindex`)
+  - `/request-demo-suppliers` (message producteurs et grossistes, `noindex`)
+- Bandeau photo + titre H1 blanc (classes `rd-hero-banner*`, dégradé `c10-bg-fade`, ligne `c10-wave`).
+- Colonne droite : photo + « What happens next » + 3 étapes, sans cadre vert.
+- À faire : retirer titre et intro des 3 formulaires dans HubSpot ; FAQ distributeurs à rédiger ; traduire les 3 pages en FR et ES.
