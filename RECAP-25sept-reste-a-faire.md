@@ -74,7 +74,7 @@
 ### P2 · Qualité et contenus
 
 6. **About Us** : structure faite ✅. Restent les textes provisoires et les chiffres (point 3), un lien vers Klarys joins Consentio dans le bloc « Consentio and Klarys », et « 124 connected partners » (About Us) à aligner sur « 124 partners invited » (story Lagadec).
-7. **Klarys joins Consentio** : créée et reliée au footer ✅ ; seul le bouton du CTA final reste sans lien (point 1).
+7. **Klarys joins Consentio** : créée et reliée au footer ✅ ; seul le bouton du CTA final reste sans lien (point 1). Photo du hero générée par IA (`seafood-packing.jpg`, aussi sur About Us) : remplacement suivi dans une autre session, validation prévue demain à 9 h.
 8. **Home** :
    - slider ERP inchangé : Cegid et Oracle toujours présents ; SIGEM, SAGE, Produce Pro, ORISHA et COPILOTE absents (ordre cible : SAP, SIGEM, Stepcom, SAGE, Produce Pro, ORISHA, Infor, Microsoft, MS Dynamics, COPILOTE) ;
    - placeholder « Eyebrow » toujours affiché au-dessus des blocs retailers et suppliers ;
@@ -112,7 +112,7 @@ Nouveau point P3 :
 | Resources | 4 liens (3 sur les cartes + CTA) | ≈ 5 min |
 | Retailers | 1 lien, Section 2, « Buying workspace », 1 point de la section Problem | ≈ 30 min |
 | Suppliers | 3 témoignages, image IA, Magic Orders | selon décisions |
-| About Us | 4 textes provisoires, chiffres, témoignage, lien Klarys | ≈ 15 min + validation |
+| About Us | 4 textes provisoires, chiffres, témoignage, lien Klarys, photo IA | ≈ 15 min + validation |
 | Request Demo × 3 | 9 textes FR, FAQ Retailers, meta description | ≈ 20 min |
 | Customer Stories | 1 lien (CTA) · champ `order` du CMS | ≈ 5 min |
 | Templates Customer Stories et Resources | 7 liens | ≈ 10 min |
