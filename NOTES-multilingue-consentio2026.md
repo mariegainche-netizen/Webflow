@@ -29,3 +29,9 @@
 - Bandeau photo + titre H1 blanc (classes `rd-hero-banner*`, dégradé `c10-bg-fade`, ligne `c10-wave`).
 - Colonne droite : photo + « What happens next » + 3 étapes, sans cadre vert.
 - À faire : retirer titre et intro des 3 formulaires dans HubSpot ; FAQ distributeurs à rédiger ; traduire les 3 pages en FR et ES.
+
+## État fin de journée 24/09
+- 3 pages de démo : bandeau (libellé + H1 personnalisé, sans sous-titre), formulaire à gauche, photo à droite, « What happens next » en 3 colonnes sous le formulaire.
+- Témoignage E.Leclerc (Steven Michel, citation courte mot pour mot) sur `/request-demo-retailers` uniquement : accord à confirmer.
+- Page Suppliers : 11 boutons de démo pointent vers `/request-demo-suppliers` (10 anciens liens `/book-demo` cassés corrigés).
+- Demain : 2 témoignages réels validés par Emilien (distributeur + fournisseur), FAQ distributeurs, vérification mobile, Publish, traduction FR/ES.
