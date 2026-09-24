@@ -46,6 +46,43 @@
 | Grille de cartes **enfant direct** de ce conteneur | la grille | `data-reveal-stagger` = `60` ou `80` → les cartes arrivent une par une |
 | Liste CMS | l'élément **Collection List** (pas le Collection List Wrapper) | `data-reveal-stagger` = `80` |
 | CTA final | rien : le composant **CTA Next Step** est déjà équipé | — |
+| Cadre photo (`overflow: hidden`) | le cadre, pas l'image | `data-zoom` (vide) |
+
+### ⏱ Chrono 5 min : exemple réel, page About Us (22 attributs)
+
+**0:00 → 0:30 · Préparation**
+- Designer › page About Us › Navigator (**Z**) › panneau Settings (**D**) : il reste ouvert tout le long.
+- Réflexe : pour chaque élément ci-dessous, clic dans le Navigator › Custom attributes › **+** › Name › Value › Entrée (≈ 10 s).
+
+**0:30 → 1:15 · Hero (section `cpy-hero`)**
+
+| Élément (Navigator) | Name | Value |
+|---|---|---|
+| `cpy-flow-hero` (le svg de la ligne) | `data-draw` | vide |
+| `cpy-hero-copy` (colonne de texte) | `data-reveal-stagger` | `60` |
+| `cpy-media` (colonne photo) | `data-reveal` | `120` |
+| `cpy-photo` (dans `cpy-media`) | `data-zoom` | vide |
+
+**1:15 → 4:00 · Sections 01 à 05 + bloc final** : 1 attribut sur le conteneur, 1 sur la grille, 1 sur chaque ligne ou photo
+
+| Section | Élément | Name | Value |
+|---|---|---|---|
+| 01 `cpy-sec-light` | `cpy-container` · puis `cpy-grid-2` | `data-reveal-stagger` | `80` · `80` |
+| 02 `cpy-sec-deep` | `cpy-flow-top` | `data-draw` | vide |
+| 02 | `cpy-center` (le conteneur n'a qu'un enfant : on descend d'un cran) | `data-reveal-stagger` | `80` |
+| 03 `cpy-sec-light` | `cpy-container` · puis chaque `cpy-story` | `data-reveal-stagger` | `80` · `80` |
+| 03 | chaque `cpy-photo` (2) | `data-zoom` | vide |
+| 04 `cpy-sec-tint` | `cpy-container` · puis `cpy-impact-grid` | `data-reveal-stagger` | `80` · `60` |
+| 05 `cpy-sec-sand` | `cpy-container` · puis `cpy-avis-grid` | `data-reveal-stagger` | `80` · `80` |
+| 05 | `cpy-btn-row` (bouton sous les avis) | `data-reveal` | `400` : il arrive après les cartes |
+| Final `cpy-final` | `cpy-flow-final` | `data-draw` | vide |
+| Final | `cpy-container` · puis `cpy-final-grid` | `data-reveal-stagger` | `80` · `80` |
+| Final | `cpy-photo` | `data-zoom` | vide |
+
+**4:00 → 5:00 · Publier et vérifier**
+- **Publish** › staging uniquement › page en **navigation privée**.
+- Scroll lent : chaque section arrive en cascade, les 3 lignes vertes se tracent, survol d'une photo = zoom léger.
+- Volontairement sans effet : l'image de fond du bloc final (`cpy-final-bg`, plein cadre : une parallaxe ferait apparaître un bord vide).
 
 ---
 
@@ -54,6 +91,7 @@
 - **Double animation** : pas de `data-reveal` sur un élément qui a déjà une interaction Webflow (panneau ⚡). Cas actuel : section chiffres de la Home (`c2-stats`, « Scroll interaction 3 »), laissée telle quelle.
 - **Cascade dans cascade** : OK seulement si la grille est l'**enfant direct** du conteneur animé. Plus profond → double fondu.
 - **Parallaxe sur une image de fond plein cadre** : un bord vide apparaît. Toujours sur un cadre photo avec `overflow: hidden`.
+- **Bouton sous une grille en cascade** : sans réglage, il arrive en même temps que la 1re carte. Lui poser `data-reveal` = `400` pour qu'il arrive en dernier.
 - **Flottement** : pas sur un élément qui a déjà une transformation (rotation, échelle) dans le Style panel.
 - **Header, footer, pop-ups, formulaire HubSpot** : ne rien animer.
 - **« Rien ne bouge »** : page bien publiée ? navigation privée ? « Réduire les animations » activé sur ton ordinateur (Windows : Paramètres › Accessibilité › Effets visuels ; Mac : Réglages › Accessibilité › Affichage) ? Console F12 sans erreur rouge ?
@@ -95,9 +133,10 @@
 | **Customer Stories** · **Resources** | hero, filtres, cartes CMS en cascade, CTA final |
 | **Modèles CMS** (cas client, article) | en-tête en cascade, corps de texte, liste « à lire aussi », CTA final |
 | **Klarys joins Consentio** | hero + 3 sections |
+| **About Us** | hero (cascade texte, photo, ligne) + sections 01 à 05 + bloc final : 13 cascades, 3 lignes tracées, zoom au survol sur 4 photos, bouton des avis décalé (détail § 3) |
 | **Composant CTA Next Step** | cascade + ligne : vaut pour toutes les pages qui l'utilisent |
 | Volontairement sans effet | Request Demo (formulaire affiché sans délai), pages légales, header, footer |
-| Pas touché | **About Us** (en cours de refonte) : appliquer la recette § 3 une fois la page finie · section chiffres de la Home (interaction Webflow existante) |
+| Pas touché | section chiffres de la Home (interaction Webflow existante) · brouillon « BACKUP - About Us » |
 
 ---
 
