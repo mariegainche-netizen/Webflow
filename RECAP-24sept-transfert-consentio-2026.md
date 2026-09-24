@@ -139,6 +139,7 @@
 | **Filtres** | `CLAUDE.md` (Finsweet CMS Filter) | Finsweet Attributes v2 chargé dans le Head du site ; filtre Resources bugué (sélecteur `.Button` en majuscule) | Finsweet **non chargé** ; filtres gérés par des scripts de page maison | à tester sur le site publié |
 
 - ✅ **Bonne nouvelle** : dans Webflow, Coast Tropical et Mytilimer ont les bonnes données. L'erreur (KPI de Mytilimer sur la ligne Coast Tropical) n'existe que dans le Sheet `customer-stories_a-completer`. **Ne pas réimporter ce Sheet tel quel**, sinon Coast Tropical sera écrasé.
+- ✅ **Corps des articles (`body-content`) : rien n'a été perdu** (vérifié texte par texte le 24/09 au matin). Les 5 corps des Customer Stories et les 2 corps Resources du site test sont identiques dans 2026. Dans 2026, 54 articles Resources sur 55 ont un corps (médiane ≈ 2 600 caractères) ; seul « Procsea becomes Klarys » n'en a pas. La colonne `body-content` du Sheet de Robin est vide parce que les textes ont été collés directement dans Webflow (limite de caractères des cellules Google Sheets).
 - **20 anciennes collections** héritées du site de prod dans 2026 (Blog Posts, Webinars, Ebooks, Use Cases, Team Members, etc.) : à garder tant que les pages `/old/` et le blog legacy existent, à trier à la bascule.
 
 **Code custom du site (Site settings › Custom code)**
@@ -161,6 +162,7 @@
 - **Bascule du plan** (échange support Webflow du 17/09) : transférer le plan CMS de Consentio vers le nouveau site **seulement le jour J** (sinon consentio.co passe en Starter). Formulaires et apps ne suivent pas : à reconfigurer, avec les 301 et la Search Console. Le tracking, lui, est déjà dans le code du site 2026.
 - **Weglot + Webflow Localization = double traduction** : retirer Weglot avant d'activer les locales.
 - **Sheet `customer-stories_a-completer`** : la ligne **Coast Tropical** contient les KPI et bénéfices de **Mytilimer** (« 76 Mussel producers connected », « 4x »). À corriger avant tout import.
+- **Ne jamais réimporter le Sheet de Robin tel quel** : sa colonne `body-content` est vide et 11 de ses 43 slugs ne correspondent plus à ceux de 2026 (ex. `technologie-tracabilite-blockchain` → `technology-traceability-blockchain`). Un réimport risque soit d'effacer les corps collés à la main, soit de créer des doublons. Si un réimport est nécessaire : supprimer la colonne `body-content` du CSV (ou ne pas la mapper) et vérifier les slugs.
 - **Traduction FR des pages légales** : la version française des CGU existe déjà dans la page BACKUP - Terms & conditions (texte EN + FR) → la reprendre pour la locale FR au lieu de retraduire.
 - **Emilien doit encore livrer** le texte de Company dans Lovable (repasse du 21/09) : ne pas perdre de temps sur le contenu de Company avant.
 
