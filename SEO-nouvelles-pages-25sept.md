@@ -11,7 +11,7 @@
 |---|---|
 | Pages concernées | **10 pages + 2 templates CMS** : Home, Retailers, Suppliers, About Us, 3 × Request Demo, Klarys joins Consentio, Customer Stories, Resources + templates Resources et Customer Stories |
 | Déjà correct | **Klarys joins Consentio** (title, description, image de partage) · titles des 2 pages Request Demo Retailers et Suppliers (`noindex`) · description de Customer Stories |
-| À corriger | **7 titles** · **6 descriptions** · **10 pages sans image de partage** (Open Graph) · **2 templates CMS vides** (55 articles + 8 cas clients sans title ni description) · **11 textes alternatifs** (10 logos + 1 image en français) |
+| À corriger | **6 titles** (+ 4 pages légales) · **6 descriptions** · **8 pages sans image de partage** (Open Graph), + celle de la Home à remplacer · **2 templates CMS vides** (55 articles + 8 cas clients sans title ni description) · **11 textes alternatifs** (10 logos + 1 image en français) |
 | Temps | **10 min de lecture** + **2 min** si j'applique via l'API (recommandé) ou 25 min de copier-coller · **+ 15 min de Designer** (templates CMS, logos) |
 | Risque n° 1 hors metas | **La migration** : anciennes URL sans redirection, pages héritées publiées, FR et ES non traduits (§ 7) |
 
