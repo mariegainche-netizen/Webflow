@@ -1,0 +1,6 @@
+priorite,site,ancienne_url,nouvelle_url,statut,commentaire
+à vérifier (audit prod lundi),consentio (nouveau site),/solutions/for-supermarkets,/retailers,probable,à ajouter au CSV unique seulement si l'audit de la prod montre que cette URL existe
+à vérifier (audit prod lundi),consentio (nouveau site),/solutions/for-producers,/suppliers,probable,à ajouter au CSV unique seulement si l'audit de la prod montre que cette URL existe
+à ajouter (fichier klarys),klarys.io,/en,https://consentio.co/klarys-joins-consentio,à valider,accueil anglais de Klarys ; à placer après les 23 règles de import-webflow-301-klarys.csv
+à ajouter (fichier klarys),klarys.io,/,https://consentio.co/klarys-joins-consentio,à valider,accueil de Klarys ; à placer après les 23 règles de import-webflow-301-klarys.csv
+à ajouter (fichier klarys),klarys.io,/(.*),https://consentio.co/klarys-joins-consentio,à valider,"règle générique pour toutes les autres pages Klarys : à placer tout en bas du fichier klarys, à affiner avec l'audit de klarys.io"
