@@ -1,0 +1,110 @@
+<!-- =============================================================
+     CONSENTIO — Page /request-demo (site « Consentio 2026 »)
+     À coller dans UN SEUL Code Embed (pleine largeur) sur la page.
+     - Mise en page reprise de la page Lovable « Book a demo »
+     - Formulaire HubSpot choisi automatiquement selon la langue
+       (FR / EN / ES) détectée via l'attribut lang de <html>,
+       posé par Webflow Localization, avec repli sur l'URL.
+     - Classes préfixées « rd- » pour ne pas entrer en conflit
+       avec les styles Webflow existants.
+     ============================================================= -->
+<style>
+  .rd{--forest:#07372D;--lime:#A4EF28;--lime-fg:#0F2A22;--sand:#F5F6F1;--muted:#5C6B65;--border:#E4E6E1;--on-forest:#B7C4BE;
+      background:var(--sand);padding:clamp(48px,8vw,96px) 0;font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;color:#12211C}
+  .rd *{box-sizing:border-box}
+  .rd-wrap{max-width:1200px;margin:0 auto;padding:0 16px;display:grid;gap:48px}
+  @media(min-width:992px){.rd-wrap{grid-template-columns:1fr .75fr;padding:0 40px}}
+  .rd-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px}
+  @media(min-width:992px){.rd-card{padding:40px}}
+  .rd-title{margin:0;font-size:clamp(1.875rem,3.5vw,2.25rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--forest)}
+  .rd-lead{margin:16px 0 32px;font-size:1.125rem;line-height:1.55;color:var(--muted)}
+  .rd-form{min-height:520px} /* réserve la place pendant le chargement HubSpot (évite le saut de page) */
+  .rd-aside{height:fit-content;background:var(--forest);color:#F5F6F1;border-radius:24px;padding:32px}
+  .rd-aside h2{margin:0;font-size:1.25rem;font-weight:700;color:#F5F6F1}
+  .rd-steps{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:16px}
+  .rd-steps li{display:flex;gap:12px;font-size:.9375rem;line-height:1.5;color:var(--on-forest)}
+  .rd-num{flex:0 0 28px;height:28px;border-radius:50%;background:var(--lime);color:var(--lime-fg);display:grid;place-items:center;font-size:.75rem;font-weight:800}
+</style>
+
+<section class="rd">
+  <div class="rd-wrap">
+    <div class="rd-card">
+      <h1 class="rd-title" data-rd="title"></h1>
+      <p class="rd-lead" data-rd="lead"></p>
+      <div class="rd-form" id="rd-form"></div>
+    </div>
+    <aside class="rd-aside">
+      <h2 data-rd="next"></h2>
+      <ol class="rd-steps">
+        <li><span class="rd-num">1</span><span data-rd="s1"></span></li>
+        <li><span class="rd-num">2</span><span data-rd="s2"></span></li>
+        <li><span class="rd-num">3</span><span data-rd="s3"></span></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<script>
+(function () {
+  // 1) Détection de la langue : <html lang="fr-FR|es-ES|en-US"> posé par Webflow,
+  //    repli sur le sous-dossier de l'URL (/es-es, /en-us), sinon FR (langue principale).
+  var lang = (document.documentElement.lang || '').slice(0, 2).toLowerCase();
+  if (!/^(fr|en|es)$/.test(lang)) {
+    var p = location.pathname;
+    lang = p.indexOf('/es-es') === 0 ? 'es' : p.indexOf('/en-us') === 0 ? 'en' : 'fr';
+  }
+
+  // 2) Formulaires HubSpot (portail 144242237, région eu1) — un par langue.
+  var FORMS = {
+    en: '4e689804-5174-4575-a0c6-1228f1675a25',
+    fr: 'ca0ea91c-a8b6-4ae7-802b-e64fa310516e',
+    es: 'f705925c-3f85-453d-9c21-6aab9b3cac29'
+  };
+
+  // 3) Textes de la page par langue.
+  var T = {
+    fr: {
+      title: 'Parlons de vos opérations produits frais.',
+      lead: 'Présentez-nous votre organisation et les processus que vous souhaitez améliorer. Nous vous mettrons en relation avec l’équipe Consentio la plus adaptée.',
+      next: 'Et ensuite ?',
+      s1: 'Nous étudions votre demande et votre contexte opérationnel.',
+      s2: 'Un expert de l’équipe distributeurs ou fournisseurs vous contacte.',
+      s3: 'Nous préparons une démo centrée sur vos catégories et vos processus.'
+    },
+    en: {
+      title: 'Let’s discuss your fresh food operations.',
+      lead: 'Tell us about your organization and the workflows you want to improve. We will connect you with the relevant Consentio team.',
+      next: 'What happens next',
+      s1: 'We review your request and operational context.',
+      s2: 'A specialist from the retailer or supplier team contacts you.',
+      s3: 'We prepare a demo focused on your categories and workflows.'
+    },
+    es: {
+      title: 'Hablemos de sus operaciones de productos frescos.',
+      lead: 'Cuéntenos sobre su organización y los procesos que desea mejorar. Le pondremos en contacto con el equipo de Consentio adecuado.',
+      next: '¿Qué pasa después?',
+      s1: 'Revisamos su solicitud y su contexto operativo.',
+      s2: 'Un especialista del equipo de retailers o de proveedores se pone en contacto con usted.',
+      s3: 'Preparamos una demo centrada en sus categorías y procesos.'
+    }
+  };
+  var t = T[lang];
+  document.querySelectorAll('.rd [data-rd]').forEach(function (el) {
+    el.textContent = t[el.getAttribute('data-rd')];
+  });
+
+  // 4) Injection du conteneur HubSpot PUIS du script (le script scanne les
+  //    .hs-form-frame au chargement : le conteneur doit exister avant).
+  var frame = document.createElement('div');
+  frame.className = 'hs-form-frame';
+  frame.setAttribute('data-region', 'eu1');
+  frame.setAttribute('data-form-id', FORMS[lang]);
+  frame.setAttribute('data-portal-id', '144242237');
+  document.getElementById('rd-form').appendChild(frame);
+
+  var s = document.createElement('script');
+  s.src = 'https://js-eu1.hsforms.net/forms/embed/144242237.js';
+  s.defer = true;
+  document.body.appendChild(s);
+})();
+</script>
