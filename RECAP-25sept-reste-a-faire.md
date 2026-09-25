@@ -6,6 +6,26 @@
 
 ---
 
+## 🕛 Point du 25/09 à midi (pages modifiées de 11 h 10 à 11 h 55)
+
+**Fait depuis 11 h 20 ✅**
+- **Header 2026** : classe `login_signup_link` ajoutée sur les 2 logins (Consentio et Klarys).
+- **Liens des cartes CMS** : Resources, cas clients de la Home, cartes des 2 templates (fait par Marie).
+- **Home** : « Book a demo », ancien header masqué supprimé, textes alternatifs des logos (fait par Marie).
+- **Suppliers** : « Explore supplier solutions → » pointe bien vers la section des 2 modules (revérifié).
+
+**Reste avant le go-live ❌**
+- **Bell Food Group** toujours publiée (modifiée puis republiée à 11 h 22) et **Ultra Marine** toujours publiée → menu ⋯ › **Unpublish**.
+- **Agroponiente** et **Coast Tropical** toujours à `order` = 4 → passer Agroponiente à 6.
+- **Témoignages de démo** : Camille Ferrand, Marc Oberli, Elena Ruiz toujours sur Suppliers, Camille Ferrand sur About Us.
+- **About Us** : les 4 textes « [TO BE CONFIRMED…] » sont toujours visibles (page non modifiée depuis le 24/09).
+- **Request Demo Retailers** : FAQ toujours côté fournisseurs · **Request Demo** : meta description vide.
+- **SEO** de Home, Retailers et Suppliers inchangé · **OLD - Resources**, **Terms & conditions Copy**, **OLD - For Producers** toujours publiées · encarts « LEGAL APPROVAL REQUIRED » (pages légales non modifiées).
+
+**À faire trancher par Emilien** : textes provisoires et chiffres d'About Us, chiffres de Manor, langue racine, encarts juridiques.
+
+---
+
 ## 🔄 Mise à jour du 25/09 à 9 h 50 (pages modifiées hier de 18 h à 18 h 10 et ce matin de 9 h 07 à 9 h 26)
 
 Le contrôle express prévu à 7 h 45 n'a pas tourné : le rappel de 8 h 30 contenait la liste d'hier soir. Voici l'écart constaté à 9 h 50.
