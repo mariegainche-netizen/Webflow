@@ -1,7 +1,9 @@
-# SEO des nouvelles pages : à valider le 25/09 à 9 h 30
+# SEO des nouvelles pages : à valider le lundi 28/09 à 16 h 45
 
 > Audit du 24/09 au soir via l'API Webflow, en **lecture seule** (rien n'a été modifié). Site **Consentio 2026**, langue principale **EN** → metas en anglais. FR et ES : après traduction des pages.
-> **Rien ne sera écrit dans Webflow sans ton OK.** Go-live visé : lundi 28/09.
+> **Rien ne sera écrit dans Webflow sans ton OK.** Mise en ligne prévue **jeudi 1ᵉʳ/10 (14 h-16 h)**, d'après le planning du 25/09.
+> Recontrôlé le 25/09 à 18 h 30 : titles, descriptions et images de partage **inchangés** depuis la veille.
+> ⚠️ Après la reconnexion de Webflow lundi à 8 h 30, les anciennes sessions perdent l'accès : **appliquer depuis la nouvelle session** (ce document suffit, les IDs sont en annexe A).
 
 ---
 
@@ -13,14 +15,14 @@
 | Déjà correct | **Klarys joins Consentio** (title, description, image de partage) · titles des 2 pages Request Demo Retailers et Suppliers (`noindex`) · description de Customer Stories |
 | À corriger | **6 titles** (+ 4 pages légales) · **6 descriptions** · **8 pages sans image de partage** (Open Graph), + celle de la Home à remplacer · **2 templates CMS vides** (55 articles + 8 cas clients sans title ni description) · **11 textes alternatifs** (10 logos + 1 image en français) |
 | Temps | **10 min de lecture** + **2 min** si j'applique via l'API (recommandé) ou 25 min de copier-coller · **+ 15 min de Designer** (templates CMS, logos) |
-| Risque n° 1 hors metas | **La migration** : anciennes URL sans redirection, pages héritées publiées, FR et ES non traduits (§ 7) |
+| Risques hors metas | redirections (CSV unique mercredi), FR et ES non traduits, anglais publié sous `/en-en/`, fr.consentio.co via Weglot (§ 7) |
 
 ---
 
 ## 1. Validation en 3 étapes
 
 1. Lire les § 2 à 6 et répondre dans la session Claude : **« OK tout »** ou **« OK sauf Home : … »**.
-2. **Option A (recommandée)** : j'applique via l'API en 1 appel (titles, descriptions, images de partage, textes alternatifs des assets, sitemap) → **2 min, zéro copier-coller**.
+2. **Option A (recommandée)** : Claude applique via l'API en 1 appel, depuis la nouvelle session (titles, descriptions, images de partage, textes alternatifs des assets, sitemap) → **2 min, zéro copier-coller**.
    **Option B** : copier-coller dans Pages › ⚙ Page settings › SEO settings, puis Open Graph settings → 25 min.
 3. **Designer** (impossible via l'API) : templates CMS (§ 4) et alt des logos (§ 5) → 15 min. Puis **Publish › staging uniquement** et contrôle en navigation privée.
 
@@ -196,7 +198,7 @@ Le reste est bon : Suppliers, About Us et les 3 Request Demo ont des alt descri
 |---|---|---|---|
 | Sitemap | **88 pages** déclarées, dont les 2 Request Demo `noindex` et une quarantaine de pages héritées | exclure les 2 `noindex` tout de suite, les héritées selon la décision ci-dessous | API, 1 appel |
 | Templates inutiles | Product modules (5 URL) et Retailers Logo (20 URL) publics | `<meta name="robots" content="noindex">` dans le code du template + fiches exclues du sitemap | Designer 2 min + API |
-| Pages héritées publiées | dossier `/old/` (≈ 40 pages), **3 copies de la Home avec le même title**, « Test », « NPS », « unsubscribe »… + une vingtaine de templates CMS de l'ancien site (Blog, Webinars, Ebooks, Team, Jobs…) | passer en brouillon avant la bascule, **après** avoir posé les redirections | décision + API |
+| Pages héritées publiées | dossier `/old/` (≈ 40 pages, **déjà en ligne sur le site actuel**), 3 copies de la Home avec le même title, « Test », « NPS »… + une vingtaine de templates CMS de l'ancien site | pris en charge par le **nettoyage des pages (lundi 9 h 30)** et des **collections (10 h)** : chaque page dépubliée qui existe sur la prod reçoit une 301 | sessions « nettoyage » |
 | Sous-domaine de staging | le `….webflow.io` peut être indexé | Site settings › SEO › **Disable Webflow subdomain indexing** : ON | toi, 10 s |
 | Canonical | aucun domaine de prod connecté | à la bascule : Site settings › SEO › **Global canonical tag URL** = domaine de prod | toi, 10 s |
 
@@ -204,23 +206,24 @@ Le reste est bon : Suppliers, About Us et les 3 Request Demo ont des alt descri
 
 ## 7. Angles morts et mises en garde
 
-1. **Le plus gros risque SEO de lundi, c'est la migration, pas les metas.** Les anciennes pages de consentio.co ont été rangées dans `/old/` : leurs URL d'origine (`/solutions/for-supermarkets`, `/company/about-consentio`, `/contact`, `/blog`, `/features`…) tomberont en **404** à la bascule, avec leurs backlinks et leurs positions. Même chose pour **fr.consentio.co** et **klarys.io**. → **Carte des redirections 301 à faire avant lundi.** Je peux la préparer depuis la liste des pages et le champ `Legacy article URL` des 55 articles.
+1. **Le plus gros risque SEO de la mise en ligne, ce sont les redirections, pas les metas.** Correction du 25/09 : les pages de `/old/` y sont **déjà sur le site actuel**, elles ne créent pas de 404. Les points de vigilance : 2 pages de solution peut-être renommées (`/solutions/for-supermarkets`, `/solutions/for-producers`), les articles en double, klarys.io et fr.consentio.co. → `REDIRECTIONS-301-25sept.md` : 94 règles sur 99 déjà prêtes dans les fichiers du nettoyage CMS, 5 à ajouter au CSV unique de mercredi.
 2. **Articles en double** : les anciens articles (`/blog/…`, collection Blog Posts) et leurs versions reprises dans Resources (`/resources/…`) coexisteront → 301 de l'ancien vers le nouveau, puis dépublier l'ancien.
-3. **FR et ES publiés mais non traduits** : `/fr-fr/…` et `/es-es/…` affichent l'anglais avec les mêmes metas → contenu en triple et balises hreflang incohérentes. → Soit traduire avant lundi (pages **et** metas), soit **désactiver les 2 langues** jusqu'à la traduction et garder fr.consentio.co en ligne d'ici là.
+3. **FR et ES publiés mais non traduits** : `/fr-fr/…` et `/es-es/…` affichent l'anglais avec les mêmes metas → contenu en triple et balises hreflang incohérentes. La traduction des pages statiques est prévue mardi et mercredi : **traduire les metas en même temps** (je les prépare à partir des versions EN validées). Toute langue non relue le jour J reste désactivée.
 4. **Chiffres et noms de clients** : ils s'affichent dans Google et sur LinkedIn. Trois chiffres « fournisseurs » coexistent (1,000+, près de 3,000, 3,200+) → mes propositions n'en contiennent aucun ; on les ajoutera quand Emilien aura validé **une seule** fiche de chiffres.
 5. **Ne renommer aucun slug** des nouvelles pages : header, footer, formulaires HubSpot et e-mails y pointent.
-6. **Langue principale déclarée `en-US`** : signale une cible américaine. Pour un site européen, « English » sans région est plus juste → à vérifier dans Site settings › Localization, sans urgence.
+6. **Anglais publié sous `/en-en/`** : la racine redirige vers `/en-en/`, ce qui double chaque redirection et brouille le canonical. Retrait prévu **lundi 10 h 20** (« Anglais à la racine »). Au passage, la langue principale est déclarée `en-US` (cible américaine) : « English » sans région serait plus juste, sans urgence.
 7. **Attentes réalistes** : de bonnes metas améliorent le **taux de clic**, pas le classement à elles seules. Après une migration, une baisse de trafic de 2 à 4 semaines est normale **si** les 301 sont en place ; sans 301, la perte peut durer.
 8. **Le jour J** : Google Search Console › soumettre `sitemap.xml`, demander l'indexation de Home, Retailers et Suppliers, puis surveiller les 404 pendant 2 semaines. Le suivi GA4 et GTM hérité du site de prod est déjà en place ✅.
-9. **Données structurées (P2)** : bloc JSON-LD « Organization » sur la Home (annexe B), à valider.
+9. **Canonical des articles Klarys** : 21 ressources pointent leur canonical vers klarys.io (relevé du nettoyage CMS) → Google les attribue à klarys.io tant qu'il n'est pas vidé. À vider le jour où klarys.io redirige.
+10. **Données structurées (P2)** : bloc JSON-LD « Organization » sur la Home (annexe B), à valider.
 
 ---
 
-## 8. Décisions à demander à Emilien (oui ou non)
+## 8. Décisions d'Emilien
 
-1. Metas **sans chiffres ni noms de clients** jusqu'à validation d'une fiche de chiffres : oui ?
-2. FR et ES : **traduits pour lundi**, ou **désactivés** jusqu'à la traduction (fr.consentio.co reste en ligne) ?
-3. Domaine de prod : `www.consentio.co` ou `consentio.co` ? Qui gère le DNS et les redirections de fr.consentio.co et klarys.io ?
+Déjà prévues lundi (message groupé de 8 h 50 et point de 16 h) : fiche de chiffres unique, domaine de prod, accès et DNS. Deux compléments :
+1. Metas **sans chiffres ni noms de clients** jusqu'à validation de la fiche de chiffres : oui ?
+2. **fr.consentio.co (Weglot)** : garder en attendant `/fr-fr/`, ou couper le jour J ?
 
 ---
 
