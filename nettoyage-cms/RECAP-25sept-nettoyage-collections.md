@@ -1,9 +1,10 @@
 # Nettoyage des collections CMS : plan du 25/09
 
-> Inventaire via l'API Webflow le **24/09 au soir**, en lecture seule (rien n'a été modifié). Site **Consentio 2026** (`6aaaafd0271107b340148c86`). Bascule visée **lundi 28/09**.
-> Complète le [nettoyage des pages](https://github.com/mariegainche-netizen/Webflow/blob/claude/peaceful-sagan-o1u9j9/nettoyage-pages/RECAP-25sept-nettoyage-pages.md) (demain 9 h 30) : même règle, **archiver d'abord, supprimer mi-octobre**.
+> Inventaire via l'API Webflow le **24/09 au soir**, en lecture seule (rien n'a été modifié). Site **Consentio 2026** (`6aaaafd0271107b340148c86`). Mise en ligne **jeudi 1ᵉʳ/10 (14 h-16 h)**, fin de mission **vendredi 2/10**.
+> Complète le [nettoyage des pages](https://github.com/mariegainche-netizen/Webflow/blob/claude/peaceful-sagan-o1u9j9/nettoyage-pages/RECAP-25sept-nettoyage-pages.md) (lundi 28/09, 9 h 30) : même règle, **archiver d'abord, supprimer fin octobre**.
+> **Mise à jour du 25/09 après-midi** : nettoyage des pages décalé à lundi 9 h 30 → nettoyage CMS **lundi 10 h** · anglais à la racine décidé (retirer `/en-en/` avant le CSV final des 301) · 55 articles en anglais au lancement ([estimation du 25/09](https://github.com/mariegainche-netizen/Webflow/blob/claude/charming-brown-j06lw3/RECAP-25sept-estimation-prolongation.md)).
 > **Sheets de travail** : [Inventaire collections CMS · Consentio 2026](https://docs.google.com/spreadsheets/d/14n9_5hoakdAT5sYw2uUv3WWnwoAgH_kb1jGd7sXc1pU/edit) (1 ligne par collection, colonne « Validé par ») · [Tri des 95 articles du blog](https://docs.google.com/spreadsheets/d/1Xibzb15rkydZ9RyD3S8Lh44oXinQC6WmgjsMBLyoeYk/edit) (1 décision et 1 cible 301 par article)
-> **Fichiers** : [`inventaire-collections-consentio-2026.csv`](inventaire-collections-consentio-2026.csv) (1 ligne par collection) · [`tri-95-articles-blog.csv`](tri-95-articles-blog.csv) (1 ligne par article) · [`redirections-301-cms.csv`](redirections-301-cms.csv) (lisible) · [`import-webflow-301-cms.csv`](import-webflow-301-cms.csv) (à importer lundi) · [`import-webflow-301-klarys.csv`](import-webflow-301-klarys.csv) (site klarys.io)
+> **Fichiers** : [`inventaire-collections-consentio-2026.csv`](inventaire-collections-consentio-2026.csv) (1 ligne par collection) · [`tri-95-articles-blog.csv`](tri-95-articles-blog.csv) (1 ligne par article) · [`redirections-301-cms.csv`](redirections-301-cms.csv) (lisible) · [`import-webflow-301-cms.csv`](import-webflow-301-cms.csv) (à importer le jour J) · [`import-webflow-301-klarys.csv`](import-webflow-301-klarys.csv) (site klarys.io)
 
 ---
 
@@ -12,12 +13,12 @@
 | Question | Réponse |
 |---|---|
 | Faut-il tout garder ? | **Non.** 4 collections sur 24 font le nouveau site. Les **20 autres** viennent de l'ancien site (2020-2023) : **363 items, dont 348 publiés**. Doublons, démos, salons 2021, anciennes équipes. |
-| Comment nettoyer d'ici lundi ? | **Archiver, ne rien supprimer.** Les 363 items passent en « Archived » via l'API (≈ 5 min, réversible) : ils ne partent pas en ligne lundi. Suppression des collections **mi-octobre**, une fois les 404 propres. |
-| Comment y voir clair ? | Le Sheet : 1 ligne par collection, 1 verdict, 1 cible, 1 règle 301. Dans Webflow : 4 collections au lieu de 24 après la suppression (option demain : préfixer les 20 anciennes « OLD · »). |
+| Comment nettoyer d'ici la mise en ligne ? | **Archiver, ne rien supprimer.** Les 363 items passent en « Archived » via l'API (≈ 5 min, réversible) : ils ne partent pas en ligne jeudi. Suppression des collections **fin octobre**, une fois les 404 propres. |
+| Comment y voir clair ? | Le Sheet : 1 ligne par collection, 1 verdict, 1 cible, 1 règle 301. Dans Webflow : 4 collections au lieu de 24 après la suppression (option lundi : préfixer les 20 anciennes « OLD · »). |
 | Comment structurer ? | **2 collections de contenu** (Resources, Customer Stories) + **2 de données** (Product modules, Logos clients). 5 règles en section 4. |
 | Synergies ? | Content Hubs = **116 copies sur 121** du blog et des podcasts · **34 articles** déjà repris dans Resources · **3 cas sur 4** de Use Cases déjà dans Customer Stories · **4 témoignages** rangés à tort dans Resources · **1 seul fichier 301** pour pages + CMS. |
 | Nouvelles versions ? | **Oui, ciblées** : 13 anciens articles → **8 ressources** à réécrire (1 par semaine = 2 mois de contenu) · 20 articles fusionnés dans une ressource existante · 4 témoignages → Customer Stories (8 → 12). |
-| Temps demain | **≈ 20 min à 10 h**, juste après le nettoyage des pages. |
+| Quand ? | **Lundi 28/09 à 10 h (≈ 20 min)**, juste après le nettoyage des pages. |
 
 ---
 
@@ -66,16 +67,16 @@
 
 ---
 
-## 2. Demain 10 h : 5 étapes (≈ 20 min)
+## 2. Lundi 28/09 à 10 h : 5 étapes (≈ 20 min)
 
-1. **Sauvegarde (1 min)** : celle de 9 h 30 suffit si rien n'a été publié entre-temps ; sinon Site settings › Backups › « Avant nettoyage CMS 25/09 ».
+1. **Sauvegarde (1 min)** : celle de 9 h 30 (« Avant nettoyage pages ») suffit si rien n'a été publié entre-temps ; sinon Site settings › Backups › « Avant nettoyage CMS ».
 2. **Dire « go CMS » à Claude (1 min)**. Claude vérifie les Collection Lists restantes (section 10), puis archive via l'API les **363 items des 20 collections héritées** (≈ 5 min, réversible).
    - Sans Claude : CMS › collection › cocher tous les items › **Archive** (≈ 15 min).
 3. **Vérifier (5 min)** : publier en **staging seulement**, puis Preview : Home, Retailers, Suppliers, Resources, Customer Stories (logos, cartes, stories).
-4. **Message à Emilien (2 min)** : section 7, à grouper avec celui des pages. Sans réponse à 16 h : défaut appliqué (archivé).
+4. **Décisions d'Emilien** : section 7, dans le message groupé (décisions et accès). Sans réponse lundi soir : défaut appliqué mardi matin (archivé).
 5. **Option (5 min)** : renommer les 20 collections « OLD · Blog Posts »… (CMS › ⚙ de la collection › Collection name). Le slug et les URL ne changent pas.
 
-⚠️ **Pas vendredi** : suppression de collections, import des 301 (lundi), réécriture d'articles, ajout ou suppression de champs.
+⚠️ **Pas encore** : suppression de collections (fin octobre), import des 301 (jour J, jeudi 1ᵉʳ/10), réécriture d'articles, ajout ou suppression de champs.
 
 ---
 
@@ -89,13 +90,13 @@
 | **Use Cases → Customer Stories** : Anecoop, Coast Tropical, Lagadec déjà repris | 3 × 301 · Ame Haslé à ajouter |
 | **Resources → Customer Stories** : 4 témoignages rangés en articles (Vitale, Picvert, Ame Haslé, Alsum Farms) | **8 → 12 stories** sans rien écrire |
 | **3 collections de logos → 1** « Logos clients » | 1 seul endroit pour les bandeaux ; E.Leclerc, Walmart, Greenery à ajouter après validation légale |
-| **1 fichier 301** pour pages + CMS + existantes | 1 seul import lundi au lieu de ~170 saisies |
-| **Nettoyer avant de traduire** | **63 contenus** à traduire en FR/ES au lieu de 451 items (÷ 7) |
-| **Suppression mi-octobre** dans la même session que `/old/` | Pages d'abord, collections ensuite (dépendances) |
+| **1 fichier 301** pour pages + CMS + existantes | 1 seul import le jour J au lieu de ~190 saisies |
+| **Nettoyer avant de traduire** | 8 cas clients traduits au lancement, 55 articles plus tard : rien à traduire dans les 363 items archivés |
+| **Suppression fin octobre** dans la même session que `/old/` | Pages d'abord, collections ensuite (dépendances) |
 
 ---
 
-## 4. Structure cible (mi-octobre)
+## 4. Structure cible (fin octobre)
 
 ```
 CMS : 4 collections au lieu de 24
@@ -150,32 +151,32 @@ Option si Emilien le veut : Team (About Us). Sinon : section statique.
 
 | # | Angle mort | Parade |
 |---|---|---|
-| 1 | **348 items hérités sont publiés** : lundi, ils partent en ligne avec les anciens modèles (ancien header, ancien formulaire Webflow → leads hors HubSpot). | Archiver vendredi (étape 2). |
+| 1 | **348 items hérités sont publiés** : jeudi, ils partent en ligne avec les anciens modèles (ancien header, ancien formulaire Webflow → leads hors HubSpot). | Archiver lundi (étape 2). |
 | 2 | **Contenu dupliqué** : 34 articles existent 3 fois (`/blog/`, `/contenthub/`, `/resources/`). | Archiver + 301 précises. |
 | 3 | **Démo publiée** : 5 articles du gabarit Webflow (« Why We Love Webflow… ») dans Blog Posts only- es. | Archiver. |
-| 4 | **Import CSV des 301 = écrase toutes les redirections existantes**, et l'ordre du fichier = ordre d'exécution : une règle précise ajoutée après une générique ne se déclenche jamais. | Lundi : Export › 1 fichier (existantes + pages + CMS) › 1 import. Précises en haut, génériques en bas, `/old/(.*)` en dernier. |
+| 4 | **Import CSV des 301 = écrase toutes les redirections existantes**, et l'ordre du fichier = ordre d'exécution : une règle précise ajoutée après une générique ne se déclenche jamais. | Jour J : retirer `/en-en/`, puis Export › 1 fichier (existantes + pages + CMS) › 1 import. Précises en haut, génériques en bas, `/old/(.*)` en dernier. |
 | 5 | **Canonical Klarys** : 21 ressources déclarent un canonical vers klarys.io. Cohérent tant que klarys.io publie ces articles. | Le jour où klarys.io redirige : vider `canonical-url` (1 appel API), sinon boucle canonical ↔ 301 et aucune indexation sur consentio.co. |
 | 6 | **klarys.io** : 23 redirections à poser sur le site Klarys (autre projet Webflow, hors de cet accès API). | [`import-webflow-301-klarys.csv`](import-webflow-301-klarys.csv), cibles en `https://consentio.co/…` à confirmer. |
-| 7 | **Suppression irréversible**, sauf restauration d'un backup : le site entier revient en arrière, design compris. | Export CSV natif (CMS › collection › Export) juste avant chaque suppression, mi-octobre. |
+| 7 | **Suppression irréversible**, sauf restauration d'un backup : le site entier revient en arrière, design compris. | Export CSV natif (CMS › collection › Export) juste avant chaque suppression, fin octobre. |
 | 8 | **Ordre de suppression** : les pages `/old/` contiennent des Collection Lists liées aux anciennes collections ; Integrations Tools référence Integrations Categories. | Pages `/old/` d'abord, puis Integrations Tools, puis Integrations Categories. |
 | 9 | **Données personnelles** : 23 fiches Team Members (photos + LinkedIn, 2020-2023) publiées. | Archiver ; ne pas republier d'ex-salariés. |
 | 10 | **Customer Stories** : Bell Food Group étiquetée « Consentio » alors que c'est un client Klarys ; Ultra Marine à vérifier. | Corriger `source-brand` (filtre par marque faux sinon). |
 | 11 | **Tri fait sur le contenu, pas sur le trafic** (pas d'accès Search Console ; consentio.co bloqué depuis l'environnement Claude). | 10 min avant la suppression : Search Console › Performance › Pages, filtre `/blog/`, 12 mois. Article « Archiver » avec du trafic → « Nouvelle version ». |
 | 12 | **fr.consentio.co** : 6 anciens slugs traduits (ex. `/blog/technologie-tracabilite-capteurs`). | Les 301 ne s'appliquent que si ce domaine est connecté au nouveau site. |
-| 13 | **Locale anglaise en `/en-en/`** : les cibles 301 supposent l'anglais à la racine. | Préfixer les cibles si `/en-en/` reste (décision langue d'Emilien). |
+| 13 | **Locale anglaise en `/en-en/`** : la racine redirige vers `/en-en/`, chaque 301 en déclencherait une 2ᵉ. | Décidé le 25/09 : anglais à la racine → retirer le sous-dossier `en-en` **avant** le CSV final. |
 | 14 | **Localisation** : chaque item existe aussi en ES et FR ; archiver dans la locale principale ne suffit peut-être pas. | Claude contrôle les 3 locales au « go CMS » (section 10). |
 | 15 | **Kit Digital (ES)** : programme public espagnol. | Vérifier avec l'équipe ES qu'aucune obligation de publicité ne subsiste avant suppression. |
 | 16 | **n8n et intégrations** : un workflow qui écrit dans une collection héritée échouera. | Chercher les ID de la section 10 dans n8n (2 min). |
-| 17 | **Fin de mission lundi** : la suppression se fera sans toi. | Le Sheet sert de passation (colonne « Validé par »). |
+| 17 | **Fin de mission vendredi 2/10** : la suppression (fin octobre) se fera sans toi. | Le Sheet sert de passation (colonne « Validé par »). |
 | 18 | **Plan Webflow** : depuis le 13/05/2026, CMS et Business = **Premium** (40 collections, 20 000 items). | Pas de problème de quota ; le budget du récap du 15/09 (« Business + Localization × 2 ») est à mettre à jour. |
 
-**Non vérifié** : trafic par page (Search Console), sitemap de la prod, et 4 Collection Lists (Retailers, Resources × 2, 3ᵉ liste du modèle Customer Stories) : Claude les contrôle au « go CMS » (quota API atteint le 24/09).
+**Non vérifié** : trafic par page (Search Console), URL réelles de la prod et de klarys.io (**audit prévu après la reconnexion Webflow du 25/09 à 17 h**), et 4 Collection Lists (Retailers, Resources × 2, 3ᵉ liste du modèle Customer Stories) : Claude les contrôle au « go CMS » (quota API atteint le 24/09).
 
 ---
 
 ## 7. Message à Emilien (prêt à coller)
 
-> Emilien, en complément du tri des pages : le CMS compte 24 collections, dont 20 héritées de l'ancien site (363 items, 2020-2023). Sans retour de ta part d'ici 16 h, j'applique ceci, réversible jusqu'à mi-octobre :
+> Emilien, en complément du tri des pages : le CMS compte 24 collections, dont 20 héritées de l'ancien site (363 items, 2020-2023). Sans retour de ta part d'ici lundi soir, j'applique ceci mardi matin, réversible jusqu'à fin octobre :
 > - **Archivées** : Podcasts (32 épisodes, série arrêtée en 2022), Media (32 retombées presse 2020-2021), Team Members (23 fiches d'anciennes équipes), Kit Digital (7 catégories ES).
 > - **2 questions** : garde-t-on une section équipe ou presse sur About Us ? Une obligation Kit Digital subsiste-t-elle côté Espagne ?
 > - **Contenu** : 8 anciens articles à réécrire dans Resources (1 par semaine) et 4 témoignages clients à passer en Customer Stories (Vitale, Picvert, Ame Haslé, Alsum Farms).
@@ -184,16 +185,16 @@ Option si Emilien le veut : Team (About Us). Sinon : section statique.
 
 ---
 
-## 8. Lundi (bascule) : les 301 du CMS en 10 min
+## 8. Jour J (jeudi 1ᵉʳ/10) : les 301 du CMS en 10 min
 
-1. Site settings › Publishing › 301 redirects › **Export** (redirections déjà présentes).
+1. **Avant** : sous-dossier `en-en` retiré (Site settings › Localization). Puis Site settings › Publishing › 301 redirects › **Export** (redirections déjà présentes).
 2. Assembler **1 seul CSV**, dans cet ordre : redirections existantes · 301 des pages (Sheet des pages) · [`import-webflow-301-cms.csv`](import-webflow-301-cms.csv) (106 précises puis 20 génériques) · `/old/(.*)` → `/` **en dernier**.
 3. **Import** › publier › tester 10 URL (5 `/blog/…`, 2 `/contenthub/…`, 2 `/use/…`, 1 `/team/…`).
 4. **Klarys** : [`import-webflow-301-klarys.csv`](import-webflow-301-klarys.csv) sur le site klarys.io le jour de sa bascule.
 
 ---
 
-## 9. Après la bascule (équipe, mi-octobre)
+## 9. Après la bascule (équipe, fin octobre)
 
 1. **Semaines 1 à 4** : Search Console › Pages › 404 non résolues.
 2. **Contenu** : 1 nouvelle version par semaine + les 4 Customer Stories.
