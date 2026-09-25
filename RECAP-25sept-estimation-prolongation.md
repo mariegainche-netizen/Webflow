@@ -6,6 +6,26 @@
 
 ---
 
+## 🔄 Mise à jour du 25/09 à 12 h 20 : réponses de Marie
+
+| # | Réponse de Marie | Conséquence |
+|---|---|---|
+| 1 | Anglais à la racine `/` | Retirer le sous-dossier `en-en` de la langue principale (Site settings › Localization) **avant** le CSV final des 301. FR `/fr-fr/` et ES `/es-es/` inchangés : le script du formulaire HubSpot ne bouge pas. |
+| 2 | Pages statiques **+ 8 cas clients** traduits ; 55 articles en anglais | + 2 à 3 h. Articles chiffrés à part (ci-dessous). |
+| 3 | Aucun relecteur espagnol identifié | À demander à Emilien (équipe ES, 1 h 30 mardi ou mercredi). Sans relecteur : ES non publié le jour J, reporté après le 2/10. |
+| 4 | Aucun accès (DNS, site klarys.io, GTM, GA4, Search Console, HubSpot, Cookiebot) : c'est Emilien | Emilien devient le **chemin critique**. Sans accès mardi 12 h : il fait le tracking lui-même avec une checklist (≈ 2 h pour lui, ≈ 3 h de moins pour Marie). |
+| 5 | Question pas comprise | Claude vérifie lui-même dans la nouvelle session : domaines connectés au site actuel (fr.consentio.co = Weglot ou site Webflow séparé). |
+| 6 | Images avec du texte anglais : Home, Suppliers, Retailers, peut-être Resources et Customer Stories | Inventaire des images à texte via l'API dans la nouvelle session, validation par Marie. Manquent : sources des schémas Magic Orders et Webshop, captures de l'appli en FR et ES. |
+| 7 | Éléments de Klarys joins Consentio attendus d'Emilien | Date limite lundi 12 h, sinon le planning glisse. |
+| 8 | Emilien modifiera seulement des textes et des articles | Option A : formation 1 h 30, rôle d'éditeur de contenu suffisant. |
+
+- **Estimation mise à jour** : ≈ 44 h (36 à 53 h) pour 39 à 44 h disponibles → ça tient à 8 h par jour, **sans marge**. Au premier blocage, appliquer la liste « à couper » (4 à 6 h). Le risque principal devient **le délai de réponse d'Emilien** : 8 éléments dépendent de lui.
+- **Les 55 articles** (chiffrage demandé) : ≈ 22 000 mots par langue → relecture FR 6 à 8 h (≈ 1 jour de Marie) + ≈ 1 jour d'un relecteur ES + 4 à 6 h de traduction par Claude via l'API. **Ne rentre pas dans les 4 jours.** Options : A) 2ᵉ vague après la mise en ligne, par lots de 10 (reco) · B) 1 jour de plus (lundi 5/10) pour avoir le FR au lancement.
+- **Pièges CMS** : 21 articles ont un `canonical-url` vers klarys.io → leurs versions FR et ES ne seraient pas indexées tant que ce champ n'est pas vidé. Filtres de Resources et Customer Stories = scripts maison : à retester en FR et ES.
+- **Message groupé à Emilien** proposé à Marie à 12 h 20 : décisions d'ici lundi 9 h, accès d'ici mardi 12 h, relecteur ES, plan Webflow avec Localization, gestionnaire du DNS joignable jeudi 14 h-16 h, créneaux go/no-go et formation.
+
+---
+
 ## ⚡ En bref
 
 | Question | Réponse |
@@ -73,7 +93,7 @@
 
 ---
 
-## 4. Questions en attente (réponses de Marie)
+## 4. Questions posées le 25/09 (réponses : mise à jour de 12 h 20, en haut)
 
 1. URL anglaise : A) racine `/` (reco) · B) garder `/en-en/`.
 2. Traduction au go-live : A) pages statiques, CMS en anglais (reco) · B) + 8 cas clients · C) + 55 articles.
