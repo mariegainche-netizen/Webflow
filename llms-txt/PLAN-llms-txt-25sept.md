@@ -10,15 +10,15 @@
 | C'est quoi ? | Un fichier texte à la racine du site (`/llms.txt`) qui résume Consentio pour les assistants IA (ChatGPT, Claude, Perplexity, agents). Non visible dans le site, non indexé par Google. |
 | Que contient le brouillon ? | L'offre (retailers, suppliers, workflow, modules, ERP, Klarys) + 25 liens : 10 pages conservées du nouveau site, 5 pages légales, 5 cas clients, 5 articles. **Aucun chiffre.** Seuls noms de clients : les 5 cas clients déjà publiés. |
 | Où l'insérer ? | Site settings › SEO › LLMs.txt › Upload file › Save changes (2 min). |
-| Quand est-il en ligne ? | Seulement après publication sur le **domaine de prod** : Webflow ne le sert pas sur `*.webflow.io`. Uploadé vendredi, il part en ligne avec la bascule de lundi. |
+| Quand est-il en ligne ? | Seulement après publication sur le **domaine de prod** : Webflow ne le sert pas sur `*.webflow.io`. Uploadé avant la bascule, il part en ligne avec elle ; uploadé après, republier le site. |
 | Temps total | 2 min pour la question à Émilien + 5 min d'insertion après son OK. |
 
-## 1. Question pour Émilien (à ajouter au message groupé de 9 h 30)
+## 1. Question pour Émilien (lundi 28/09 à 8 h 45, rappel posé dans l'agenda)
 
-À glisser dans le message de l'étape 4 du nettoyage (avec langue, chiffres et témoignages), pas dans un message à part. Joindre le fichier `llms.txt`.
+À envoyer par Slack ou e-mail en joignant le fichier `llms.txt`. Si un point de bascule est prévu avec Émilien, la poser à ce moment-là plutôt que dans un message à part.
 
-> **llms.txt** : je propose de mettre en ligne lundi, avec le site, un fichier llms.txt : un résumé texte de Consentio destiné aux assistants IA (ChatGPT, Perplexity…), invisible dans le site et non indexé par Google. Il ne contient **aucun chiffre** et ne cite que les **5 cas clients déjà publiés** (Coast Tropical, Lagadec Primeurs, Anecoop France, Mytilimer, Agroponiente). Brouillon joint.
-> 1. OK pour le publier lundi ?
+> **llms.txt** : je propose de mettre en ligne aujourd'hui, avec le nouveau site, un fichier llms.txt : un résumé texte de Consentio destiné aux assistants IA (ChatGPT, Perplexity…), invisible dans le site et non indexé par Google. Il ne contient **aucun chiffre** et ne cite que les **5 cas clients déjà publiés** (Coast Tropical, Lagadec Primeurs, Anecoop France, Mytilimer, Agroponiente). Brouillon joint.
+> 1. OK pour le publier aujourd'hui ?
 > 2. OK pour citer ces 5 clients, ou je retire la liste ?
 >
 > Sans retour de ta part, je ne le mets pas en ligne.
@@ -28,7 +28,7 @@
 1. **Domaine** : le fichier utilise `https://www.consentio.co`. Si Émilien retient `consentio.co` sans www, remplacer les 25 occurrences (Rechercher / Remplacer dans un éditeur, ou dire « domaine = consentio.co » dans une session Claude).
 2. **Si « pas de noms de clients »** : supprimer la section `## Customer stories` (6 lignes). Le lien vers la page Customer Stories reste dans `## Main pages`.
 3. **Upload** : Webflow › Site settings › SEO › **LLMs.txt** › Upload file › choisir `llms.txt` (UTF-8, moins de 100 Ko) › **Save changes**.
-4. **Lundi, après la publication sur le domaine de prod** : ouvrir `https://www.consentio.co/llms.txt` en navigation privée. Attendu : le texte brut s'affiche (ni 404, ni page HTML).
+4. **Si la bascule est déjà faite** : republier le site sur le domaine de prod (le fichier ne part en ligne qu'à la publication). Puis ouvrir `https://www.consentio.co/llms.txt` en navigation privée. Attendu : le texte brut s'affiche (ni 404, ni page HTML).
 
 ## 3. Pièges
 
