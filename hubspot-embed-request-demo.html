@@ -1,0 +1,50 @@
+<!-- =============================================================
+     CONSENTIO — Formulaire HubSpot seul (FR / EN / ES)
+     Titre + paragraphe = éléments Webflow natifs (.book-demo__title,
+     .book-demo__lead) placés au-dessus de cet embed.
+     Les formulaires HubSpot ne contiennent plus que les champs.
+     La langue est détectée via le sous-dossier de l'URL
+     (/fr-fr, /es-es), EN par défaut (langue principale).
+     ============================================================= -->
+<div id="rd-form" style="min-height:520px"></div>
+<script>
+(function () {
+  // Langue = sous-dossier de l'URL (Webflow Localization) :
+  // /fr-fr → fr, /es-es → es, sinon en (langue principale : racine ou /en-en).
+  // On n'utilise PAS <html lang> (peut être modifié par un outil tiers).
+  var p = location.pathname.toLowerCase();
+  var lang = /^\/fr-fr(\/|$)/.test(p) ? 'fr' : /^\/es-es(\/|$)/.test(p) ? 'es' : 'en';
+
+  // Test : ?lang=fr|es|en dans l'URL force la langue (sans activer les langues Webflow)
+  var forced = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+  if (/^(fr|en|es)$/.test(forced)) lang = forced;
+
+  // Un formulaire HubSpot par langue (portail 144242237, région eu1)
+  // Versions « champs uniquement » (sans titre ni paragraphe)
+  var FORMS = {
+    en: '00baaa3e-16cb-461d-ab87-184060f830cc',
+    fr: 'baed50c1-f576-4698-a7e2-601c1f3f6ec2',
+    es: '7fc84d57-b798-49b3-ad63-011296045140'
+  };
+
+  // Le min-height réserve la place pendant le chargement (évite le saut de page).
+  // Une fois le formulaire prêt, on le retire : le formulaire est plus court
+  // sans titre ni paragraphe, sinon il resterait un vide en bas de la carte.
+  window.addEventListener('hs-form-event:on-ready', function () {
+    document.getElementById('rd-form').style.minHeight = '0';
+  });
+
+  // Conteneur HubSpot créé AVANT le chargement du script (il le cherche au chargement)
+  var frame = document.createElement('div');
+  frame.className = 'hs-form-frame';
+  frame.setAttribute('data-region', 'eu1');
+  frame.setAttribute('data-form-id', FORMS[lang]);
+  frame.setAttribute('data-portal-id', '144242237');
+  document.getElementById('rd-form').appendChild(frame);
+
+  var s = document.createElement('script');
+  s.src = 'https://js-eu1.hsforms.net/forms/embed/144242237.js';
+  s.defer = true;
+  document.body.appendChild(s);
+})();
+</script>
