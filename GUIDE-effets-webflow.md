@@ -155,6 +155,16 @@
 | le retirer d'un carrousel | switch correspondant sur OFF (ne pas supprimer l'item : il sert peut-être à l'autre page) |
 | ajouter un logo | New item › Name · Logo (PNG fond transparent) · switches · positions |
 
+**Espacer les logos de la Home (30 s)**
+1. Designer › Home › Navigator (**Z**) › déplier `Logos CMS Home…` › cliquer sur **`s9-logos__list is-home`** (la Collection List : ni le wrapper au-dessus, ni un item en dessous).
+2. Panneau Style (**S**) : le sélecteur doit afficher `s9-logos__list` **+** `is-home`. Sinon, tu modifies aussi Suppliers.
+3. Layout › **Gap** : le champ qui affiche **44** (l'autre, 24, est l'espace vertical : ne pas y toucher) › `64` › Entrée.
+4. Breakpoint tablette (icône en haut du Designer) : le champ qui affiche **32** › `48` (le mobile suit la tablette).
+5. **Publish** › staging › navigation privée.
+
+- Rien à changer dans le code : sur la Home, le script recale la boucle sur le Gap du Designer (0 px de saut, testé à 64 et 48 px).
+- Ne pas modifier la classe seule `s9-logos__list` : elle sert aussi à Suppliers, dont le code suppose 44 px (32 px en tablette). Un autre écart y ferait un saut de quelques px à chaque boucle.
+
 **Pièges**
 - **3 langues** : chaque item existe en EN, FR et ES. Changer une position ou un switch dans **les 3 langues** (sélecteur de langue en haut du CMS), sinon l'ordre diffère selon la version.
 - **Logo sans image = invisible** (filtre « Logo is set ») : cas de **Deterra**, positions déjà réservées (19 Home, 8 Suppliers). Il suffit d'ajouter son image dans l'item.
