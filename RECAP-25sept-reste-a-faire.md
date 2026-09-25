@@ -17,6 +17,15 @@ Le contrôle express prévu à 7 h 45 n'a pas tourné : le rappel de 8 h 30 con
 - **Customer Stories et Resources** : bouton du CTA final relié à `/request-demo`.
 - **Header 2026** : Klarys Login pointe maintenant vers `https://klarys.app/accounts/login/`.
 
+**Corrigé via l'API à 11 h 15, à la demande de Marie ✅** (vérifié)
+- **Composant CTA Next Step** : bouton relié à Request Demo (corrige Retailers et Klarys joins Consentio).
+- **Template Customer Stories** : « ← All customer stories » → Customer Stories · CTA → Request Demo. **Template Resources** : CTA → Request Demo.
+- **Suppliers** : « Explore supplier solutions → » → section des 2 modules (`#extend`).
+- **Footer 2026** : Klarys Login → `https://klarys.app/accounts/login/`, comme le header.
+- **Attributs `href` supprimés** : CTA de Customer Stories et de Resources, CTA des 2 templates, « Discuss an integration → », « Demander une démo ».
+- **Home, textes repris de la maquette** : « Stable · Predictable · Structured », « Fresh needs workflows built for daily decisions and execution. », « For fresh food suppliers », et « Two sides, one tempo » à la place de « Eyebrow ».
+- Non faisable via l'API : les liens des cartes CMS (Current Resource, Current Customer Story) et le texte de « Demander une démo » (le bouton contient une icône que l'API effacerait).
+
 **Toujours ouvert ❌** (P1 en premier)
 - **Resources** : flèche ↗ des cartes toujours en `#` ; carte à la une et image des cartes à tester en Preview.
 - **Composant CTA Next Step** : bouton toujours sans lien (Retailers, Klarys joins Consentio).
