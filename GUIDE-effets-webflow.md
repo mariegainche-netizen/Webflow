@@ -140,7 +140,35 @@
 
 ---
 
-## 8. Fichiers du repo
+## 8. Carrousels de logos (Home · Suppliers)
+
+> Mis en place le 25/09/2026. Ordre de référence : doc « Commentaires divers site web » (Emilien).
+
+- **Une seule collection** pour les deux carrousels : CMS › **Retailers Logo collections** (1 item = 1 logo).
+- Le carrousel de la Home est une **copie** de celui de Suppliers : logos gris, défilement continu, pause au survol.
+- L'ancien bandeau couleur de la Home est **masqué, pas supprimé** : `OLD logos couleur (masqué, à supprimer après validation)`.
+
+| Je veux… | Dans l'item CMS du logo |
+|---|---|
+| l'afficher sur la Home | `Show in Home carousel` = ON · `Order (Home)` = sa position (1 = premier) |
+| l'afficher sur Suppliers | `Show in Suppliers carousel` = ON · `Order (Suppliers)` = sa position |
+| le retirer d'un carrousel | switch correspondant sur OFF (ne pas supprimer l'item : il sert peut-être à l'autre page) |
+| ajouter un logo | New item › Name · Logo (PNG fond transparent) · switches · positions |
+
+**Pièges**
+- **3 langues** : chaque item existe en EN, FR et ES. Changer une position ou un switch dans **les 3 langues** (sélecteur de langue en haut du CMS), sinon l'ordre diffère selon la version.
+- **Logo sans image = invisible** (filtre « Logo is set ») : cas de **Deterra**, positions déjà réservées (19 Home, 8 Suppliers). Il suffit d'ajouter son image dans l'item.
+- **Deux logos à la même position** : leur ordre n'est pas garanti. Insérer un logo = décaler les suivants de +1.
+- **Rien ne change sur le site** : les modifications CMS ne se voient qu'après **Publish**.
+- Le défilement est codé dans **Page settings › Custom code** de chaque page (Home : Head · Suppliers : Head + Footer). Ne pas le copier dans les Site settings : les logos seraient dupliqués deux fois.
+
+**Ordre en place**
+- Home (24) : Coast Tropical · Monoprix · Carrefour · Priméale · Intermarché · Agroponiente · Biocoop · Anecoop · Manor Fresh · Blue Whale · Savéol · Kultive · Rougeline · Hoogsteder · Grupo Clasol · Pomelos MBC · Bell · Solarenn · Deterra · Maison Reynaud · Mytilimer · The Greenery · Ultramarine Food · Perle du Nord
+- Suppliers (21, fournisseurs uniquement) : Coast Tropical · Priméale · Agroponiente · Anecoop · Blue Whale · Savéol · Kultive · Deterra · Rougeline · Hoogsteder · Grupo Clasol · Everest Fresh · Pomelos MBC · Bell · Solarenn · Maui Fresh International · Perle du Nord · The Greenery · Maison Reynaud · Mytilimer · Ultramarine Food
+
+---
+
+## 9. Fichiers du repo
 
 | Fichier | Rôle |
 |---|---|
