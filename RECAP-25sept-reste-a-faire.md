@@ -6,6 +6,35 @@
 
 ---
 
+## 🔄 Mise à jour du 25/09 à 9 h 50 (pages modifiées hier de 18 h à 18 h 10 et ce matin de 9 h 07 à 9 h 26)
+
+Le contrôle express prévu à 7 h 45 n'a pas tourné : le rappel de 8 h 30 contenait la liste d'hier soir. Voici l'écart constaté à 9 h 50.
+
+**Corrigé depuis hier 18 h ✅**
+- **Request Demo × 3** : les 9 textes de « What happens next » sont en anglais, avec une étape 2 adaptée à chaque page (« retailer team », « supplier team ») ; témoignage Steven Michel (E.Leclerc Sodijour) ajouté sur Request Demo Retailers.
+- **Home** : « Explore Consentio for retailers → » et « Explore Consentio for suppliers → » reliés ; « See how it works ↓ » relié à sa section.
+- **Retailers** : « Discuss an integration → » relié à `/request-demo`.
+- **Customer Stories et Resources** : bouton du CTA final relié à `/request-demo`.
+- **Header 2026** : Klarys Login pointe maintenant vers `https://klarys.app/accounts/login/`.
+
+**Toujours ouvert ❌** (P1 en premier)
+- **Resources** : flèche ↗ des cartes toujours en `#` ; carte à la une et image des cartes à tester en Preview.
+- **Composant CTA Next Step** : bouton toujours sans lien (Retailers, Klarys joins Consentio).
+- **Template Customer Stories** (modifié à 9 h 26, peut-être en cours) : lien retour, CTA « Contact our sales team » et cartes « autres stories » toujours en `#`. **Template Resources** : pas retouché (CTA et cartes en `#`).
+- **Home** : cartes des cas clients en `#`, attribut `href="/book-demo"` sur « Demander une démo », ancien header masqué (avec les anciennes URL françaises `/pour-les-distributeurs`, `/entreprise`…), 4 textes en français, placeholder « Eyebrow », slider ERP (Cegid et Oracle toujours là).
+- **Header 2026** : classe `login_signup_link` toujours absente des 2 logins.
+- **Suppliers** : 3 témoignages de démo toujours en place ; **nouveau** : le bouton « Explore supplier solutions → » du hero n'a pas de lien.
+- **About Us** : les 4 textes « [TO BE CONFIRMED…] » sont toujours visibles.
+- **Request Demo Retailers** : FAQ toujours côté fournisseurs · **Request Demo** : meta description toujours vide.
+- SEO de Home, Retailers et Suppliers inchangé · OLD - Resources, Terms & conditions Copy et OLD - For Producers toujours publiées.
+
+**Nouveaux pièges ⚠️**
+- **Liens en URL au lieu de liens Page** : les liens corrigés ce matin sont saisis en URL (`/retailers`, `/suppliers`, `/request-demo`). Ils fonctionnent, mais ne suivront ni un changement de slug ni les versions `/fr-fr` et `/es-es` une fois les langues activées. Préférer ⚙ Settings › Link › **Page**.
+- **Double `href`** : sur les CTA de Customer Stories et Resources, et sur « Discuss an integration → », l'ancien attribut personnalisé (`#book-demo`, `#contact`) est resté à côté du nouveau lien. Le supprimer (⚙ Settings › Custom attributes), sinon le navigateur peut garder l'ancien.
+- **Footer** : Klarys Login pointe encore vers `app.klarys.io`, alors que le header pointe vers `klarys.app/accounts/login/` → aligner les deux.
+
+---
+
 ## ⚡ En bref
 
 | Question | Réponse |
