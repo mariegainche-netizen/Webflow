@@ -19,9 +19,10 @@
 | 7 | Éléments de Klarys joins Consentio attendus d'Emilien | Date limite lundi 12 h, sinon le planning glisse. |
 | 8 | Emilien modifiera seulement des textes et des articles | Option A : formation 1 h 30, rôle d'éditeur de contenu suffisant. |
 
-- **Estimation mise à jour** : ≈ 44 h (36 à 53 h) pour 39 à 44 h disponibles → ça tient à 8 h par jour, **sans marge**. Au premier blocage, appliquer la liste « à couper » (4 à 6 h). Le risque principal devient **le délai de réponse d'Emilien** : 8 éléments dépendent de lui.
+- **Estimation mise à jour** : ≈ 44 h (35 à 52 h) pour 39 à 44 h disponibles → ça tient à 8 h par jour, **sans marge**. Au premier blocage, appliquer la liste « à couper » (4 à 6 h). Le risque principal devient **le délai de réponse d'Emilien** : 8 éléments dépendent de lui.
 - **Les 55 articles** (chiffrage demandé) : ≈ 22 000 mots par langue → relecture FR 6 à 8 h (≈ 1 jour de Marie) + ≈ 1 jour d'un relecteur ES + 4 à 6 h de traduction par Claude via l'API. **Ne rentre pas dans les 4 jours.** Options : A) 2ᵉ vague après la mise en ligne, par lots de 10 (reco) · B) 1 jour de plus (lundi 5/10) pour avoir le FR au lancement.
 - **Pièges CMS** : 21 articles ont un `canonical-url` vers klarys.io → leurs versions FR et ES ne seraient pas indexées tant que ce champ n'est pas vidé. Filtres de Resources et Customer Stories = scripts maison : à retester en FR et ES.
+- **Page transmise à Emilien pour Guillaume (CEO)** : [Mise en ligne Consentio 2026](https://claude.ai/artifact/PKzsjEG5gKjqTtyCKtuMzG), tableau des 13 tâches (35 à 52 h, ≈ 44 h) avec les jours prévus. Rappel Google Agenda posé à 17 h pour la reconnexion de Webflow.
 - **Message groupé à Emilien** proposé à Marie à 12 h 20 : décisions d'ici lundi 9 h, accès d'ici mardi 12 h, relecteur ES, plan Webflow avec Localization, gestionnaire du DNS joignable jeudi 14 h-16 h, créneaux go/no-go et formation.
 
 ---
