@@ -34,7 +34,7 @@
 | Lundi 28 au soir ? | **Impossible** : ≈ 11 h disponibles, alors qu'une mise en ligne en anglais seul demande déjà ≈ 20 h. |
 | Vendredi 2/10 ? | **Oui, c'est le minimum réaliste** : charge de 34 à 50 h (médiane ≈ 42 h) pour 39 h (7 h par jour) à 44 h (8 h par jour) disponibles. |
 | Conditions | Traduction limitée aux pages statiques (CMS en anglais) · décisions d'Emilien d'ici lundi 9 h · accès d'ici mardi 12 h · relecteur espagnol natif réservé mardi ou mercredi. Sans elles, il manque ≈ 1 jour. |
-| Mise en ligne | **Jeudi 1ᵉʳ/10, 14 h-16 h** · go/no-go jeudi 12 h · formation d'Emilien vendredi matin (2 h). |
+| Mise en ligne | **Jeudi 1ᵉʳ/10, 14 h-16 h** · feu vert au point Emilien de jeudi 11 h · formation d'Emilien vendredi 11 h 30 (1 h). |
 | Méthode | 7 h utiles par jour (bas de la fourchette 7-9 h de Marie). Temps des récaps précédents × 1,5 : c'étaient des temps de manipulation pure (le nettoyage prévu « 20 min à 9 h 30 » n'était pas lancé à 11 h 50). |
 
 ---
@@ -63,19 +63,21 @@
 
 ---
 
-## 2. Planning
+## 2. Planning de la semaine (posé dans l'agenda Google de Marie le 25/09 à 18 h 50)
 
-| Jour | Contenu | h |
+> Remplace le planning initial : 29 créneaux posés autour des 5 points déjà fixés avec Emilien. Titres : 🛠 tâche · 📋 préparation d'un point Emilien (ordre du jour dans l'événement) · 🚀 mise en ligne · ⏳ marge.
+
+| Jour | Matin | Après-midi |
 |---|---|---|
-| Ven. 25 après-midi | Nettoyage · un seul message à Emilien (décisions et accès) · carrousels | 4 |
-| Lun. 28 | Company · Klarys · landing pages démo · ligne 11 · **textes anglais figés à 18 h** | 8 |
-| Mar. 29 | Claude traduit FR et ES le matin, Marie fait les images · relecture FR et mise en page · l'ES part chez le relecteur | 8 |
-| Mer. 30 | Tracking · corrections ES · redirections (CSV final) · llms.txt | 8 |
-| Jeu. 1ᵉʳ/10 | Recette EN, FR et ES sur 3 formats d'écran · go/no-go 12 h · **mise en ligne 14 h-16 h** · tests · Search Console | 7 |
-| Ven. 2/10 | Contrôles du lendemain · **formation d'Emilien (2 h)** · passation · marge ≈ 2 h 30 | 7 |
+| Lun. 28 | 8 h 30 reconnexion Webflow (nouvelle session) · 8 h 50 message groupé à Emilien · 9 h 30 nettoyage pages puis CMS · 10 h 20 retirer `/en-en/` · 10 h 30 carrousels | 14 h pages démo · **16 h point Emilien n° 1 : débloquer le contenu** · 16 h 45 finitions (1/2) |
+| Mar. 29 | 9 h Company · 10 h 30 Klarys · **11 h 30 point n° 2 : tout valider** · 12 h 15 finitions (2/2) | **14 h anglais figé, traduction lancée** · 14 h 15 images · 16 h 45 relecture FR (1/2) |
+| Mer. 30 | 9 h relecture FR (2/2) · 11 h 30 cas clients · 12 h 30 corrections ES | **14 h point n° 3 : préparer la mise en ligne** · 14 h 30 suivi analytique · 17 h redirections et llms.txt |
+| Jeu. 1ᵉʳ/10 | 9 h recette · **11 h point n° 4 : feu vert** · 12 h corrections | **14 h mise en ligne** · 16 h contrôles et Search Console |
+| Ven. 2/10 | 9 h contrôles du lendemain · 10 h préparer la formation · **11 h 30 point n° 5 : formation et passation** | 14 h marge · 16 h passation écrite |
 
-- **Formation (2 h)** : modifier textes et images · ajouter un article ou un cas client · publier · gérer FR et ES · poser une 301 · ce qu'il ne faut pas toucher (classes, composants).
-- **Pas de mise en ligne le dernier jour ni un vendredi** : jeudi 14 h laisse 1,5 jour de corrections avec Marie encore là.
+- **Ordre des sujets avec Emilien** : du plus bloquant au moins bloquant (lundi : prolongation, chiffres, témoignages, éléments Klarys et Company, logos, relecteur ES, accès · mardi : validation avant de figer l'anglais · mercredi : accès restants, déroulé de la bascule, redirections · jeudi : feu vert · vendredi : formation 45 min + passation 15 min).
+- ⚠️ Après la reconnexion de lundi 8 h 30, les anciennes sessions n'ont plus accès à Webflow : lancer « go nettoyage » et « go CMS » dans la nouvelle session.
+- Planning valable si la prolongation est confirmée lundi.
 
 ---
 
