@@ -20,6 +20,8 @@
 > **llms.txt** : je propose de mettre en ligne aujourd'hui, avec le nouveau site, un fichier llms.txt : un résumé texte de Consentio destiné aux assistants IA (ChatGPT, Perplexity…), invisible dans le site et non indexé par Google. Il ne contient **aucun chiffre** et ne cite que les **5 cas clients déjà publiés** (Coast Tropical, Lagadec Primeurs, Anecoop France, Mytilimer, Agroponiente). Brouillon joint.
 > 1. OK pour le publier aujourd'hui ?
 > 2. OK pour citer ces 5 clients, ou je retire la liste ?
+> 3. Si ce n'est pas déjà tranché : domaine de prod, www.consentio.co ou consentio.co ?
+> 4. Qui le met à jour quand le site évolue (nouvelle page, changement d'offre) ?
 >
 > Sans retour de ta part, je ne le mets pas en ligne.
 
