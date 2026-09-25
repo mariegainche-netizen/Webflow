@@ -167,7 +167,7 @@
 
 **Pièges**
 - **3 langues** : chaque item existe en EN, FR et ES. Changer une position ou un switch dans **les 3 langues** (sélecteur de langue en haut du CMS), sinon l'ordre diffère selon la version.
-- **Logo sans image = invisible** (filtre « Logo is set ») : cas de **Deterra**, positions déjà réservées (19 Home, 8 Suppliers). Il suffit d'ajouter son image dans l'item.
+- **Logo sans image = invisible** (filtre « Logo is set ») : l'item existe mais ne s'affiche pas tant que le champ Logo est vide. Cas de Deterra jusqu'au 25/09 (logo ajouté depuis le Drive d'Emilien).
 - **Deux logos à la même position** : leur ordre n'est pas garanti. Insérer un logo = décaler les suivants de +1.
 - **Rien ne change sur le site** : les modifications CMS ne se voient qu'après **Publish**.
 - Le défilement est codé dans **Page settings › Custom code** de chaque page (Home : Head · Suppliers : Head + Footer). Ne pas le copier dans les Site settings : les logos seraient dupliqués deux fois.
@@ -178,7 +178,49 @@
 
 ---
 
-## 9. Fichiers du repo
+## 9. Sliders ERP (Home · Suppliers)
+
+> Mis à jour le 25/09/2026. Référence : liste « Principaux ERP connectés à Consentio » du doc « Commentaires divers site web ».
+
+- **Mêmes 11 ERP, même ordre, sur les 2 pages** : SAP · Microsoft Dynamics · Descartes StepCom · Akanéa (Isagri) · Orisha · Sage · Hispatec · Produce Pro · Copilote · Sigem · Agriwave.
+- **Home** : section « Already connected to your ecosystem », classes `c2-pl-*`, clic = page Request Demo.
+- **Suppliers** : slider `erp-slider__*`, clic = page Request Demo Suppliers.
+- **Retirés** (absents du doc) : Microsoft, Oracle, Infor, Cegid. Leurs images restent dans le panneau Assets.
+- Les 2 sliders ne sont pas un composant partagé : **toute modification se fait sur les 2 pages**.
+
+**Ajouter un ERP (1 min par page)**
+1. Navigator › slider › clic droit sur un logo existant (`c2-pl-item` sur la Home, `erp-slider__slide` sur Suppliers) › **Duplicate**.
+2. Image : Settings › **Replace image** › Alt text « Nom logo ».
+3. Texte de l'infobulle : « Click to explore Nom integration ».
+4. Lien : Custom attributes › `aria-label` = « Explore the Nom integration ».
+5. Logo blanc : ajouter la combo `c2-pl-logo-dark` (Home) ou `erp-slider__logo--dark` (Suppliers) sur le bloc qui contient l'image (cas de Descartes StepCom).
+
+**Ancres ERP : une seule, `integration`**
+
+| Page | Section ERP | Ancre |
+|---|---|---|
+| Home | « Already connected to your ecosystem » | `#integration` (ajoutée le 25/09) |
+| Suppliers | section `s12-section` | `#integration` |
+| Retailers | section `c8-section` | `#integration` |
+
+- **Footer › « ERP integration »** (toutes les pages) : lien vide jusqu'ici, il pointe maintenant vers `/#integration` (section ERP de la Home).
+- **Retailers › bouton du hero « See the modules ↓ »** : lien vide, il pointe maintenant vers la section Modules (`#modules`).
+- Viser une section de la **même page** : Link settings › **Page section** › choisir la section. Le lien suit l'ancre même si elle est renommée.
+- Viser une section d'une **autre page** : lien URL `/suppliers#integration`. L'ancre doit exister à l'identique sur la page cible.
+
+**Pièges des ancres**
+- **Renommer une ancre** casse les liens URL qui la visent (`/#integration`, `/suppliers#integration`) : les chercher avant de renommer.
+- **Une ancre = une seule section par page.**
+- **Lien URL et langues** : un lien URL n'est pas traduit, il ouvre la version anglaise (même comportement que « Book a demo » dans le footer).
+
+**Pièges**
+- **Logo minuscule** : le cadre fait 32 px de haut. Un PNG avec de grandes marges transparentes s'affiche tout petit : le recadrer au ras du logo avant l'import (versions recadrées dans `logos/erp/`).
+- **Orisha** : le seul logo disponible était « Orisha Real Estate » (branche immobilière). Il est recadré sur le mot « ORISHA » : à remplacer si Emilien obtient le logo de la branche agroalimentaire.
+- **Copilote** : logo sans nom (pictogramme seul) ; l'infobulle et le texte alternatif portent le nom.
+
+---
+
+## 10. Fichiers du repo
 
 | Fichier | Rôle |
 |---|---|
@@ -186,3 +228,5 @@
 | `effets-consentio/effets-footer.html` | bloc Footer installé (moteur commenté) |
 | `effets-consentio/hero-home-visuel.html` / `.css` | visuel natif du hero (HTML + CSS envoyés à Webflow) |
 | `effets-consentio/hero-crate-produce.webp` | photo du hero (asset Webflow `6ab5294af0884069047d39e6`) |
+| `logos/erp/` | logos ERP recadrés (sliders Home et Suppliers) |
+| `logos/clients/` | logos clients recadrés ajoutés au CMS le 25/09 (Deterra, Pomelos MBC, The Greenery, Perle du Nord, Everest Fresh, Maui Fresh) |
