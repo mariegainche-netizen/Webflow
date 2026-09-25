@@ -1,0 +1,48 @@
+<!-- =============================================================
+     CONSENTIO — Formulaire HubSpot seul (FR / EN / ES)
+     À coller dans un Code Embed, À LA PLACE de l'ancien formulaire
+     dans la mise en page 2026 copiée depuis le site test.
+     La langue est détectée via le sous-dossier de l'URL
+     (/fr-fr, /es-es), EN par défaut (langue principale).
+     ============================================================= -->
+<style>
+  /* Le formulaire HubSpot a déjà son titre et son paragraphe : on masque ceux de Webflow.
+     Titre : masqué visuellement mais gardé dans le code (H1 utile au SEO et aux lecteurs d'écran).
+     Paragraphe : supprimé de l'affichage. */
+  .book-demo__title{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .book-demo__lead{display:none!important}
+</style>
+<div id="rd-form" style="min-height:520px"></div>
+<script>
+(function () {
+  // Langue = sous-dossier de l'URL (Webflow Localization) :
+  // /fr-fr → fr, /es-es → es, sinon en (langue principale : racine ou /en-en).
+  // On n'utilise PAS <html lang> (peut être modifié par un outil tiers).
+  var p = location.pathname.toLowerCase();
+  var lang = /^\/fr-fr(\/|$)/.test(p) ? 'fr' : /^\/es-es(\/|$)/.test(p) ? 'es' : 'en';
+
+  // Test : ?lang=fr|es|en dans l'URL force la langue (sans activer les langues Webflow)
+  var forced = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+  if (/^(fr|en|es)$/.test(forced)) lang = forced;
+
+  // Un formulaire HubSpot par langue (portail 144242237, région eu1)
+  var FORMS = {
+    en: '4e689804-5174-4575-a0c6-1228f1675a25',
+    fr: 'ca0ea91c-a8b6-4ae7-802b-e64fa310516e',
+    es: 'f705925c-3f85-453d-9c21-6aab9b3cac29'
+  };
+
+  // Conteneur HubSpot créé AVANT le chargement du script (il le cherche au chargement)
+  var frame = document.createElement('div');
+  frame.className = 'hs-form-frame';
+  frame.setAttribute('data-region', 'eu1');
+  frame.setAttribute('data-form-id', FORMS[lang]);
+  frame.setAttribute('data-portal-id', '144242237');
+  document.getElementById('rd-form').appendChild(frame);
+
+  var s = document.createElement('script');
+  s.src = 'https://js-eu1.hsforms.net/forms/embed/144242237.js';
+  s.defer = true;
+  document.body.appendChild(s);
+})();
+</script>
