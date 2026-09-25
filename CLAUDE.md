@@ -9,7 +9,7 @@
   - Texte foncé : `#12211C` · texte secondaire : `#5F6964` · filets : `rgba(5,49,45,0.1)`
 - Dans Webflow, lier les couleurs aux variables « Vert charte » / « Lime charte » plutôt que de saisir des hex.
 - Le code Lovable (zip « Exploration Site vitrine Consentio ») sert de référence pour la structure, les tailles et les espacements uniquement : ne jamais reprendre ses couleurs oklch (`#093627`, `#AEF23C`, etc.).
-- Typographie : **Manrope** partout (400 à 800) ; **JetBrains Mono** pour les libellés techniques (méta, eyebrows, badges).
+- Typographie : **Manrope partout**, sans exception (400 à 800), y compris les libellés techniques (méta, eyebrows, badges : Manrope en majuscules + interlettrage). Pas de JetBrains Mono ni d'autre police, même si le code Lovable en utilise.
 
 ## Règles de gabarit validées par Marie (CMS Customer Stories / Resources)
 
