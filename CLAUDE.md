@@ -24,5 +24,6 @@
 ## Contexte technique
 
 - Site Webflow principal : « Consentio 2026 » (site ID `6aaaafd0271107b340148c86`).
-- Pas de publication sans accord explicite de Marie.
+- Pas de publication sans accord explicite de Marie. Un accord vaut pour la demande en cours seulement.
+- Localisation Webflow active : EN (principal), ES (`es-es`) et FR (`fr-fr`). Les variantes FR et ES de la CMS sont pour l'instant des copies en anglais : toute mise à jour d'un champ doit être reportée dans les trois langues.
 - Le code Lovable contient du contenu de démonstration (chiffres et citations marqués « DEMO CONTENT » ou « demo quote ») : ne jamais le présenter comme du contenu client réel.

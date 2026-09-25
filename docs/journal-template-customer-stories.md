@@ -2,7 +2,7 @@
 
 Référence : HTML Lovable de la page Agroponiente + zip Lovable (`src/components/v2/resource-detail.tsx`, `resource-card.tsx`, `kit.tsx`, `styles.css`, `data/resources.ts`, `data/site.ts`).
 Couleurs : charte Webflow (voir `CLAUDE.md`), jamais les oklch Lovable. Police : Manrope partout, libellés compris.
-Rien n'est publié : toutes les modifications sont dans le Designer ou en brouillon CMS.
+Publication (25/09/2026) : version EN publiée à 16 h 40 (heure de Paris), avec toutes les modifications ci-dessous ; variantes FR et ES des 8 fiches publiées ensuite, avec l'accord de Marie pour cette demande.
 
 Statut : tâche clôturée le 25/09/2026 (arbitrages de Marie intégrés).
 
@@ -54,6 +54,8 @@ Tout le contenu est dans les champs de la collection (rien en dur dans la page),
 | « Modules list » (nouveau, texte) | Rempli pour les 8 fiches. Agroponiente : « Magic Orders, Consentio App, Hispatec ERP sync » (Lovable). Manor, Bell, Ultra Marine : modules Lovable. Autres : repris du champ Tags. Le champ Tags (référence) reste pour les filtres. |
 | Body content | Agroponiente : texte complet de la maquette + encadré final. Manor, Bell Food Group, Ultra Marine : Context / The challenge / The solution / Approach, repris de Lovable (`data/site.ts`). |
 | Read time | Manor, Bell Food Group, Ultra Marine : 1 (texte court). |
+
+Variantes FR et ES (copies en anglais, non traduites) : mêmes mises à jour reportées le 25/09 (Modules list, CTA headline, corps d'Agroponiente, Manor, Bell et Ultra Marine, temps de lecture).
 
 Non importé volontairement : les chiffres et citations de Manor, Bell et Ultra Marine dans Lovable sont marqués « DEMO CONTENT » et « demo quote » (fictifs). KPI, Benefits, Location et citation restent vides, donc masqués.
 
