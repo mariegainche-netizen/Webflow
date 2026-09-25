@@ -35,3 +35,8 @@
 - Témoignage E.Leclerc (Steven Michel, citation courte mot pour mot) sur `/request-demo-retailers` uniquement : accord à confirmer.
 - Page Suppliers : 11 boutons de démo pointent vers `/request-demo-suppliers` (10 anciens liens `/book-demo` cassés corrigés).
 - Demain : 2 témoignages réels validés par Emilien (distributeur + fournisseur), FAQ distributeurs, vérification mobile, Publish, traduction FR/ES.
+
+### 25/09 : témoignage fournisseur
+- `/request-demo-suppliers` : témoignage Antoine Caruana (Les Paysans de Rougeline), validé par Emilien, ajouté sous la photo (version EN, locale principale).
+- Original FR à coller dans la locale FR lors de la traduction.
+- Poste d'Antoine Caruana manquant (seule l'entreprise est affichée).
