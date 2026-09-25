@@ -40,3 +40,5 @@
 - `/request-demo-suppliers` : témoignage Antoine Caruana (Les Paysans de Rougeline), validé par Emilien, ajouté sous la photo (version EN, locale principale).
 - Original FR à coller dans la locale FR lors de la traduction.
 - Poste d'Antoine Caruana manquant (seule l'entreprise est affichée).
+- Grille `book-demo__grid` : `minmax(0, 5fr) minmax(0, 7fr)`, espace entre colonnes 48px (photo + témoignage à gauche, formulaire plus large à droite), validé par Marie. Une seule colonne sur tablette et mobile.
+- Citation E.Leclerc à remplacer (témoignage distributeur attendu d'Emilien). Ne pas publier avant.
