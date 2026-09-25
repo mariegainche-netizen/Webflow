@@ -1,0 +1,54 @@
+# Consentio
+
+> Consentio is a B2B software platform for fresh food trade. It connects food retailers and their fresh food suppliers in one continuous workflow: demand forecasting, supplier consultations and offers, volume allocation, order execution and ERP synchronization. It covers fresh produce (fruit and vegetables), seafood, meat and poultry, and other fresh categories.
+
+Consentio has offices in Barcelona (Spain), Paris and Rennes (France). Klarys (formerly Procsea), the fresh food eProcurement platform based in Rennes, has joined Consentio: Klarys and Consentio have joined forces to build one integrated platform for fresh food procurement and supplier collaboration.
+
+Key facts:
+
+- Who it is for: food retailers and their buying teams for fresh categories, and the suppliers who deliver them (growers, cooperatives and wholesalers).
+- For retailers: plan demand and share volume targets early, run structured consultations with the supplier base, compare offers on price, volume, quality and origin, allocate volumes and generate orders in one step, track execution and supplier performance.
+- For suppliers: maintain one catalogue mapped to each customer, answer customer requests with structured offers, receive and confirm orders in one place, reduce manual re-entry between channels, share delivery and document information, and automate orders received from other customers (Magic Orders).
+- Workflow: Forecast (AI-powered demand forecasting by category, store group and period), Collect (prices, volumes and availability in one comparable format), Allocation (volumes distributed across suppliers with full decision context), Order execution (confirmations, amendments, deliveries and documents).
+- Modules: Offers and allocation, Orders and collaboration, Logistics, Data and intelligence, Integrations.
+- Integration: validated order data is synchronized with the customer's ERP. Consentio complements existing ERP environments; it does not replace them.
+- Deployment: modular. A focused pilot on one category can go live in weeks, then the scope extends progressively across categories, workflows and teams.
+- Pricing: on request, through the demo request form.
+- Existing customers sign in at https://app.consentio.co
+
+## Main pages
+
+- [Home](https://www.consentio.co/): overview of the platform and of the connected workflow, from demand plan to synchronized order data.
+- [Consentio for retailers](https://www.consentio.co/retailers): fresh food procurement for retail buying teams.
+- [Consentio for suppliers](https://www.consentio.co/suppliers): sales and order operations for fresh food suppliers.
+- [Customer stories](https://www.consentio.co/customer-stories): how retailers, food groups and suppliers use Consentio.
+- [Klarys joins Consentio](https://www.consentio.co/klarys-joins-consentio): why Klarys and Consentio joined forces to build one integrated platform.
+- [About Consentio](https://www.consentio.co/company/about-us): fresh food expertise, retail knowledge, data and technology to improve how buyers and suppliers work together.
+- [Resources](https://www.consentio.co/resources): articles and guides for fresh food buying and sales teams.
+
+## Book a demo
+
+- [Book a demo](https://www.consentio.co/request-demo): demo tailored to your fresh categories and workflows.
+- [Demo for retailers](https://www.consentio.co/request-demo-retailers): for retail buying offices running daily fresh food operations.
+- [Demo for suppliers](https://www.consentio.co/request-demo-suppliers): for growers and wholesalers.
+
+## Customer stories
+
+- [Coast Tropical](https://www.consentio.co/customer-stories/coast-tropical-order-automation): order automation at a fresh produce company operating in the United States and Mexico.
+- [Lagadec Primeurs](https://www.consentio.co/customer-stories/lagadec-primeurs-customer-communication): a French fruit and vegetable wholesaler modernizes ordering and communication with its customers.
+- [Anecoop France](https://www.consentio.co/customer-stories/anecoop-order-profitability): interview with the sales director about several years of working with Consentio.
+- [Mytilimer](https://www.consentio.co/customer-stories/mytilimer-eprocurement-mussel-producers): eProcurement to centralize the offer of mussel producers and automate purchasing documents.
+- [Agroponiente](https://www.consentio.co/customer-stories/agroponiente-order-entry-automation): a southern European fruit and vegetable group moves from manual order entry to automated order processing.
+
+## Optional
+
+- [Buyer-supplier relations](https://www.consentio.co/resources/buyer-supplier-relations): why digitalizing procurement strengthens buyer-supplier relationships in agri-food.
+- [EDI and procurement performance](https://www.consentio.co/resources/edi-and-procurement-performance): how digital transactions and clean data raise the value of procurement teams.
+- [EDI: for whom, for what, how?](https://www.consentio.co/resources/edi-for-whom-for-what-how): which documents EDI covers and how to get started.
+- [Traceability in retail](https://www.consentio.co/resources/traceability-in-retail): why traceability has to travel with transaction data.
+- [Why joining GS1 is a must](https://www.consentio.co/resources/joining-gs1-a-must): what GTIN codes, barcodes and EDI bring to fresh food suppliers and distributors.
+- [Privacy policy](https://www.consentio.co/legal/privacy-policy)
+- [Terms and conditions](https://www.consentio.co/legal/terms-and-conditions)
+- [Data processing agreement](https://www.consentio.co/legal/data-processing-agreement)
+- [Legal notice](https://www.consentio.co/legal/legal-notice)
+- [Cookie policy](https://www.consentio.co/legal/cookie-policy)
