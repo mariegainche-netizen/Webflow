@@ -26,7 +26,7 @@ Le contrôle express prévu à 7 h 45 n'a pas tourné : le rappel de 8 h 30 con
 - **Home, textes repris de la maquette** : « Stable · Predictable · Structured », « Fresh needs workflows built for daily decisions and execution. », « For fresh food suppliers », et « Two sides, one tempo » à la place de « Eyebrow ».
 - Non faisable via l'API : les liens des cartes CMS (Current Resource, Current Customer Story) et le texte de « Demander une démo » (le bouton contient une icône que l'API effacerait).
 
-**Fait par Marie dans le Designer (confirmé à 11 h 30) ✅**
+**Fait par Marie dans le Designer (confirmé à 11 h 20) ✅**
 - Liens des cartes CMS : Resources (carte à la une et grille), cas clients de la Home, cartes « autres stories » et « autres articles » des 2 templates.
 - Home : « Book a demo » à la place de « Demander une démo », ancien header masqué supprimé, textes alternatifs des 9 logos corrigés.
 - **Reste** : classe `login_signup_link` sur les 2 logins, 4 témoignages de démo (Suppliers × 3, About Us × 1), Bell Food Group et Ultra Marine en brouillon, publication puis test en Preview, et les décisions d'Emilien.
