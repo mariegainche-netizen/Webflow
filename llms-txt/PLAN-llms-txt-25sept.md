@@ -10,15 +10,15 @@
 | C'est quoi ? | Un fichier texte à la racine du site (`/llms.txt`) qui résume Consentio pour les assistants IA (ChatGPT, Claude, Perplexity, agents). Non visible dans le site, non indexé par Google. |
 | Que contient le brouillon ? | L'offre (retailers, suppliers, workflow, modules, ERP, Klarys) + 25 liens : 10 pages conservées du nouveau site, 5 pages légales, 5 cas clients, 5 articles. **Aucun chiffre.** Seuls noms de clients : les 5 cas clients déjà publiés. |
 | Où l'insérer ? | Site settings › SEO › LLMs.txt › Upload file › Save changes (2 min). |
-| Quand est-il en ligne ? | Seulement après publication sur le **domaine de prod** : Webflow ne le sert pas sur `*.webflow.io`. Uploadé avant la bascule, il part en ligne avec elle ; uploadé après, republier le site. |
+| Quand est-il en ligne ? | Seulement après publication sur le **domaine de prod** : Webflow ne le sert pas sur `*.webflow.io`. Mise en ligne du site prévue fin de semaine prochaine (date à confirmer) : uploadé dès l'OK d'Émilien, il partira en ligne tout seul avec le site ; uploadé après, republier le site. |
 | Temps total | 2 min pour la question à Émilien + 5 min d'insertion après son OK. |
 
 ## 1. Question pour Émilien (lundi 28/09 à 8 h 45, rappel posé dans l'agenda)
 
-À envoyer par Slack ou e-mail en joignant le fichier `llms.txt`. Si un point de bascule est prévu avec Émilien, la poser à ce moment-là plutôt que dans un message à part.
+À envoyer par Slack ou e-mail en joignant le fichier `llms.txt`. Si un point est prévu avec Émilien d'ici là, la poser à ce moment-là plutôt que dans un message à part.
 
-> **llms.txt** : je propose de mettre en ligne aujourd'hui, avec le nouveau site, un fichier llms.txt : un résumé texte de Consentio destiné aux assistants IA (ChatGPT, Perplexity…), invisible dans le site et non indexé par Google. Il ne contient **aucun chiffre** et ne cite que les **5 cas clients déjà publiés** (Coast Tropical, Lagadec Primeurs, Anecoop France, Mytilimer, Agroponiente). Brouillon joint.
-> 1. OK pour le publier aujourd'hui ?
+> **llms.txt** : je propose de mettre en ligne, au lancement du nouveau site, un fichier llms.txt : un résumé texte de Consentio destiné aux assistants IA (ChatGPT, Perplexity…), invisible dans le site et non indexé par Google. Il ne contient **aucun chiffre** et ne cite que les **5 cas clients déjà publiés** (Coast Tropical, Lagadec Primeurs, Anecoop France, Mytilimer, Agroponiente). Brouillon joint.
+> 1. OK pour le publier au lancement ?
 > 2. OK pour citer ces 5 clients, ou je retire la liste ?
 > 3. Si ce n'est pas déjà tranché : domaine de prod, www.consentio.co ou consentio.co ?
 > 4. Qui le met à jour quand le site évolue (nouvelle page, changement d'offre) ?
@@ -29,18 +29,19 @@
 
 1. **Domaine** : le fichier utilise `https://www.consentio.co`. Si Émilien retient `consentio.co` sans www, remplacer les 25 occurrences (Rechercher / Remplacer dans un éditeur, ou dire « domaine = consentio.co » dans une session Claude).
 2. **Si « pas de noms de clients »** : supprimer la section `## Customer stories` (6 lignes). Le lien vers la page Customer Stories reste dans `## Main pages`.
-3. **Upload** : Webflow › Site settings › SEO › **LLMs.txt** › Upload file › choisir `llms.txt` (UTF-8, moins de 100 Ko) › **Save changes**.
-4. **Si la bascule est déjà faite** : republier le site sur le domaine de prod (le fichier ne part en ligne qu'à la publication). Puis ouvrir `https://www.consentio.co/llms.txt` en navigation privée. Attendu : le texte brut s'affiche (ni 404, ni page HTML).
+3. **Upload** : Webflow › Site settings › SEO › **LLMs.txt** › Upload file › choisir `llms.txt` (UTF-8, moins de 100 Ko) › **Save changes**. Possible dès l'OK, sans attendre la date de mise en ligne : rien n'est servi avant la publication sur le domaine de prod.
+4. **La veille de la mise en ligne** : revérifier les 25 liens (pages renommées, dépubliées ou ajoutées d'ici là). 1 min en demandant « contrôle llms.txt » dans une session Claude ; si un lien a changé, ré-uploader le fichier corrigé.
+5. **Après la mise en ligne** : ouvrir `https://www.consentio.co/llms.txt` en navigation privée. Attendu : le texte brut s'affiche (ni 404, ni page HTML). Si l'upload a eu lieu après la mise en ligne, republier d'abord le site sur le domaine de prod (le fichier ne part en ligne qu'à la publication).
 
 ## 3. Pièges
 
 - **Nom exact** : `llms.txt`, en minuscules et avec un s. « LLM.txt » ne sera jamais lu par les outils.
-- **Aucun test possible sur le staging** : Webflow ne publie pas le fichier sur `*.webflow.io`. Seul contrôle possible avant lundi : relire le fichier.
+- **Aucun test possible sur le staging** : Webflow ne publie pas le fichier sur `*.webflow.io`. Seul contrôle possible avant la mise en ligne : relire le fichier.
 - **Une IA peut citer le fichier mot pour mot** : même règle que les metas de la PR #13, aucun chiffre tant que la fiche chiffres n'est pas validée (tableau § 5).
 - **Exclus volontairement du fichier** : `/old/`, les 9 pages à trancher, les modèles Product modules et Retailers Logo (noindex), les cas clients Manor (chiffres de démo), Bell Food Group et Ultra Marine (vides), les versions FR et ES (non traduites), la liste des ERP (slider en cours de modification).
-- **About Us affiche encore 4 « [TO BE CONFIRMED…] »** : à corriger avant lundi, le fichier renvoie vers cette page.
+- **About Us affiche encore 4 « [TO BE CONFIRMED…] »** : à corriger avant la mise en ligne, le fichier renvoie vers cette page.
 - **robots.txt** : llms.txt ne sert à rien si les robots IA sont bloqués. Webflow ne bloque rien par défaut ; si un proxy type Cloudflare est placé devant le domaine, vérifier son option de blocage des robots IA. Ne pas bloquer les robots de recherche (OAI-SearchBot, Claude-SearchBot, PerplexityBot) : ce sont eux qui alimentent les citations dans les réponses.
-- **Fichier statique** : il ne se met pas à jour tout seul. À ré-uploader à chaque nouvelle page ou changement d'offre. Fin de mission lundi : faire désigner un propriétaire du fichier par Émilien.
+- **Fichier statique** : il ne se met pas à jour tout seul. À ré-uploader à chaque nouvelle page ou changement d'offre. Faire désigner un propriétaire du fichier par Émilien (question 4).
 
 ## 4. Attentes réalistes
 
