@@ -1,0 +1,33 @@
+<!-- ============================================================
+     EFFETS CONSENTIO · partie 1/2 : Site settings › Custom code › Head
+     (à coller À LA FIN du bloc Head existant, sans rien effacer)
+     Tant que le JS ne tourne pas, rien n'est masqué : le site reste lisible.
+     ============================================================ -->
+<!-- Police Manrope du nouveau design (classes c2-*) : absente des polices du site au 24/09.
+     À retirer si Manrope est ajoutée dans Site settings › Fonts › Google Fonts. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Apparition au scroll : état de départ (fondu + 18 px plus bas) */
+html.fx [data-reveal]:not(.fx-in),
+html.fx:not(.fx-ready) [data-reveal-stagger]>*{opacity:0;translate:0 18px}
+html.fx [data-reveal]{transition:opacity .7s cubic-bezier(.22,1,.36,1) var(--fx-d,0ms),translate .7s cubic-bezier(.22,1,.36,1) var(--fx-d,0ms)}
+/* Ligne qui se dessine : invisible le temps que le moteur mesure le tracé */
+html.fx:not(.fx-ready) [data-draw]{opacity:0}
+/* Zoom photo au survol + flottement des cartes (désactivés si « moins d'animations ») */
+@media (prefers-reduced-motion:no-preference){
+[data-zoom]{overflow:hidden}
+[data-zoom] img{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+[data-zoom]:hover img{transform:scale(1.03)}
+html.fx [data-float]{animation:fx-float 7s ease-in-out infinite}
+html.fx [data-float="2"]{animation-delay:-3.5s}
+}
+@keyframes fx-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-6px,0)}}
+@media print{html.fx [data-reveal],html.fx [data-reveal-stagger]>*{opacity:1!important;translate:none!important}}
+</style>
+<script>
+/* Active les effets, sauf si le visiteur a demandé moins d'animations.
+   Filet de sécurité : si le moteur (pied de page) ne démarre pas en 3 s, tout réapparaît. */
+!function(h){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;h.classList.add('fx');setTimeout(function(){h.classList.contains('fx-ready')||h.classList.remove('fx')},3000)}(document.documentElement);
+</script>
