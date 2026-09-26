@@ -13,17 +13,14 @@ Seules deux images de la page Suppliers contiennent du texte. Home et Retailers 
 
 - Formats locaux appliqués : 2,85 €, 1 000 kg (FR), 1.000 kg (ES), mar. 23 avr.
 - Texte alternatif FR / ES déjà renseigné sur chaque asset.
-- Affichage par langue : à faire dans le Designer (voir ci-dessous), l'API ne permet pas de remplacer une image par langue.
+- Affichage par langue : automatique, voir ci-dessous.
 
-### Remplacer l'image par langue dans le Designer
+### Affichage par langue (automatique)
 
-1. Ouvrir la page Suppliers, puis choisir « French (France) » dans le sélecteur de langue en haut du Designer.
-2. Sélectionner l'image Magic Orders, puis Settings (touche D) › Image › Replace image › `magic-orders-flow-fr.png`.
-3. Même chose pour l'image Webshop avec `webshop-flow-fr.png`.
-4. Passer en « Spanish (Spain) » et refaire les étapes 2 et 3 avec les fichiers `-es.png`.
-5. Publier.
-
-Piège : faire le remplacement **dans la langue secondaire**. En anglais, l'image change pour toutes les langues.
+- À côté de chaque image anglaise, deux copies FR et ES (classes combo `loc-fr` / `loc-es`), masquées par défaut. Dans le Navigator, elles s'appellent « Magic Orders FR (visible en français) », etc.
+- Une règle CSS dans le Head de la page Suppliers affiche la bonne image selon l'attribut `lang` de la page (`html:lang(fr)`, `html:lang(es)`).
+- En anglais, rien ne change. Si le CSS est supprimé, seule l'image anglaise s'affiche.
+- Piège : si l'image anglaise change un jour, il faut aussi régénérer et remplacer ses copies FR et ES.
 
 ### Régénérer les images (si un texte change)
 
