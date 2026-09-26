@@ -1,0 +1,70 @@
+/* Classes Webflow de la page « Klarys joins Consentio » (préfixe kl-), version V2 du 26/09 (Lovable klarys-next). Miroir des styles natifs créés dans le Designer : modifier dans Webflow, ce fichier sert de référence. Charte officielle Consentio uniquement. */
+.kl-hero { position: relative; overflow: hidden; background-color: #05312D; color: #F3FCEB; font-family: Manrope, sans-serif; line-height: 1.5; }
+.kl-flow-hero { position: absolute; top: 1.5rem; right: 0; left: 0; width: 100%; height: 16rem; pointer-events: none; }
+/* Tracé des lignes (3 paths, attribut pathLength="1") : l'Interaction IX3 ajoute le combo is-drawn, la transition CSS joue le tracé en 2,2 s (valeurs Lovable). */
+.kl-flow-path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2200ms cubic-bezier(0.22, 1, 0.36, 1); }
+.kl-flow-path.is-drawn { stroke-dashoffset: 0; }
+.kl-container { position: relative; z-index: 1; width: 100%; max-width: 80rem; margin-right: auto; margin-left: auto; padding: 4rem 2rem; box-sizing: border-box; }
+.kl-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.kl-label { display: inline-flex; align-items: center; gap: 0.5rem; color: #5C6B65; font-size: 0.6875rem; line-height: 1.5; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+.kl-label.is-dark { color: rgba(163, 234, 52, 0.9); }
+.kl-dot { display: inline-block; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background-color: #A3EA34; }
+.kl-quote { display: flex; flex-direction: row; align-items: center; gap: 1.5rem 2rem; max-width: 56rem; margin: 1.5rem 0 0; }
+.kl-portrait { width: 7rem; height: 7rem; flex: 0 0 auto; border-radius: 50%; object-fit: cover; object-position: 50% 50%; box-shadow: 0 0 0 2px rgba(163, 234, 52, 0.6); }
+.kl-blockquote { margin: 0; padding: 0; border-left: none; color: #F3FCEB; font-size: 1.5rem; line-height: 1.375; font-weight: 600; font-style: italic; }
+.kl-quote-caption { display: block; margin-top: 1rem; margin-bottom: 0; color: rgba(243, 252, 235, 0.6); font-size: 0.875rem; line-height: 1.5; font-weight: 600; }
+.kl-section { position: relative; overflow: hidden; background-color: #FFFFFF; color: #161616; font-family: Manrope, sans-serif; line-height: 1.5; }
+.kl-section.is-deep { background-color: #0A3E36; color: #F3FCEB; }
+.kl-section.is-warm { background-color: #F5F6F1; }
+.kl-num { display: block; color: rgba(5, 49, 45, 0.6); font-size: 0.75rem; line-height: 1.5; font-weight: 700; letter-spacing: 0.3em; }
+.kl-num.is-dark { color: #A3EA34; }
+.kl-h2 { margin-top: 1.5rem; margin-bottom: 0; color: #05312D; font-size: 2.75rem; line-height: 1.05; font-weight: 800; letter-spacing: -0.035em; }
+.kl-h2.is-dark { color: #F3FCEB; }
+.kl-about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: start; margin-top: 2rem; }
+.kl-text { margin-top: 0; margin-bottom: 0; color: #5C6B65; font-size: 1.125rem; line-height: 1.625; }
+.kl-text.is-dark { margin-bottom: 1rem; color: rgba(243, 252, 235, 0.9); font-size: 1.0625rem; }
+.kl-text.is-dark:last-child { margin-bottom: 0; }
+.kl-video { display: block; margin: 0; }
+.kl-video-frame { position: relative; overflow: hidden; border: 1px solid rgba(243, 252, 235, 0.2); border-radius: 0.375rem; background-color: #05312D; }
+/* Vidéo : élément Video natif de Webflow dans .kl-video-frame. Il porte lui-même son format 16:9 (div .w-video en padding-top). */
+.kl-video-caption { display: block; margin-top: 0.75rem; margin-bottom: 0; color: rgba(243, 252, 235, 0.6); font-size: 0.75rem; line-height: 1.5; font-weight: 600; letter-spacing: 0.025em; }
+.kl-split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 4rem; margin-top: 1rem; }
+.kl-benefits { position: relative; margin-top: 2.5rem; }
+.kl-benefits-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.kl-benefit { display: flex; height: 100%; padding-top: 1.5rem; flex-direction: column; border-top: 1px solid #E4E6E1; }
+.kl-benefit-title { margin-top: 1rem; margin-bottom: 0; color: #05312D; font-size: 1.25rem; line-height: 1.375; font-weight: 800; letter-spacing: -0.025em; }
+@media screen and (max-width: 991px) {
+  .kl-container { padding: 2.5rem 1.25rem; } .kl-h2 { font-size: 2.25rem; }
+  .kl-portrait { width: 6rem; height: 6rem; } .kl-blockquote { font-size: 1.25rem; } .kl-about-grid { grid-template-columns: minmax(0, 1fr); }
+  .kl-benefits-grid { grid-template-columns: minmax(0, 1fr); } .kl-split { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+}
+@media screen and (max-width: 767px) { .kl-h2 { font-size: 1.875rem; } .kl-quote { flex-direction: column; align-items: flex-start; } }
+
+/* Composant partagé « CTA Next Step » : lien secondaire ajouté le 26/09, masqué par défaut (prop « Afficher le lien secondaire »), activé sur cette page. */
+.c10-link { display: inline-block; margin-left: 32px; color: #F5F6F1; font-size: 16px; line-height: 1.5; font-weight: 600; text-decoration: underline; text-decoration-color: #A3EA34; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+@media screen and (max-width: 479px) { .c10-link { display: block; width: fit-content; margin-left: 0; margin-top: 16px; } }
+
+/* V1 : classes encore présentes dans Webflow mais plus utilisées sur la page depuis la V2 du 26/09. Suppression possible via Style Manager > Clean up (ne retire que les classes inutilisées). */
+.kl-hero-img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; transform: scale(1.08); }
+.kl-hero-overlay { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-image: linear-gradient(0deg, #05312D 0%, rgba(5, 49, 45, 0.6) 50%, rgba(5, 49, 45, 0.2) 100%); }
+.kl-h1 { max-width: 48rem; margin-top: 1.25rem; margin-bottom: 0; color: #F3FCEB; font-size: 4.25rem; line-height: 0.98; font-weight: 800; letter-spacing: -0.035em; }
+.kl-lead { max-width: 36rem; margin-top: 1.25rem; margin-bottom: 0; color: rgba(243, 252, 235, 0.9); font-size: 1.125rem; line-height: 1.625; }
+.kl-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+.kl-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border: 1px solid rgba(243, 252, 235, 0.2); border-radius: 0.5rem; background-color: transparent; color: #F3FCEB; font-size: 0.9375rem; font-weight: 700; text-decoration: none; }
+.kl-btn-outline:hover { background-color: rgba(243, 252, 235, 0.1); }
+.kl-head { max-width: 48rem; margin-top: 1rem; }
+.kl-converge { position: relative; margin-top: 3rem; }
+.kl-flow-converge { position: absolute; top: 0; right: 0; left: 0; width: 100%; height: 14rem; pointer-events: none; }
+.kl-converge-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 1.5rem; align-items: end; }
+.kl-card { position: relative; padding: 1.75rem; border: 1px solid rgba(243, 252, 235, 0.2); background-color: rgba(243, 252, 235, 0.1); }
+.kl-card.is-accent { max-width: 36rem; margin: 1rem auto 0; border-color: rgba(163, 234, 52, 0.6); background-color: rgba(163, 234, 52, 0.1); text-align: center; }
+.kl-card-title { margin-top: 1rem; margin-bottom: 0; color: #F3FCEB; font-size: 1.5rem; line-height: 1.25; font-weight: 800; }
+.kl-node { display: flex; justify-content: center; }
+.kl-node-dot { display: block; width: 12px; height: 12px; border-radius: 50%; background-color: #A3EA34; }
+.kl-flow-benefits { position: absolute; top: 1.5rem; right: 0; left: 0; width: 100%; height: 2rem; pointer-events: none; }
+.kl-list { margin-top: 2rem; margin-bottom: 0; padding-left: 0; list-style-type: none; }
+.kl-list-item { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.875rem 0; border-top: 1px solid #E4E6E1; }
+.kl-list-item:last-child { border-bottom: 1px solid #E4E6E1; }
+.kl-list-text { color: #161616; font-size: 0.9375rem; line-height: 1.5; }
+@media screen and (max-width: 991px) { .kl-h1 { font-size: 3.75rem; } .kl-flow-converge, .kl-node, .kl-flow-benefits { display: none; } .kl-converge-grid { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; } .kl-card.is-accent { margin-top: 2.5rem; } }
+@media screen and (max-width: 767px) { .kl-h1 { font-size: 2.5rem; } }

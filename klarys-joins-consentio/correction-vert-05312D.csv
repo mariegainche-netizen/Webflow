@@ -1,0 +1,107 @@
+classe;propriété;ancienne valeur;nouvelle valeur;origine
+c4-forecast__foot;border-top-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c4-module__title;color;#07372D;#05312D;existante
+c6-alloc-name;color;#07372D;#05312D;existante
+c3-step__meta;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c9-step__num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c5-offers__row;border-bottom-color;rgba(7,55,45,0.06);rgba(5,49,45,0.06);existante
+c4-module__rule;background-color;rgba(7,55,45,0.12);rgba(5,49,45,0.12);existante
+c3-step__title;color;#07372D;#05312D;existante
+c9-h2;color;#07372D;#05312D;existante
+cs-info-label;color;rgba(7,55,45,0.7);rgba(5,49,45,0.7);existante
+c10-btn;color;#07372D;#05312D;existante
+c4-h2;color;#07372D;#05312D;existante
+c4-foot-val;color;#07372D;#05312D;existante
+c5-offers__badge;color;#07372D;#05312D;existante
+c2-offer-price c2-offer-price--best;color;#07372D;#05312D;existante
+c2-frag-label;color;#07372D;#05312D;existante
+c4-module__label;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c2-hero 2;background-color;#07372D;#05312D;existante
+c2-offers;color;#07372D;#05312D;existante
+c2-h1 2;-webkit-text-stroke-color;#07372d;#05312D;existante
+c2-frag-arrow;color;rgba(7,55,45,0.35);rgba(5,49,45,0.35);existante
+c6-alloc__rule;background-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c10-bg 5;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(7,55,45,0.95));radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));existante
+c2-workspace;background-color;#07372D;#05312D;existante
+c6-alloc__label;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c10-bg-fade;background-image;linear-gradient(90deg, #07372D 0%, #07372D 50%, rgba(7,55,45,0) 100%);linear-gradient(90deg, #05312D 0%, #05312D 50%, rgba(5,49,45,0) 100%);existante
+cs-kpis;background-color;#07372D;#05312D;existante
+c2-hero;background-color;#07372D;#05312D;existante
+c2-offer-price;color;#07372D;#05312D;existante
+c2-frag-card;border-top-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c2-frag-card;border-right-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c2-frag-card;border-bottom-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c2-frag-card;border-left-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c2-offers__product;border-bottom-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c2-h1;-webkit-text-stroke-color;#07372d;#05312D;existante
+c6-alloc__total;color;#07372D;#05312D;existante
+c2-rule;background-color;rgba(7,55,45,0.15);rgba(5,49,45,0.15);existante
+c2-section-num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c6-alloc-track;background-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c9-step__title;color;#07372D;#05312D;existante
+c5-module__rule;background-color;rgba(7,55,45,0.12);rgba(5,49,45,0.12);existante
+c2-offers__head;border-bottom-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c5-cell-tag;color;#07372D;#05312D;existante
+c5-cell;color;#07372D;#05312D;existante
+c2-offer-thumb;background-color;rgba(7,55,45,0.06);rgba(5,49,45,0.06);existante
+c3old-h2;color;#07372D;#05312D;existante
+c9-section-num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c5-offers__label;color;#07372D;#05312D;existante
+c5-module__title;color;#07372D;#05312D;existante
+c4-legend-item;color;#07372D;#05312D;existante
+c9-step__rule;background-color;rgba(7,55,45,0.15);rgba(5,49,45,0.15);existante
+c7-section c7-section--dark;background-color;#07372D;#05312D;existante
+cpy-num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c4-eyebrow__label;color;#07372D;#05312D;existante
+c5-cell-name;color;#07372D;#05312D;existante
+c10-bg 4;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(7,55,45,0.95));radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));existante
+c5-offers;border-top-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c5-offers;border-right-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c5-offers;border-bottom-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c5-offers;border-left-color;rgba(7,55,45,0.1);rgba(5,49,45,0.1);existante
+c5-module__label;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c10-bg 2;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(7,55,45,0.95));radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));existante
+cpy-photo-fade;background-image;linear-gradient(0deg,rgba(7,55,45,0.55),rgba(7,55,45,0.05) 50%,rgba(7,55,45,0));linear-gradient(0deg,rgba(5,49,45,0.55),rgba(5,49,45,0.05) 50%,rgba(5,49,45,0));existante
+cpy-h2;color;#07372D;#05312D;existante
+c5-offers__cta;color;#07372D;#05312D;existante
+c10-section;background-color;#07372D;#05312D;existante
+c2-offers__product-name;color;#07372D;#05312D;existante
+c3-eyebrow__label;color;#07372D;#05312D;existante
+c5-offers__cols;border-bottom-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c2-offer-name;color;#07372D;#05312D;existante
+c6-alloc;border-top-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c6-alloc;border-right-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c6-alloc;border-bottom-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c6-alloc;border-left-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+s14-section;background-color;#07372D;#05312D;existante
+c2-offers__dot;background-color;#07372D;#05312D;existante
+c2-eyebrow__label;color;#07372D;#05312D;existante
+c6-module__label;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c2-offers__title;color;#07372D;#05312D;existante
+c4-forecast__label;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c8-cta;color;#07372D;#05312D;existante
+cpy-hero;background-color;#07372D;#05312D;existante
+cs-benefit-text;color;#07372D;#05312D;existante
+c10-bg 3;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(7,55,45,0.95));radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));existante
+c2-fcta;background-color;#07372D;#05312D;existante
+c2-h2;color;#07372D;#05312D;existante
+c8-h2;color;#07372D;#05312D;existante
+cs-quote;color;#07372D;#05312D;existante
+c2-frag-icon;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+c4-section-num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c4-legend-swatch c4-legend-swatch--forest;background-color;#07372D;#05312D;existante
+c6-module__title;color;#07372D;#05312D;existante
+c4-forecast;border-top-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c4-forecast;border-right-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c4-forecast;border-bottom-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c4-forecast;border-left-color;rgba(7,55,45,0.08);rgba(5,49,45,0.08);existante
+c6-module__rule;background-color;rgba(7,55,45,0.12);rgba(5,49,45,0.12);existante
+c8-eyebrow__label;color;#07372D;#05312D;existante
+c3-section-num;color;rgba(7,55,45,0.45);rgba(5,49,45,0.45);existante
+c5-col-head;color;rgba(7,55,45,0.55);rgba(5,49,45,0.55);existante
+cs-context-name;color;#07372D;#05312D;existante
+cpy-pillar-title;color;#07372D;#05312D;créée par la session Company pendant la passe
+cpy-proof;color;#07372D;#05312D;créée par la session Company pendant la passe
+cpy-h2-sm;color;#07372D;#05312D;créée par la session Company pendant la passe
+cpy-sec-forest;background-color;#07372D;#05312D;créée par la session Company pendant la passe
+cpy-photo;background-color;#07372D;#05312D;créée par la session Company pendant la passe

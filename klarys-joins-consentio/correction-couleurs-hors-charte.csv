@@ -1,0 +1,75 @@
+classe;propriété;ancienne valeur;nouvelle valeur;origine
+c10-bg 5;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));radial-gradient(circle at 70% 40%,rgba(10,62,54,0.9),rgba(5,49,45,0.95));corrigé le 26/09 par cette session
+consentio-header__burger;border-top-color;#0d4a3a;var(--deep-charte) = #0A3E36;corrigé le 26/09 par cette session
+consentio-header__burger;border-right-color;#0d4a3a;var(--deep-charte) = #0A3E36;corrigé le 26/09 par cette session
+consentio-header__burger;border-bottom-color;#0d4a3a;var(--deep-charte) = #0A3E36;corrigé le 26/09 par cette session
+consentio-header__burger;border-left-color;#0d4a3a;var(--deep-charte) = #0A3E36;corrigé le 26/09 par cette session
+consentio-header__burger;color;#0d4a3a;var(--deep-charte) = #0A3E36;corrigé le 26/09 par cette session
+c10-bg 4;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));radial-gradient(circle at 70% 40%,rgba(10,62,54,0.9),rgba(5,49,45,0.95));corrigé le 26/09 par cette session
+c10-bg 2;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));radial-gradient(circle at 70% 40%,rgba(10,62,54,0.9),rgba(5,49,45,0.95));corrigé le 26/09 par cette session
+c10-bg 3;background-image;radial-gradient(circle at 70% 40%,rgba(13,74,58,0.9),rgba(5,49,45,0.95));radial-gradient(circle at 70% 40%,rgba(10,62,54,0.9),rgba(5,49,45,0.95));corrigé le 26/09 par cette session
+Block Quote 8;border-top-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 8;border-left-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 4;border-top-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 4;border-left-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-check-icon;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 7;border-top-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 7;border-left-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3old-step [medium/noPseudo];border-left-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-offers__badge;border-top-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-offers__badge;border-right-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-offers__badge;border-bottom-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-offers__badge;border-left-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c2-eyebrow__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c2-offer-price--best;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cpy-eyebrow-dark;color;rgba(164,239,40,0.8);rgba(163,234,52,0.8);déjà corrigé avant le 26/09 (autre session)
+cpy-dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c2-workspace__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c6-module__num;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+erp-slider__link [main/hover];box-shadow;0 0 0 1px rgba(164,239,40,0.5),0 10px 24px -14px rgba(164,239,40,0.65);0 0 0 1px rgba(163,234,52,0.5),0 10px 24px -14px rgba(163,234,52,0.65);déjà corrigé avant le 26/09 (autre session)
+c4-module__num;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c4-eyebrow__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-kpi-value;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-eyebrow__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 6;border-top-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 6;border-left-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-offers__cta;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c7-check-icon;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-flow-line;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c5-module__num;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c10-eyebrow__label;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c10-eyebrow__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c8-eyebrow__dot;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c6-check-icon;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c8-cta;border-bottom-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c4-legend-swatch--lime;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-quote;border-left;2px solid #A4EF28;2px solid #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 5;border-top-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+Block Quote 5;border-left-color;#a4ef28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+erp-slider__btn [main/hover];border-top-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+erp-slider__btn [main/hover];border-right-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+erp-slider__btn [main/hover];border-bottom-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+erp-slider__btn [main/hover];border-left-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c6-alloc-fill;background-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c4-check-icon;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-step__dot;border-top-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-step__dot;border-right-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-step__dot;border-bottom-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c3-step__dot;border-left-color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+c7-module__num;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-benefit-check;color;#A4EF28;var(--lime-charte) = #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-benefit-check;border-top;1.5px solid #A4EF28;1.5px solid #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-benefit-check;border-right;1.5px solid #A4EF28;1.5px solid #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-benefit-check;border-bottom;1.5px solid #A4EF28;1.5px solid #A3EA34;déjà corrigé avant le 26/09 (autre session)
+cs-benefit-check;border-left;1.5px solid #A4EF28;1.5px solid #A3EA34;déjà corrigé avant le 26/09 (autre session)
+book-demo__step;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c2-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c3-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c4-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c5-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c6-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c8-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c9-section;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+csl-card;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c6-al;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
+c6-al-sup-price;color;#12211C;var(--noir-charte) = #161616;corrigé le 26/09 par cette session
