@@ -26,7 +26,7 @@
 .kl-text.is-dark:last-child { margin-bottom: 0; }
 .kl-video { display: block; margin: 0; }
 .kl-video-frame { position: relative; overflow: hidden; border: 1px solid rgba(243, 252, 235, 0.2); border-radius: 0.375rem; background-color: #05312D; }
-/* Vidéo : élément Code Embed dans .kl-video-frame. Le format 16:9 est porté par un div en style inline (height 0, padding-top 56.25 %) qui contient l'iframe en position absolue, car la propriété aspect-ratio ne s'appliquait pas sur le site publié. */
+/* Vidéo : élément Video natif de Webflow dans .kl-video-frame. Il porte lui-même son format 16:9 (div .w-video en padding-top). */
 .kl-video-caption { display: block; margin-top: 0.75rem; margin-bottom: 0; color: rgba(243, 252, 235, 0.6); font-size: 0.75rem; line-height: 1.5; font-weight: 600; letter-spacing: 0.025em; }
 .kl-split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 4rem; margin-top: 1rem; }
 .kl-benefits { position: relative; margin-top: 2.5rem; }

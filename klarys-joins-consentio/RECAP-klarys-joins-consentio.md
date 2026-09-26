@@ -9,7 +9,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 - **Composant partagé « CTA Next Step »** : 4 props ajoutés (eyebrow masquable, lien secondaire optionnel), sans effet sur les 2 autres pages qui l’utilisent.
 - **Charte** : vert, lime, deep et texte foncé Lovable corrigés sur tout le site les 24 et 26/09 (section 4).
 - **About Us non touchée** : elle relève de la session « Company Page Creation ».
-- **Vidéo Manor** : dans un élément Code Embed, avec son propre cadre 16:9 en style inline (26/09, 16 h 05). L’élément personnalisé `iframe` puis un premier Embed ne s’affichaient pas sur le site publié. À contrôler sur webflow.io après republication.
+- **Vidéo Manor** : élément Video natif de Webflow, ajouté par Marie le 26/09 et vérifié en ligne. Il remplace mes essais (élément personnalisé `iframe`, puis Code Embed), qui ne s’affichaient pas sur le site publié.
 
 ## 1. La page
 
@@ -35,7 +35,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 | 5 | CTA Next Step | Composant : titre « Discover now how Consentio and Klarys help thousands of companies. », eyebrow masqué, bouton « Book a demo », lien « Discover Consentio for retailers » | `688d7304-9935-d555-621a-8d5b3b887e1f` |
 | 6 | Footer 2026 | Composant (instance) | `8bcdd768-2b5d-716b-6adf-66f59dcf7a4f` |
 
-- **Webflow natif** : 0 script et 1 seul embed de code, pour la vidéo. La ligne verte est un élément personnalisé (Custom Element `svg`), modifiable dans le panneau Settings. Les animations sont des Interactions natives (section 5).
+- **100 % Webflow natif** : 0 script, 0 embed de code. La vidéo est l’élément Video natif, la ligne verte un élément personnalisé (Custom Element `svg`), modifiable dans le panneau Settings. Les animations sont des Interactions natives (section 5).
 - Contenus : textes de la V2 Lovable, en anglais.
 - Retiré de la V1 : image de fond du hero et son voile, titre visible, texte d’accroche et 2 boutons du hero, section « Klarys and Consentio, converging » (cartes et ligne), liste à puces de la continuité, ligne des bénéfices.
 
@@ -49,7 +49,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 ### Images et vidéo
 
 - Portrait : photo Lovable de Guillaume Humbert (asset `6ab7d09835960d164f51aabf`, remplacée par Marie dans le Designer le 26/09), texte alternatif « Guillaume Humbert, CEO ». Cadrage rond centré (`object-position: 50% 50%`).
-- Vidéo : témoignage Manor, dans un élément Code Embed (`506038aa-cb40-fdbe-6e24-161812a98b06`) : un div en style inline porte le format 16:9 (hauteur 0, `padding-top` 56,25 %) et contient l’iframe `https://www.youtube-nocookie.com/embed/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Le domaine youtube-nocookie ne dépose pas de cookie avant la lecture, comme dans Lovable.
+- Vidéo : témoignage Manor, élément Video natif (`fb61ab80-6533-7d37-78b7-aafd7a517211`) dans le cadre `kl-video-frame`, URL `https://youtu.be/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Webflow génère lui-même l’iframe et son format 16:9.
 - Image de partage (OG) : `seafood-packing.jpg`, asset `6ab4ebeb94eb6de7ff706177`.
 
 ### Responsive (desktop first)
@@ -81,7 +81,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 - **Hero** : `kl-hero`, `kl-flow-hero`, `kl-flow-path` (et son combo `is-drawn`), `kl-sr-only` (H1 invisible), `kl-quote`, `kl-portrait`, `kl-blockquote`, `kl-quote-caption`
 - **Communes** : `kl-container`, `kl-label`, `kl-dot`, `kl-section`, `kl-num`, `kl-h2`, `kl-text`
-- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame` (bordure, arrondi et fond du cadre qui contient l’Embed), `kl-video-caption`
+- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame` (bordure, arrondi et fond du cadre de la vidéo), `kl-video-caption`
 - **Continuité** : `kl-split` (marge haute d’1 rem ajoutée), `kl-benefits`, `kl-benefits-grid`, `kl-benefit`, `kl-benefit-title`
 - **Combos** : `is-drawn` (sur `kl-flow-path`, ajouté par les Interactions), `is-dark` (sur `kl-label`, `kl-num`, `kl-h2` et `kl-text`, ce dernier créé le 26/09), `is-deep` et `is-warm` (sur `kl-section`)
 - **Composant CTA Next Step** : `c10-link` (lien secondaire, créé le 26/09)
@@ -130,7 +130,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 ## 6. Écarts assumés par rapport à Lovable (V2)
 
-- **Vidéo** : élément Code Embed avec l’iframe youtube-nocookie de Lovable. L’élément YouTube natif ne peut pas recevoir la vidéo via l’API, un élément personnalisé `iframe` ne s’affiche pas sur le site publié, et la propriété `aspect-ratio` du cadre ne s’appliquait pas (constaté le 26/09) : le format 16:9 est donc porté par l’Embed lui-même. Pour changer de vidéo : double-clic sur l’Embed dans le cadre vidéo, puis remplacer l’identifiant `dhKXULAqtdU` dans l’URL. Alternative 100 % native : remplacer l’Embed par l’élément YouTube de Webflow et coller l’URL de la vidéo dans ses réglages.
+- **Vidéo** : élément Video natif de Webflow au lieu de l’iframe youtube-nocookie de Lovable. Il passe par youtube.com (via Embedly) : YouTube peut déposer ses cookies dès l’affichage de la page, et pas seulement au clic. À valider avec la politique cookies du site. Pour changer de vidéo : sélectionner l’élément Video, puis coller la nouvelle URL dans ses réglages.
 - **H1** : la V2 Lovable n’en a pas. Il est gardé pour le SEO et l’accessibilité, mais invisible à l’écran (classe `kl-sr-only`).
 - **CTA final** : composant existant « CTA Next Step », avec son image cagette au lieu des tomates (hands-market) de Lovable. Un seul CTA est ainsi maintenu pour tout le site.
 - **Espacement** : le titre « What is Klarys? » est à 1,5 rem sous le « 01 » (1 rem dans Lovable), pour réutiliser `kl-h2` sans nouvelle variante.
