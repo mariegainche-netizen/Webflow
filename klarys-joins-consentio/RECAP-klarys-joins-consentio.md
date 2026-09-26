@@ -9,7 +9,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 - **Composant partagé « CTA Next Step »** : 4 props ajoutés (eyebrow masquable, lien secondaire optionnel), sans effet sur les 2 autres pages qui l’utilisent.
 - **Charte** : vert, lime, deep et texte foncé Lovable corrigés sur tout le site les 24 et 26/09 (section 4).
 - **About Us non touchée** : elle relève de la session « Company Page Creation ».
-- **Vidéo Manor** : élément Video natif de Webflow, ajouté par Marie le 26/09 et vérifié en ligne. Il remplace mes essais (élément personnalisé `iframe`, puis Code Embed), qui ne s’affichaient pas sur le site publié.
+- **Vidéo Manor : à réparer dans le Designer (1 min, piège 17).** C’est l’élément Video natif ajouté par Marie le 26/09, visible sur la publication de 16 h 01. À 16 h 12, j’ai changé son titre par l’API : cela a effacé le lecteur généré par Webflow, et la vidéo n’apparaît plus depuis la publication de 16 h 13. Mes essais précédents (élément personnalisé `iframe`, puis Code Embed) ne s’affichaient pas sur le site publié.
 
 ## 1. La page
 
@@ -49,7 +49,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 ### Images et vidéo
 
 - Portrait : photo Lovable de Guillaume Humbert (asset `6ab7d09835960d164f51aabf`, remplacée par Marie dans le Designer le 26/09), texte alternatif « Guillaume Humbert, CEO ». Cadrage rond centré (`object-position: 50% 50%`).
-- Vidéo : témoignage Manor, élément Video natif (`fb61ab80-6533-7d37-78b7-aafd7a517211`) dans le cadre `kl-video-frame`, URL `https://youtu.be/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Webflow génère lui-même l’iframe et son format 16:9.
+- Vidéo : témoignage Manor, élément Video natif (`fb61ab80-6533-7d37-78b7-aafd7a517211` au 26/09 ; nouvel ID si l’élément est recréé) dans le cadre `kl-video-frame`, URL `https://youtu.be/dhKXULAqtdU`. Titre : celui que Webflow remplit au collage de l’URL (titre YouTube). Webflow génère lui-même l’iframe et son format 16:9, mais seulement quand l’URL est collée dans le Designer (piège 17). La légende « Testimony of Manor, major Swiss retailer using Klarys » est un `figcaption` sous le cadre.
 - Image de partage (OG) : `seafood-packing.jpg`, asset `6ab4ebeb94eb6de7ff706177`.
 
 ### Responsive (desktop first)
@@ -130,7 +130,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 ## 6. Écarts assumés par rapport à Lovable (V2)
 
-- **Vidéo** : élément Video natif de Webflow au lieu de l’iframe youtube-nocookie de Lovable. Il passe par youtube.com (via Embedly) : YouTube peut déposer ses cookies dès l’affichage de la page, et pas seulement au clic. À valider avec la politique cookies du site. Pour changer de vidéo : sélectionner l’élément Video, puis coller la nouvelle URL dans ses réglages.
+- **Vidéo** : élément Video natif de Webflow au lieu de l’iframe youtube-nocookie de Lovable. Il passe par youtube.com (via Embedly) : YouTube peut déposer ses cookies dès l’affichage de la page, et pas seulement au clic. À valider avec la politique cookies du site. Pour changer de vidéo : dans le Designer, sélectionner l’élément Video, puis coller la nouvelle URL dans ses réglages (jamais par l’API : piège 17).
 - **H1** : la V2 Lovable n’en a pas. Il est gardé pour le SEO et l’accessibilité, mais invisible à l’écran (classe `kl-sr-only`).
 - **CTA final** : composant existant « CTA Next Step », avec son image cagette au lieu des tomates (hands-market) de Lovable. Un seul CTA est ainsi maintenu pour tout le site.
 - **Espacement** : le titre « What is Klarys? » est à 1,5 rem sous le « 01 » (1 rem dans Lovable), pour réutiliser `kl-h2` sans nouvelle variante.
@@ -178,6 +178,11 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
     - **Éléments ciblés un par un** : un bloc supprimé puis recréé, ou dupliqué, n’est plus animé. Il faut le re-cibler dans le panneau Interactions.
     - **Mouvement réduit strict** (option) : pour couper aussi le tracé de 2,2 s, ajouter dans le code personnalisé de la page (Head) : `<style>@media (prefers-reduced-motion: reduce) { .kl-flow-path { transition: none; } }</style>`. Ce n’est pas un script, mais c’est hors Designer.
 16. **Contrôle en Preview et sur webflow.io** (republier après chaque modification) : desktop, tablette (991 px et moins) et mobile (767 px et moins). À vérifier : portrait et citation du hero, lecture de la vidéo Manor, lien secondaire du CTA, portrait au-dessus de la citation sur mobile, apparitions décalées et tracé de la ligne du hero.
+17. **Vidéo : réglages dans le Designer uniquement.**
+    - L’API (MCP) n’enregistre que l’URL et le titre de l’élément Video, pas le lecteur que Webflow génère (via Embedly) quand on colle l’URL dans le Designer. Une écriture par l’API vide donc l’élément : la vidéo disparaît du site publié, sans message d’erreur. C’est ce qui s’est passé le 26/09 à 16 h 12.
+    - Correctif : Navigator (Z), « What is Klarys? » › `kl-about-grid` › `kl-video` › `kl-video-frame` › Video. Panneau Settings (D) : coller `https://youtu.be/dhKXULAqtdU` dans le champ URL, puis Entrée. Ce lien court diffère de l’URL enregistrée (`https://youtube.com/watch?v=dhKXULAqtdU`), ce qui force Webflow à recréer le lecteur. Vérifier la vignette dans le canevas, puis publier.
+    - Si la vignette n’apparaît pas : supprimer l’élément Video, en glisser un nouveau (A › Media › Video) à l’intérieur de `kl-video-frame`, puis coller l’URL. Le cadre et l’animation, réglés sur ses parents, s’appliquent d’office.
+    - Titre (équivalent du texte alternatif) : garder celui que Webflow remplit tout seul. La légende visible est le `figcaption` sous le cadre.
 
 ## Fichiers du dossier
 
