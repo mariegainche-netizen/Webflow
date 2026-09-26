@@ -4,12 +4,12 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 
 ## Statut
 
-- **Page « Klarys joins Consentio » passée en V2 le 26/09, toujours en brouillon.** La nouvelle version Lovable (`klarys-next.tsx`, bouton V2) remplace la V1 sur la même page : même URL, même SEO. À vérifier en Preview, puis publication par Marie.
+- **Page « Klarys joins Consentio » passée en V2 le 26/09 et publiée sur le domaine de test.** La nouvelle version Lovable (`klarys-next.tsx`, bouton V2) remplace la V1 sur la même page : même URL, même SEO. Marie a décoché Draft et publié le site le 26/09 à 15 h 45 pour voir le rendu sur webflow.io.
 - **Photo du CEO provisoire** : portrait `10_Guillaume.png` du site 2024, en attendant le fichier de la photo Lovable (voir « Pièges et à faire », point 1).
 - **Composant partagé « CTA Next Step »** : 4 props ajoutés (eyebrow masquable, lien secondaire optionnel), sans effet sur les 2 autres pages qui l’utilisent.
 - **Charte** : vert, lime, deep et texte foncé Lovable corrigés sur tout le site les 24 et 26/09 (section 4).
 - **About Us non touchée** : elle relève de la session « Company Page Creation ».
-- **⚠ À lire avant de publier** : la case Draft a été retrouvée décochée le 24/09 puis le 26/09, avec une publication du site dans chaque fenêtre (point 2). La page est de nouveau en brouillon depuis le 26/09 à 9 h 48 et l’est restée après la V2.
+- **Vidéo Manor** : passée dans un élément Code Embed le 26/09 à 15 h 55, car l’élément personnalisé `iframe` ne s’affichait pas sur le site publié. Visible sur webflow.io après la prochaine publication.
 
 ## 1. La page
 
@@ -18,7 +18,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 | Nom | Klarys joins Consentio |
 | Slug | `klarys-joins-consentio` (URL publiée : `/en-en/klarys-joins-consentio`) |
 | ID page | `6ab4ed0fc1f440501102f46b` |
-| Statut | Brouillon (Draft coché) |
+| Statut | Publiée sur le domaine de test (Draft décoché par Marie le 26/09 à 15 h 45) |
 | Version | V2 (Lovable `klarys-next.tsx`), en place depuis le 26/09 |
 | SEO title | Klarys joins Consentio \| One fresh food procurement platform |
 | Meta description | Klarys and Consentio have joined forces to build one integrated platform for fresh food procurement and supplier collaboration. |
@@ -35,7 +35,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 | 5 | CTA Next Step | Composant : titre « Discover now how Consentio and Klarys help thousands of companies. », eyebrow masqué, bouton « Book a demo », lien « Discover Consentio for retailers » | `688d7304-9935-d555-621a-8d5b3b887e1f` |
 | 6 | Footer 2026 | Composant (instance) | `8bcdd768-2b5d-716b-6adf-66f59dcf7a4f` |
 
-- **Webflow natif** : 0 script, 0 embed de code. La ligne verte et la vidéo sont des éléments personnalisés (Custom Element `svg` et `iframe`), modifiables dans le panneau Settings. Les animations sont des Interactions natives (section 5).
+- **Webflow natif** : 0 script et 1 seul embed de code, pour la vidéo. La ligne verte est un élément personnalisé (Custom Element `svg`), modifiable dans le panneau Settings. Les animations sont des Interactions natives (section 5).
 - Contenus : textes de la V2 Lovable, en anglais.
 - Retiré de la V1 : image de fond du hero et son voile, titre visible, texte d’accroche et 2 boutons du hero, section « Klarys and Consentio, converging » (cartes et ligne), liste à puces de la continuité, ligne des bénéfices.
 
@@ -49,7 +49,7 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 ### Images et vidéo
 
 - Portrait : asset `10_Guillaume.png` (`6aaaafd0271107b3401492ea`), texte alternatif « Guillaume Humbert, CEO ». Provisoire (section 8, point 1).
-- Vidéo : témoignage Manor, `https://www.youtube-nocookie.com/embed/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Le domaine youtube-nocookie ne dépose pas de cookie avant la lecture, comme dans Lovable.
+- Vidéo : témoignage Manor, dans un élément Code Embed (`506038aa-cb40-fdbe-6e24-161812a98b06`) : iframe `https://www.youtube-nocookie.com/embed/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Le domaine youtube-nocookie ne dépose pas de cookie avant la lecture, comme dans Lovable.
 - Image de partage (OG) : `seafood-packing.jpg`, asset `6ab4ebeb94eb6de7ff706177`.
 
 ### Responsive (desktop first)
@@ -77,11 +77,11 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 
 ## 3. Classes (préfixe `kl-`)
 
-La V2 utilise 25 classes et 7 combos, toutes natives (panneau Style). Miroir CSS : `kl-classes.css`. Structure HTML : `sections.html`.
+La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS : `kl-classes.css`. Structure HTML : `sections.html`.
 
 - **Hero** : `kl-hero`, `kl-flow-hero`, `kl-flow-path` (et son combo `is-drawn`), `kl-sr-only` (H1 invisible), `kl-quote`, `kl-portrait`, `kl-blockquote`, `kl-quote-caption`
 - **Communes** : `kl-container`, `kl-label`, `kl-dot`, `kl-section`, `kl-num`, `kl-h2`, `kl-text`
-- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame`, `kl-video-iframe`, `kl-video-caption`
+- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame` (cadre 16:9 qui contient l’Embed), `kl-video-caption`
 - **Continuité** : `kl-split` (marge haute d’1 rem ajoutée), `kl-benefits`, `kl-benefits-grid`, `kl-benefit`, `kl-benefit-title`
 - **Combos** : `is-drawn` (sur `kl-flow-path`, ajouté par les Interactions), `is-dark` (sur `kl-label`, `kl-num`, `kl-h2` et `kl-text`, ce dernier créé le 26/09), `is-deep` et `is-warm` (sur `kl-section`)
 - **Composant CTA Next Step** : `c10-link` (lien secondaire, créé le 26/09)
@@ -131,7 +131,7 @@ La V2 utilise 25 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 ## 6. Écarts assumés par rapport à Lovable (V2)
 
 - **Photo du CEO** : portrait provisoire du site 2024 (fond lime, gilet Consentio) tant que le fichier de la photo Lovable n’est pas dans Webflow.
-- **Vidéo** : élément personnalisé `iframe` (youtube-nocookie, comme Lovable) au lieu de l’élément YouTube natif, car l’API ne permet pas d’y renseigner la vidéo. Pour changer de vidéo : sélectionner l’iframe dans le Navigator, puis modifier l’attribut `src` dans le panneau Settings.
+- **Vidéo** : élément Code Embed avec l’iframe youtube-nocookie de Lovable. L’élément YouTube natif ne peut pas recevoir la vidéo via l’API, et un élément personnalisé `iframe` ne s’affiche pas sur le site publié (constaté le 26/09). Pour changer de vidéo : double-clic sur l’Embed dans le cadre vidéo, puis remplacer l’identifiant `dhKXULAqtdU` dans l’URL. Alternative 100 % native : remplacer l’Embed par l’élément YouTube de Webflow et coller l’URL de la vidéo dans ses réglages.
 - **H1** : la V2 Lovable n’en a pas. Il est gardé pour le SEO et l’accessibilité, mais invisible à l’écran (classe `kl-sr-only`).
 - **CTA final** : composant existant « CTA Next Step », avec son image cagette au lieu des tomates (hands-market) de Lovable. Un seul CTA est ainsi maintenu pour tout le site.
 - **Espacement** : le titre « What is Klarys? » est à 1,5 rem sous le « 01 » (1 rem dans Lovable), pour réutiliser `kl-h2` sans nouvelle variante.
@@ -148,10 +148,10 @@ La V2 utilise 25 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 1. **Photo du CEO à remplacer.** La photo Lovable envoyée dans la conversation n’est pas arrivée sous forme de fichier. Deux options :
    - la joindre comme fichier dans un prochain message : je la charge dans les assets et la mets en place ;
    - ou la remplacer dans le Designer : sélectionner le portrait du hero, puis Replace image dans le panneau Settings. La classe `kl-portrait` garde le cadrage rond et l’anneau lime.
-2. **La page a probablement été en ligne sur le domaine de test.**
+2. **Historique de la case Draft et du domaine de test.**
    - 24/09 : une modification SEO et OG faite via l’API a décoché la case Draft de 12 h 50 à 13 h 33 (heure de Paris). Le site a été publié à 13 h 03, pendant cette fenêtre.
    - 26/09 : case de nouveau trouvée décochée à 9 h 44. Ce n’est pas l’effet d’une écriture d’éléments via l’API (testé) : c’est probablement un réglage de page modifié entre le 24/09 à 13 h 33 et le 26/09 à 9 h 29, par une autre session ou à la main. Le site a été publié à 8 h 50 : si la case était déjà décochée, la V1 de la page est en ligne sur le domaine de test `webflow.io`, à l’adresse `/en-en/klarys-joins-consentio`.
-   - Remise en brouillon le 26/09 à 9 h 48 : la prochaine publication du site la retirera du domaine de test. Si la case avait été décochée volontairement, il suffit de la décocher à nouveau.
+   - Remise en brouillon le 26/09 à 9 h 48, puis décochée par Marie à 15 h 45 et site publié : la V2 est en ligne sur `webflow.io`, versions `/fr-fr/` et `/es-es/` comprises (en anglais). Pour la retirer, recocher Draft puis republier.
    - Aucun domaine personnalisé n’est connecté : rien n’est visible sur consentio.co.
 3. **Publier la page en même temps que le site.** Le lien « Klarys joins Consentio » du footer (composant partagé, toutes les pages) pointe vers cette page. Si le site est publié alors qu’elle est en brouillon, ce lien renvoie une 404.
 4. **Réglages de page via l’API.** Toute modification SEO ou OG faite via l’API sans `draft: true` décoche la case Draft. Après chaque intervention automatisée, revérifier cette case. Les écritures d’attributs sur les éléments, elles, ne la touchent pas (testé le 26/09).
@@ -180,14 +180,14 @@ La V2 utilise 25 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
     - **Flash possible au chargement** : le libellé et la citation du hero peuvent s’afficher une fraction de seconde avant leur animation. Si c’est visible en Preview, régler leur Initial Appearance (opacité 0) dans le panneau Interactions : l’API ne permet pas de le faire.
     - **Éléments ciblés un par un** : un bloc supprimé puis recréé, ou dupliqué, n’est plus animé. Il faut le re-cibler dans le panneau Interactions.
     - **Mouvement réduit strict** (option) : pour couper aussi le tracé de 2,2 s, ajouter dans le code personnalisé de la page (Head) : `<style>@media (prefers-reduced-motion: reduce) { .kl-flow-path { transition: none; } }</style>`. Ce n’est pas un script, mais c’est hors Designer.
-16. **Contrôle en Preview** : desktop, tablette (991 px et moins) et mobile (767 px et moins). À vérifier : portrait et citation du hero, lecture de la vidéo Manor, lien secondaire du CTA, portrait au-dessus de la citation sur mobile, apparitions décalées et tracé de la ligne du hero.
+16. **Contrôle en Preview et sur webflow.io** (republier après chaque modification) : desktop, tablette (991 px et moins) et mobile (767 px et moins). À vérifier : portrait et citation du hero, lecture de la vidéo Manor, lien secondaire du CTA, portrait au-dessus de la citation sur mobile, apparitions décalées et tracé de la ligne du hero.
 
 ## Fichiers du dossier
 
 | Fichier | Contenu |
 |---|---|
 | `RECAP-klarys-joins-consentio.md` | Ce récap |
-| `kl-classes.css` | Miroir des classes V2 (25 classes, 7 combos), de `c10-link` et des breakpoints ; section à part pour les classes V1 inutilisées |
+| `kl-classes.css` | Miroir des classes V2 (24 classes, 7 combos), de `c10-link` et des breakpoints ; section à part pour les classes V1 inutilisées |
 | `sections.html` | Structure HTML des 3 sections natives V2 |
 | `correction-vert-05312D.csv` | Détail des 106 valeurs de vert corrigées (24/09) |
 | `correction-couleurs-hors-charte.csv` | Détail des 74 valeurs lime, deep et texte foncé (26/09) |
