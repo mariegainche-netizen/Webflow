@@ -1,0 +1,26 @@
+<style>
+/* PAGE RESOURCES : grande carte « à la une » (liste native .rs-feat) + grille d'articles
+   - Carte à la une : collection list 1 item, filtre « Featured on home » = ON
+   - Grille : filtre « Featured on home » = OFF, tri date décroissante
+   - Mise en page de la grille : 100 % native depuis le 26/09
+     (classes cs-cards-grid + is-resources, 3 / 2 / 1 colonnes dans le panneau Style) */
+
+/* Catégorie lue par le filtre, jamais affichée */
+[fs-cmsfilter-field="category"],
+.rs-feat-cat { display: none !important; }
+
+/* Élément masqué par le filtre (carte de grille ou carte à la une) */
+[data-hidden="true"] { display: none !important; }
+
+/* Focus clavier */
+.rs-filter:focus-visible,
+.rs-feat:focus-visible { outline: 2px solid #A3EA34; outline-offset: 2px; }
+</style>
+<style>
+/* Ligne méta : pas de « min read » ni de « · » si le temps de lecture est vide ; pas de « · » si la date est vide */
+[data-meta="read"].w-dyn-bind-empty,
+[data-meta="read"].w-dyn-bind-empty + [data-meta="unit"]{display:none}
+[data-meta="sep"]:has(+ [data-meta="read"].w-dyn-bind-empty){display:none}
+[data-meta="date"].w-dyn-bind-empty,
+[data-meta="date"].w-dyn-bind-empty + [data-meta="sep"]{display:none}
+</style>

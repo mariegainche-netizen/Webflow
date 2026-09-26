@@ -1,0 +1,44 @@
+<style>
+/* PAGE RESOURCES : grande carte « à la une » (liste native .rs-feat) + grille d'articles
+   - Carte à la une : collection list 1 item, filtre « Featured on home » = ON
+   - Grille : filtre « Featured on home » = OFF, tri date décroissante */
+
+/* Grille 3 / 2 / 1 colonnes */
+.cs-cards-grid,
+.w-dyn-items.cs-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 2rem 0 0 !important;
+  list-style: none !important;
+}
+.cs-cards-grid > .w-dyn-item { grid-column: auto !important; width: 100% !important; margin: 0 !important; padding: 0 !important; }
+
+/* Catégorie lue par le filtre, jamais affichée */
+[fs-cmsfilter-field="category"],
+.rs-feat-cat { display: none !important; }
+
+/* Élément masqué par le filtre (carte de grille ou carte à la une) */
+[data-hidden="true"] { display: none !important; }
+
+/* Focus clavier */
+.rs-filter:focus-visible,
+.rs-feat:focus-visible { outline: 2px solid #A3EA34; outline-offset: 2px; }
+
+@media (max-width: 991px) {
+  .cs-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 639px) {
+  .cs-cards-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+<style>
+/* Ligne méta : pas de « min read » ni de « · » si le temps de lecture est vide ; pas de « · » si la date est vide */
+[data-meta="read"].w-dyn-bind-empty,
+[data-meta="read"].w-dyn-bind-empty + [data-meta="unit"]{display:none}
+[data-meta="sep"]:has(+ [data-meta="read"].w-dyn-bind-empty){display:none}
+[data-meta="date"].w-dyn-bind-empty,
+[data-meta="date"].w-dyn-bind-empty + [data-meta="sep"]{display:none}
+</style>

@@ -1,0 +1,63 @@
+<style>
+/* GRILLE 3 COLONNES : force sur le wrapper Webflow (.w-dyn-items + .cs-cards-grid) */
+.cs-cards-grid,
+.w-dyn-items.cs-cards-grid,
+ul.w-dyn-items.cs-cards-grid,
+.w-dyn-list > .cs-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+.cs-cards-grid > .w-dyn-item {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  float: none !important;
+}
+@media (max-width: 991px) {
+  .cs-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 1.5rem !important; }
+}
+@media (max-width: 639px) {
+  .cs-cards-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+}
+
+/* Filtres (boutons de .c2-filters) */
+.c2-filters { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.c2-filters [fs-list-field] {
+  padding: .5rem 1.25rem;
+  border: 1px solid rgba(5,49,45,0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+  color: #161616;
+  background: transparent;
+}
+.c2-filters [fs-list-field]:hover { background: #F3FCEB; }
+.c2-filters [fs-list-field].is-active {
+  background: #05312D;
+  color: #A3EA34;
+  border-color: #05312D;
+}
+.c2-filters [fs-list-field]:focus-visible { outline: 2px solid #A3EA34; outline-offset: 2px; }
+
+/* Champ audience (lu par le script, jamais affiché) */
+[fs-cmsfilter-field="audience"], .cs-audience-tag { display: none !important; }
+
+/* Carte masquée par le filtre */
+.cs-card-item[data-hidden="true"] { display: none !important; }
+</style>
+<style>
+/* Ligne méta : pas de « min read » ni de « · » si le temps de lecture est vide ; pas de « · » si la date est vide */
+[data-meta="read"].w-dyn-bind-empty,
+[data-meta="read"].w-dyn-bind-empty + [data-meta="unit"]{display:none}
+[data-meta="sep"]:has(+ [data-meta="read"].w-dyn-bind-empty){display:none}
+[data-meta="date"].w-dyn-bind-empty,
+[data-meta="date"].w-dyn-bind-empty + [data-meta="sep"]{display:none}
+</style>

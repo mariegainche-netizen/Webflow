@@ -1,0 +1,44 @@
+<script>
+/* Bouton « retour en haut » (mobile uniquement, ≤ 767 px)
+   - Élément : Link Block .back-to-top, juste au-dessus, dans le composant Footer
+   - Style : panneau Style, classe back-to-top ; combo is-hidden = état masqué
+   - Ce script retire is-hidden après un écran de défilement et le remet en haut de page. */
+(function () {
+  var btn = document.querySelector('.back-to-top');
+  if (!btn) return;
+  // Rattaché au <body> : reste fixé à l'écran même pendant les animations du footer
+  document.body.appendChild(btn);
+
+  // Libellé lu par les lecteurs d'écran, dans la langue de la page
+  var label = { fr: 'Retour en haut', es: 'Volver arriba' }[(document.documentElement.lang || '').slice(0, 2)];
+  if (label) btn.setAttribute('aria-label', label);
+
+  // Visible après un écran de défilement (calcul au plus une fois par image)
+  var ticking = false;
+  function update() {
+    ticking = false;
+    btn.classList.toggle('is-hidden', window.scrollY <= window.innerHeight);
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    // Défilement doux, sauf si le visiteur a demandé moins d'animations
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    // Au clavier (e.detail = 0), le focus remonte sur le premier lien visible (logo)
+    if (e.detail === 0) {
+      var links = document.querySelectorAll('a[href]');
+      for (var i = 0; i < links.length; i++) {
+        if (links[i] !== btn && links[i].getClientRects().length) {
+          links[i].focus({ preventScroll: true });
+          break;
+        }
+      }
+    }
+  });
+})();
+</script>
