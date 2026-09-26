@@ -5,11 +5,11 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 ## Statut
 
 - **Page « Klarys joins Consentio » passée en V2 le 26/09 et publiée sur le domaine de test.** La nouvelle version Lovable (`klarys-next.tsx`, bouton V2) remplace la V1 sur la même page : même URL, même SEO. Marie a décoché Draft et publié le site le 26/09 à 15 h 45 pour voir le rendu sur webflow.io.
-- **Photo du CEO provisoire** : portrait `10_Guillaume.png` du site 2024, en attendant le fichier de la photo Lovable (voir « Pièges et à faire », point 1).
+- **Photo du CEO** : la photo Lovable, mise en place par Marie dans le Designer le 26/09 (asset `6ab7d09835960d164f51aabf`).
 - **Composant partagé « CTA Next Step »** : 4 props ajoutés (eyebrow masquable, lien secondaire optionnel), sans effet sur les 2 autres pages qui l’utilisent.
 - **Charte** : vert, lime, deep et texte foncé Lovable corrigés sur tout le site les 24 et 26/09 (section 4).
 - **About Us non touchée** : elle relève de la session « Company Page Creation ».
-- **Vidéo Manor** : passée dans un élément Code Embed le 26/09 à 15 h 55, car l’élément personnalisé `iframe` ne s’affichait pas sur le site publié. Visible sur webflow.io après la prochaine publication.
+- **Vidéo Manor** : dans un élément Code Embed, avec son propre cadre 16:9 en style inline (26/09, 16 h 05). L’élément personnalisé `iframe` puis un premier Embed ne s’affichaient pas sur le site publié. À contrôler sur webflow.io après republication.
 
 ## 1. La page
 
@@ -48,8 +48,8 @@ Sessions du 24 et du 26/09/2026, site Webflow « Consentio 2026 » (`6aaaafd02
 
 ### Images et vidéo
 
-- Portrait : asset `10_Guillaume.png` (`6aaaafd0271107b3401492ea`), texte alternatif « Guillaume Humbert, CEO ». Provisoire (section 8, point 1).
-- Vidéo : témoignage Manor, dans un élément Code Embed (`506038aa-cb40-fdbe-6e24-161812a98b06`) : iframe `https://www.youtube-nocookie.com/embed/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Le domaine youtube-nocookie ne dépose pas de cookie avant la lecture, comme dans Lovable.
+- Portrait : photo Lovable de Guillaume Humbert (asset `6ab7d09835960d164f51aabf`, remplacée par Marie dans le Designer le 26/09), texte alternatif « Guillaume Humbert, CEO ». Cadrage rond centré (`object-position: 50% 50%`).
+- Vidéo : témoignage Manor, dans un élément Code Embed (`506038aa-cb40-fdbe-6e24-161812a98b06`) : un div en style inline porte le format 16:9 (hauteur 0, `padding-top` 56,25 %) et contient l’iframe `https://www.youtube-nocookie.com/embed/dhKXULAqtdU`, titre « Testimony of Manor, major Swiss retailer using Klarys ». Le domaine youtube-nocookie ne dépose pas de cookie avant la lecture, comme dans Lovable.
 - Image de partage (OG) : `seafood-packing.jpg`, asset `6ab4ebeb94eb6de7ff706177`.
 
 ### Responsive (desktop first)
@@ -81,7 +81,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 - **Hero** : `kl-hero`, `kl-flow-hero`, `kl-flow-path` (et son combo `is-drawn`), `kl-sr-only` (H1 invisible), `kl-quote`, `kl-portrait`, `kl-blockquote`, `kl-quote-caption`
 - **Communes** : `kl-container`, `kl-label`, `kl-dot`, `kl-section`, `kl-num`, `kl-h2`, `kl-text`
-- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame` (cadre 16:9 qui contient l’Embed), `kl-video-caption`
+- **What is Klarys?** : `kl-about-grid`, `kl-video`, `kl-video-frame` (bordure, arrondi et fond du cadre qui contient l’Embed), `kl-video-caption`
 - **Continuité** : `kl-split` (marge haute d’1 rem ajoutée), `kl-benefits`, `kl-benefits-grid`, `kl-benefit`, `kl-benefit-title`
 - **Combos** : `is-drawn` (sur `kl-flow-path`, ajouté par les Interactions), `is-dark` (sur `kl-label`, `kl-num`, `kl-h2` et `kl-text`, ce dernier créé le 26/09), `is-deep` et `is-warm` (sur `kl-section`)
 - **Composant CTA Next Step** : `c10-link` (lien secondaire, créé le 26/09)
@@ -130,8 +130,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 ## 6. Écarts assumés par rapport à Lovable (V2)
 
-- **Photo du CEO** : portrait provisoire du site 2024 (fond lime, gilet Consentio) tant que le fichier de la photo Lovable n’est pas dans Webflow.
-- **Vidéo** : élément Code Embed avec l’iframe youtube-nocookie de Lovable. L’élément YouTube natif ne peut pas recevoir la vidéo via l’API, et un élément personnalisé `iframe` ne s’affiche pas sur le site publié (constaté le 26/09). Pour changer de vidéo : double-clic sur l’Embed dans le cadre vidéo, puis remplacer l’identifiant `dhKXULAqtdU` dans l’URL. Alternative 100 % native : remplacer l’Embed par l’élément YouTube de Webflow et coller l’URL de la vidéo dans ses réglages.
+- **Vidéo** : élément Code Embed avec l’iframe youtube-nocookie de Lovable. L’élément YouTube natif ne peut pas recevoir la vidéo via l’API, un élément personnalisé `iframe` ne s’affiche pas sur le site publié, et la propriété `aspect-ratio` du cadre ne s’appliquait pas (constaté le 26/09) : le format 16:9 est donc porté par l’Embed lui-même. Pour changer de vidéo : double-clic sur l’Embed dans le cadre vidéo, puis remplacer l’identifiant `dhKXULAqtdU` dans l’URL. Alternative 100 % native : remplacer l’Embed par l’élément YouTube de Webflow et coller l’URL de la vidéo dans ses réglages.
 - **H1** : la V2 Lovable n’en a pas. Il est gardé pour le SEO et l’accessibilité, mais invisible à l’écran (classe `kl-sr-only`).
 - **CTA final** : composant existant « CTA Next Step », avec son image cagette au lieu des tomates (hands-market) de Lovable. Un seul CTA est ainsi maintenu pour tout le site.
 - **Espacement** : le titre « What is Klarys? » est à 1,5 rem sous le « 01 » (1 rem dans Lovable), pour réutiliser `kl-h2` sans nouvelle variante.
@@ -145,9 +144,7 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 
 ## 8. Pièges et à faire
 
-1. **Photo du CEO à remplacer.** La photo Lovable envoyée dans la conversation n’est pas arrivée sous forme de fichier. Deux options :
-   - la joindre comme fichier dans un prochain message : je la charge dans les assets et la mets en place ;
-   - ou la remplacer dans le Designer : sélectionner le portrait du hero, puis Replace image dans le panneau Settings. La classe `kl-portrait` garde le cadrage rond et l’anneau lime.
+1. **Photo du CEO** : réglée. Pour la changer plus tard, sélectionner le portrait du hero, puis Replace image dans le panneau Settings. La classe `kl-portrait` garde le cadrage rond et l’anneau lime, et le texte alternatif reste « Guillaume Humbert, CEO ».
 2. **Historique de la case Draft et du domaine de test.**
    - 24/09 : une modification SEO et OG faite via l’API a décoché la case Draft de 12 h 50 à 13 h 33 (heure de Paris). Le site a été publié à 13 h 03, pendant cette fenêtre.
    - 26/09 : case de nouveau trouvée décochée à 9 h 44. Ce n’est pas l’effet d’une écriture d’éléments via l’API (testé) : c’est probablement un réglage de page modifié entre le 24/09 à 13 h 33 et le 26/09 à 9 h 29, par une autre session ou à la main. Le site a été publié à 8 h 50 : si la case était déjà décochée, la V1 de la page est en ligne sur le domaine de test `webflow.io`, à l’adresse `/en-en/klarys-joins-consentio`.
@@ -191,4 +188,4 @@ La V2 utilise 24 classes et 7 combos, toutes natives (panneau Style). Miroir CSS
 | `sections.html` | Structure HTML des 3 sections natives V2 |
 | `correction-vert-05312D.csv` | Détail des 106 valeurs de vert corrigées (24/09) |
 | `correction-couleurs-hors-charte.csv` | Détail des 74 valeurs lime, deep et texte foncé (26/09) |
-| `klarys-desktop.png`, `klarys-mobile.png` | Rendus V2 de contrôle : maquette locale avec photo provisoire et vidéo non chargée, pas une capture Webflow |
+| `klarys-desktop.png`, `klarys-mobile.png` | Rendus V2 de contrôle : maquette locale avec l’ancienne photo provisoire et sans vidéo, pas une capture Webflow |
